@@ -356,6 +356,8 @@
   .value-summary{
     display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px;
   }
+  .value-summary--four{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:900px){.value-summary--four{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:760px){.value-summary{grid-template-columns:1fr}}
   .value-stat{border-radius:var(--radius-md); padding:22px; text-align:center}
   .value-stat .num{font-size:1.9rem; font-weight:800; letter-spacing:-0.02em}
@@ -364,6 +366,15 @@
     background:linear-gradient(160deg, rgba(79,109,245,0.95), rgba(138,92,246,0.9)); color:#fff;
   }
   .value-stat.highlight .lbl{color:rgba(255,255,255,0.85)}
+  .value-stat.warn{
+    background:rgba(239,68,68,0.08); border:1.5px solid rgba(239,68,68,0.35);
+  }
+  .value-stat.warn .num{color:#dc2626}
+  .value-stat.warn .lbl{color:#7a2e2e}
+  .setup-cost-emphasis{
+    text-align:center; font-size:1.05rem; font-weight:700; color:var(--ink);
+    max-width:640px; margin:24px auto 0; line-height:1.5;
+  }
   td.num-cell{font-variant-numeric:tabular-nums; font-weight:700}
   .value-note{
     margin-top:20px; padding:16px 20px; border-radius:var(--radius-md);
@@ -394,6 +405,14 @@
   @keyframes promoPulse{
     0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,0.45)}
     50%{box-shadow:0 0 0 10px rgba(255,255,255,0)}
+  }
+  .promo-bar strong.promo-red{
+    background:#ef4444; color:#fff;
+    animation:promoPulseRed 2.4s ease-in-out infinite;
+  }
+  @keyframes promoPulseRed{
+    0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,0.55)}
+    50%{box-shadow:0 0 0 10px rgba(239,68,68,0)}
   }
   @media (prefers-reduced-motion: reduce){
     .promo-bar strong{animation:none}
@@ -480,7 +499,7 @@
 
 <a href="#pricing" class="promo-bar">
   <span class="promo-emoji" aria-hidden="true">🎉</span>
-  2026 launch offer: <strong>2 months free</strong> on any plan, plus free data migration
+  2026 launch offer: <strong>2 months free</strong> on any plan, plus <strong class="promo-red">free data migration</strong>
   <span class="promo-arrow" aria-hidden="true">→</span>
 </a>
 
@@ -830,25 +849,33 @@
       </div>
 
       <p class="setup-cost-lede">"Build it yourself" isn't free, either &mdash; here's what that row above actually costs.</p>
-      <div class="value-summary">
+      <div class="value-summary value-summary--four">
         <div class="value-stat glass">
           <div class="num">20&ndash;40 hrs</div>
           <div class="lbl">Configuring a general tool for insurance workflows, one-time</div>
         </div>
         <div class="value-stat glass">
           <div class="num">$800&ndash;$1,600</div>
-          <div class="lbl">At $40/hr, before any ongoing maintenance</div>
+          <div class="lbl">At $40/hr &mdash; the one-time build only</div>
+        </div>
+        <div class="value-stat warn">
+          <div class="num">$150&ndash;$250/mo</div>
+          <div class="lbl">Every fix, field change &amp; new-agent setup after that &mdash; and it never stops</div>
         </div>
         <div class="value-stat highlight">
           <div class="num">$0 setup</div>
           <div class="lbl">Same-day onboarding, with Titus Data Labs</div>
         </div>
       </div>
+      <p class="setup-cost-emphasis">
+        The build is day one. Every change after that &mdash; a new field, a broken automation, onboarding the next
+        agent &mdash; is a recurring bill that compounds for as long as you keep the tool.
+      </p>
       <p class="value-note">
         Illustrative, not a promise: based on the custom fields, family-linking workarounds, reminder automations,
         and integrations a general-purpose tool needs before it handles insurance workflows at all, at a $40/hour
-        blended rate &mdash; swap in your own number. Doesn't include the ongoing hours spent maintaining that setup
-        after launch.
+        blended rate &mdash; swap in your own number. The monthly figure assumes 4&ndash;6 hours of upkeep as your
+        book, your team, or your compliance needs change.
       </p>
     </div>
   </section>
