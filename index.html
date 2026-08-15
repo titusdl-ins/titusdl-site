@@ -343,6 +343,24 @@
   .fact-card p{color:var(--ink-soft); font-size:0.95rem; margin:0}
   .fact-card strong{color:var(--ink); display:block; margin-bottom:6px; font-size:1.02rem}
 
+  /* ---------- value / roi ---------- */
+  .value-summary{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px;
+  }
+  @media (max-width:760px){.value-summary{grid-template-columns:1fr}}
+  .value-stat{border-radius:var(--radius-md); padding:22px; text-align:center}
+  .value-stat .num{font-size:1.9rem; font-weight:800; letter-spacing:-0.02em}
+  .value-stat .lbl{font-size:0.86rem; color:var(--ink-soft); margin-top:6px}
+  .value-stat.highlight{
+    background:linear-gradient(160deg, rgba(79,109,245,0.95), rgba(138,92,246,0.9)); color:#fff;
+  }
+  .value-stat.highlight .lbl{color:rgba(255,255,255,0.85)}
+  td.num-cell{font-variant-numeric:tabular-nums; font-weight:700}
+  .value-note{
+    margin-top:20px; padding:16px 20px; border-radius:var(--radius-md);
+    font-size:0.86rem; color:var(--ink-faint); line-height:1.6;
+  }
+
   /* ---------- pricing ---------- */
   .pricing-banner{
     text-align:center; border-radius:var(--radius-lg); padding:32px; margin-bottom:44px;
@@ -824,6 +842,77 @@
           <p>We don't collect Social Security numbers — one less sensitive field for you to protect, store, and explain to compliance if something ever goes wrong.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- VALUE / ROI -->
+  <section id="value">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">What it's actually worth</span>
+        <h2>The spreadsheet isn't free. It just doesn't send you a bill.</h2>
+        <p>Here's what the manual version of this job actually costs — in the hours it eats out of your week.</p>
+      </div>
+      <div class="table-wrap glass">
+        <table>
+          <thead>
+            <tr>
+              <th>Where the time goes</th>
+              <th>Doing it yourself</th>
+              <th>With Titus Data Labs</th>
+              <th class="our-col">Time back</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Finding a client's full policy picture</td>
+              <td class="mid">~3 min per lookup, ~15×/week</td>
+              <td class="yes">Under 30 sec, one search</td>
+              <td class="num-cell our-col">≈ 40 min/week</td>
+            </tr>
+            <tr>
+              <td>Tracking renewal, RMD &amp; Medicare-65 dates</td>
+              <td class="mid">~2 hrs/week on a manual tickler</td>
+              <td class="yes">Calculated automatically</td>
+              <td class="num-cell our-col">≈ 2 hrs/week</td>
+            </tr>
+            <tr>
+              <td>Cross-referencing family policies</td>
+              <td class="mid">~1.5 hrs/week reconciling by hand</td>
+              <td class="yes">Linked automatically</td>
+              <td class="num-cell our-col">≈ 1.5 hrs/week</td>
+            </tr>
+            <tr>
+              <td>Getting set up on a new system</td>
+              <td class="no">15&ndash;30 hrs building it in Notion/Zoho</td>
+              <td class="yes">Same-day onboarding</td>
+              <td class="num-cell our-col">≈ 20 hrs, once</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="value-summary">
+        <div class="value-stat glass">
+          <div class="num">≈ 17 hrs</div>
+          <div class="lbl">Given back per month, recurring</div>
+        </div>
+        <div class="value-stat glass">
+          <div class="num">≈ $680</div>
+          <div class="lbl">Value of that time at $40/hr</div>
+        </div>
+        <div class="value-stat highlight">
+          <div class="num">$49.99&ndash;$99.99</div>
+          <div class="lbl">What the CRM actually costs, per month</div>
+        </div>
+      </div>
+
+      <p class="value-note">
+        Illustrative, not a promise: based on 4 hours/week of manual lookups, renewal tracking, and family-policy
+        reconciling across spreadsheets and a general-purpose tool, at a $40/hour blended value of an agent's time
+        &mdash; a number worth swapping for your own. It doesn't include the cost of a missed renewal or a compliance
+        incident, which we've deliberately left out because we don't have a defensible number for it yet.
+      </p>
     </div>
   </section>
 
