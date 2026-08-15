@@ -360,13 +360,25 @@
     margin-top:20px; padding:16px 20px; border-radius:var(--radius-md);
     font-size:0.86rem; color:var(--ink-faint); line-height:1.6;
   }
+  .setup-cost-lede{
+    text-align:center; font-size:1.05rem; font-weight:700; color:var(--ink);
+    margin:36px 0 20px;
+  }
+
+  /* ---------- promo bar ---------- */
+  .promo-bar{
+    display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;
+    padding:11px 20px; text-align:center; text-decoration:none;
+    background:linear-gradient(90deg, var(--accent), var(--accent-2));
+    color:#fff; font-size:0.86rem; font-weight:600;
+  }
+  .promo-bar strong{
+    background:rgba(255,255,255,0.24); padding:2px 10px; border-radius:999px; font-weight:800;
+  }
+  .promo-bar .promo-arrow{transition:transform .15s ease}
+  .promo-bar:hover .promo-arrow{transform:translateX(3px)}
 
   /* ---------- pricing ---------- */
-  .pricing-banner{
-    text-align:center; border-radius:var(--radius-lg); padding:32px; margin-bottom:44px;
-  }
-  .pricing-banner .headline{font-size:1.5rem; font-weight:800}
-  .pricing-banner .headline b{color:var(--accent)}
   .pricing-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px}
   @media (max-width:800px){.pricing-grid{grid-template-columns:1fr}}
   .price-card{border-radius:var(--radius-lg); padding:32px; display:flex; flex-direction:column}
@@ -439,6 +451,12 @@
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
 <div class="mesh-bg" aria-hidden="true"></div>
+
+<a href="#pricing" class="promo-bar">
+  <span class="promo-emoji" aria-hidden="true">🎉</span>
+  2026 launch offer: <strong>2 months free</strong> on any plan, plus free data migration
+  <span class="promo-arrow" aria-hidden="true">→</span>
+</a>
 
 <header class="site">
   <div class="container">
@@ -768,6 +786,28 @@
           </tbody>
         </table>
       </div>
+
+      <p class="setup-cost-lede">"Build it yourself" isn't free, either &mdash; here's what that row above actually costs.</p>
+      <div class="value-summary">
+        <div class="value-stat glass">
+          <div class="num">20&ndash;40 hrs</div>
+          <div class="lbl">Configuring a general tool for insurance workflows, one-time</div>
+        </div>
+        <div class="value-stat glass">
+          <div class="num">$800&ndash;$1,600</div>
+          <div class="lbl">At $40/hr, before any ongoing maintenance</div>
+        </div>
+        <div class="value-stat highlight">
+          <div class="num">$0 setup</div>
+          <div class="lbl">Same-day onboarding, with Titus Data Labs</div>
+        </div>
+      </div>
+      <p class="value-note">
+        Illustrative, not a promise: based on the custom fields, family-linking workarounds, reminder automations,
+        and integrations a general-purpose tool needs before it handles insurance workflows at all, at a $40/hour
+        blended rate &mdash; swap in your own number. Doesn't include the ongoing hours spent maintaining that setup
+        after launch.
+      </p>
     </div>
   </section>
 
@@ -919,9 +959,6 @@
   <!-- PRICING -->
   <section id="pricing">
     <div class="container">
-      <div class="pricing-banner glass">
-        <p class="headline">2026 launch offer: <b>2 months free</b> on any plan, plus free data migration.</p>
-      </div>
       <div class="section-head center">
         <span class="eyebrow">Pricing</span>
         <h2>Simple, per-agent pricing</h2>
