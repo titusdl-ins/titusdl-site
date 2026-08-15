@@ -376,9 +376,20 @@
   }
   .value-stat.warn .lbl{color:#7a2e2e}
   .setup-cost-emphasis{
-    text-align:center; font-size:1.05rem; font-weight:700; color:var(--ink);
-    max-width:640px; margin:24px auto 0; line-height:1.5;
+    text-align:center; font-size:1.2rem; font-weight:800; color:var(--ink);
+    max-width:520px; margin:14px auto 0; line-height:1.4;
   }
+  .rebuild-loop{
+    display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap;
+    margin-top:36px;
+  }
+  .rebuild-step{
+    font-size:0.86rem; font-weight:800; padding:9px 18px; border-radius:999px;
+    background:rgba(20,22,40,0.06); color:var(--ink-soft);
+  }
+  .rebuild-step.warn{background:rgba(239,68,68,0.12); color:#dc2626}
+  .rebuild-arrow{color:var(--ink-faint); flex-shrink:0}
+  .rebuild-arrow.loop-back{color:#dc2626}
   td.num-cell{font-variant-numeric:tabular-nums; font-weight:700}
   .value-note{
     margin-top:20px; padding:16px 20px; border-radius:var(--radius-md);
@@ -872,13 +883,15 @@
           <div class="lbl">Same-day onboarding, with Titus Data Labs</div>
         </div>
       </div>
-      <p class="setup-cost-emphasis">
-        The build is day one. Every change after that &mdash; a new field, a broken automation, onboarding the next
-        agent &mdash; is a recurring bill that compounds for as long as you keep the tool. And in practice it's
-        rarely a quick patch: what usually needs fixing is something that was never built to be changed, so agents
-        end up rebuilding parts of it from scratch &mdash; at real cost in time and money &mdash; or they give up
-        and go back to spreadsheets.
-      </p>
+      <div class="rebuild-loop" aria-hidden="true">
+        <span class="rebuild-step">Build</span>
+        <svg class="rebuild-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <span class="rebuild-step">Break</span>
+        <svg class="rebuild-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <span class="rebuild-step warn">Rebuild</span>
+        <svg class="rebuild-arrow loop-back" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6M3 22v-6h6M3.5 9a9 9 0 0114.5-4.5L21 8M20.5 15a9 9 0 01-14.5 4.5L3 16"/></svg>
+      </div>
+      <p class="setup-cost-emphasis">Not a patch. A rebuild. Or they give up and go back to spreadsheets.</p>
       <p class="value-note">
         Illustrative, not a promise: based on the custom fields, family-linking workarounds, reminder automations,
         and integrations a general-purpose tool needs before it handles insurance workflows at all, at a $40/hour
