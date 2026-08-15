@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Titus Data Labs — Software built around what your business needs</title>
-<meta name="description" content="Titus Data Labs builds practical software for solo-run businesses, starting with a real insurance agent CRM running a live 2,000-client book every day." />
-<meta property="og:title" content="Titus Data Labs" />
-<meta property="og:description" content="Practical software for solo-run businesses. Built module by module, starting with a CRM that runs a real 2,000-client insurance book every day." />
+<title>Titus Data Labs — CRM built for insurance agents</title>
+<meta name="description" content="One CRM built around how insurance agents actually work — family and joint policies linked automatically, renewal and Medicare-65 dates calculated for you, all 8 product lines in one view." />
+<meta property="og:title" content="Titus Data Labs — CRM built for insurance agents" />
+<meta property="og:description" content="Never miss a renewal. Never lose a family record. One CRM built around how insurance agents actually work." />
 <meta property="og:image" content="https://titusdl.com/assets/og-image.png" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://titusdl.com/" />
@@ -169,27 +169,61 @@
   }
   .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--good)}
 
-  /* abstract dashboard mockup, pure CSS/SVG */
+  /* hero policy tag chips */
+  .tag-row{
+    display:flex; flex-wrap:wrap; gap:8px; justify-content:center; max-width:720px; margin:26px auto 0;
+  }
+  .tag-chip{
+    font-size:0.78rem; font-weight:700; padding:6px 14px; border-radius:999px;
+    background:rgba(255,255,255,0.6); border:1px solid rgba(20,22,40,0.08); color:var(--ink-soft);
+  }
+  .tag-chip.life{color:#4f6df5; border-color:rgba(79,109,245,0.3); background:rgba(79,109,245,0.08)}
+  .tag-chip.medicare{color:#8a5cf6; border-color:rgba(138,92,246,0.3); background:rgba(138,92,246,0.08)}
+  .tag-chip.health{color:#22c1c3; border-color:rgba(34,193,195,0.3); background:rgba(34,193,195,0.08)}
+  .tag-chip.annuity{color:#b4881a; border-color:rgba(180,136,26,0.3); background:rgba(180,136,26,0.08)}
+  .tag-chip.cancer{color:#c14a7a; border-color:rgba(193,74,122,0.3); background:rgba(193,74,122,0.08)}
+  .tag-chip.ltc{color:#1a9c6b; border-color:rgba(26,156,107,0.3); background:rgba(26,156,107,0.08)}
+  .tag-chip.retire{color:#4f6df5; border-color:rgba(79,109,245,0.3); background:rgba(79,109,245,0.08)}
+  .tag-chip.group{color:#22c1c3; border-color:rgba(34,193,195,0.3); background:rgba(34,193,195,0.08)}
+
+  /* dashboard mockup, pure CSS/SVG (illustrative sample data) */
   .mockup-wrap{margin-top:56px}
   .mockup{
     border-radius:26px; padding:22px; max-width:920px; margin:0 auto;
-    position:relative;
+    position:relative; text-align:left;
   }
-  .mockup-top{display:flex; gap:8px; margin-bottom:16px}
-  .mockup-top span{width:11px;height:11px;border-radius:50%; background:rgba(20,22,40,0.14)}
-  .mockup-grid{display:grid; grid-template-columns:1fr 2.2fr; gap:16px}
-  .mockup-side{display:flex; flex-direction:column; gap:10px}
-  .mockup-pill{height:14px; border-radius:7px; background:rgba(20,22,40,0.08)}
-  .mockup-pill.active{background:linear-gradient(135deg, var(--accent), var(--accent-2)); opacity:0.85}
-  .mockup-main{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-  .mockup-card{
-    border-radius:16px; padding:16px; background:rgba(255,255,255,0.6);
-    border:1px solid rgba(255,255,255,0.6);
+  .mockup-top{display:flex; align-items:center; gap:8px; margin-bottom:18px}
+  .mockup-top span:not(.mockup-top-label){width:11px;height:11px;border-radius:50%; background:rgba(20,22,40,0.14)}
+  .mockup-top-label{margin-left:10px; font-size:0.82rem; font-weight:700; color:var(--ink-faint)}
+  .mockup-grid{display:grid; grid-template-columns:1fr 2.4fr; gap:18px}
+  @media (max-width:640px){.mockup-grid{grid-template-columns:1fr}}
+  .mockup-side{display:flex; flex-direction:column; gap:4px}
+  .mockup-side-item{
+    display:flex; align-items:center; gap:10px; padding:9px 10px; border-radius:10px;
+    font-size:0.84rem; font-weight:600; color:var(--ink-faint);
   }
-  .mockup-card .num{font-size:1.5rem; font-weight:800}
-  .mockup-card .lbl{font-size:0.78rem; color:var(--ink-faint); margin-top:4px}
-  .mockup-bar{height:8px;border-radius:4px;background:rgba(20,22,40,0.07); margin-top:10px; overflow:hidden}
-  .mockup-bar i{display:block;height:100%;background:linear-gradient(90deg, var(--accent-3), var(--accent))}
+  .mockup-side-item .side-dot{width:7px;height:7px;border-radius:50%; background:rgba(20,22,40,0.18); flex-shrink:0}
+  .mockup-side-item.active{background:rgba(79,109,245,0.1); color:var(--accent)}
+  .mockup-side-item.active .side-dot{background:var(--accent)}
+  .mockup-main{display:flex; flex-direction:column; gap:10px}
+  .client-row{
+    display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:14px;
+    background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.6); flex-wrap:wrap;
+  }
+  .avatar{
+    width:34px;height:34px;border-radius:50%; flex-shrink:0; color:#fff; font-size:0.72rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .client-info{flex:1; min-width:110px}
+  .client-name{font-size:0.9rem; font-weight:700}
+  .client-sub{font-size:0.76rem; color:var(--ink-faint); margin-top:1px}
+  .policy-pill{font-size:0.72rem; font-weight:700; padding:5px 11px; border-radius:999px; white-space:nowrap}
+  .policy-pill.life{color:#4f6df5; background:rgba(79,109,245,0.12)}
+  .policy-pill.medicare{color:#8a5cf6; background:rgba(138,92,246,0.12)}
+  .policy-pill.health{color:#22c1c3; background:rgba(34,193,195,0.12)}
+  .policy-pill.annuity{color:#b4881a; background:rgba(180,136,26,0.12)}
+  .policy-pill.ltc{color:#1a9c6b; background:rgba(26,156,107,0.12)}
+  .policy-pill.group{color:#22c1c3; background:rgba(34,193,195,0.12)}
 
   /* ---------- proof strip ---------- */
   .proof{padding:70px 0}
@@ -366,57 +400,70 @@
   <!-- HERO -->
   <section id="top" class="hero">
     <div class="container">
-      <span class="hero-badge glass"><span class="dot" aria-hidden="true"></span> Live in production — real client data, every day</span>
-      <h1>We build what your business actually needs — not what's trendy.</h1>
+      <span class="hero-badge glass"><span class="dot" aria-hidden="true"></span> Purpose-built for insurance agents</span>
+      <h1>Never miss a renewal. Never lose a family record.</h1>
       <p class="lede">
-        We started with a CRM built for insurance agents, because agents live with the real stakes:
-        compliance, family policies, renewal deadlines. It's running a real ~2,000-client book today.
-        That's how we build everything — one module at a time, driven by what operators actually need.
+        One CRM built around how insurance agents actually work — family and joint policies linked
+        automatically, renewal and Medicare-65 dates calculated for you, and every client record locked
+        down behind bank-grade access controls.
       </p>
+      <div class="tag-row" aria-hidden="true">
+        <span class="tag-chip life">Life</span>
+        <span class="tag-chip medicare">Medicare</span>
+        <span class="tag-chip health">Health</span>
+        <span class="tag-chip annuity">Annuity</span>
+        <span class="tag-chip cancer">Cancer</span>
+        <span class="tag-chip ltc">Long-Term Care</span>
+        <span class="tag-chip retire">Business Retirement</span>
+        <span class="tag-chip group">Group Health</span>
+      </div>
       <div class="ctas">
-        <a href="#product" class="btn btn-primary">See what's live</a>
-        <a href="#contact" class="btn btn-ghost glass">Talk to us about your business</a>
+        <a href="#product" class="btn btn-primary">See how it works</a>
+        <a href="#contact" class="btn btn-ghost glass">Get started</a>
       </div>
 
       <div class="mockup-wrap">
         <div class="mockup glass-solid">
           <div class="mockup-top" aria-hidden="true">
             <span></span><span></span><span></span>
+            <span class="mockup-top-label">Client book</span>
           </div>
           <div class="mockup-grid">
             <div class="mockup-side" aria-hidden="true">
-              <div class="mockup-pill active" style="width:70%"></div>
-              <div class="mockup-pill" style="width:85%"></div>
-              <div class="mockup-pill" style="width:60%"></div>
-              <div class="mockup-pill" style="width:75%"></div>
-              <div class="mockup-pill" style="width:50%"></div>
+              <div class="mockup-side-item active"><i class="side-dot"></i>All clients</div>
+              <div class="mockup-side-item"><i class="side-dot"></i>Renewals this month</div>
+              <div class="mockup-side-item"><i class="side-dot"></i>Birthdays</div>
+              <div class="mockup-side-item"><i class="side-dot"></i>Families</div>
+              <div class="mockup-side-item"><i class="side-dot"></i>Follow-ups</div>
             </div>
             <div class="mockup-main" aria-hidden="true">
-              <div class="mockup-card">
-                <div class="num">8</div>
-                <div class="lbl">Policy types tracked</div>
-                <div class="mockup-bar"><i style="width:80%"></i></div>
+              <div class="client-row">
+                <span class="avatar" style="background:linear-gradient(135deg,#4f6df5,#8a5cf6)">JK</span>
+                <div class="client-info"><div class="client-name">Kim family</div><div class="client-sub">4 linked policies</div></div>
+                <span class="policy-pill life">Life</span>
+                <span class="policy-pill medicare">Medicare</span>
               </div>
-              <div class="mockup-card">
-                <div class="num">2FA</div>
-                <div class="lbl">Required on every login</div>
-                <div class="mockup-bar"><i style="width:100%"></i></div>
+              <div class="client-row">
+                <span class="avatar" style="background:linear-gradient(135deg,#22c1c3,#4f6df5)">SL</span>
+                <div class="client-info"><div class="client-name">S. Lee</div><div class="client-sub">Renews in 12 days</div></div>
+                <span class="policy-pill annuity">Annuity</span>
               </div>
-              <div class="mockup-card">
-                <div class="num">RLS</div>
-                <div class="lbl">Agent-isolated by default</div>
-                <div class="mockup-bar"><i style="width:95%"></i></div>
+              <div class="client-row">
+                <span class="avatar" style="background:linear-gradient(135deg,#8a5cf6,#22c1c3)">MP</span>
+                <div class="client-info"><div class="client-name">Park family</div><div class="client-sub">Medicare-65 in 3 mo</div></div>
+                <span class="policy-pill health">Health</span>
+                <span class="policy-pill group">Group</span>
               </div>
-              <div class="mockup-card">
-                <div class="num">0</div>
-                <div class="lbl">SSNs collected</div>
-                <div class="mockup-bar"><i style="width:15%"></i></div>
+              <div class="client-row">
+                <span class="avatar" style="background:linear-gradient(135deg,#4f6df5,#22c1c3)">TN</span>
+                <div class="client-info"><div class="client-name">T. Nguyen</div><div class="client-sub">Birthday this week</div></div>
+                <span class="policy-pill ltc">LTC</span>
               </div>
             </div>
           </div>
         </div>
         <p style="text-align:center; font-size:0.8rem; color:var(--ink-faint); margin-top:14px">
-          Illustrative preview, not a live screenshot.
+          Illustrative preview built with sample data, not a live screenshot.
         </p>
       </div>
     </div>
@@ -426,21 +473,21 @@
   <section id="proof" class="proof">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow">Proof, not promises</span>
-        <h2>Real numbers from a real, running business</h2>
+        <span class="eyebrow">Built for the way you work</span>
+        <h2>Everything a general CRM makes you configure — already built in</h2>
       </div>
       <div class="proof-grid">
         <div class="proof-card glass">
           <div class="num">8</div>
-          <div class="lbl">Insurance policy types tracked in one view</div>
+          <div class="lbl">Insurance policy types tracked natively, in one view</div>
         </div>
         <div class="proof-card glass">
-          <div class="num">~2,000</div>
-          <div class="lbl">Clients in the one real book run on this CRM, daily</div>
+          <div class="num">Auto</div>
+          <div class="lbl">Renewal, RMD & Medicare-65 dates calculated for you</div>
         </div>
         <div class="proof-card glass">
-          <div class="num">100%</div>
-          <div class="lbl">Logins require two-factor authentication</div>
+          <div class="num">2FA</div>
+          <div class="lbl">Required on every login, for every agent</div>
         </div>
         <div class="proof-card glass">
           <div class="num">0</div>
@@ -614,35 +661,35 @@
     </div>
   </section>
 
-  <!-- FACTS INSTEAD OF TESTIMONIALS -->
+  <!-- WHY AGENTS TRUST IT -->
   <section id="facts">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow">Why no testimonial wall</span>
-        <h2>We have one real customer. Here's what that actually means.</h2>
-        <p>We could invent a wall of five-star quotes. We're not going to. Here's what's real instead.</p>
+        <span class="eyebrow">Why agents trust it</span>
+        <h2>Built for insurance compliance, not bolted on after the fact</h2>
+        <p>The details that matter to an examiner are the same details that make your day easier.</p>
       </div>
       <div class="facts-grid">
         <div class="fact-card glass">
           <div class="fact-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg>
           </div>
-          <strong>One real book, running daily</strong>
-          <p>An independent agency runs its entire client book — about 2,000 clients across all eight product lines — on this CRM every working day. Not a pilot. Production.</p>
+          <strong>Purpose-built, not adapted</strong>
+          <p>Eight real insurance product lines — life, Medicare, health, annuity, cancer, long-term care, business retirement, group health — designed into the schema from day one, not relabeled generic fields.</p>
         </div>
         <div class="fact-card glass">
           <div class="fact-icon" aria-hidden="true">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
           </div>
-          <strong>Isolation tested on every change</strong>
-          <p>Agent-to-agent data separation isn't a policy we wrote once — it's enforced by the database and checked by an automated test that has to pass before any code change ships.</p>
+          <strong>Isolation enforced by the database</strong>
+          <p>Agent-to-agent data separation isn't a policy on paper — it's enforced at the database level and re-checked by an automated test before any code change can ship.</p>
         </div>
         <div class="fact-card glass">
           <div class="fact-icon" aria-hidden="true">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
           </div>
-          <strong>We removed a field instead of adding one</strong>
-          <p>Social Security numbers used to be collected. We looked at how agents actually use client records day to day, decided it wasn't needed, and took it out of the product.</p>
+          <strong>Less liability, not more</strong>
+          <p>We don't collect Social Security numbers — one less sensitive field for you to protect, store, and explain to compliance if something ever goes wrong.</p>
         </div>
       </div>
     </div>
@@ -718,11 +765,6 @@
           <summary>Does it work on mobile and tablet?<span class="chev" aria-hidden="true">▾</span></summary>
           <p>Yes — it's a responsive web app, so the same interface works in a browser on your phone, tablet,
             or desktop. There's no separate native app to install.</p>
-        </details>
-        <details class="faq-item glass">
-          <summary>How many agencies use this today?<span class="chev" aria-hidden="true">▾</span></summary>
-          <p>One, running a real ~2,000-client book in production. We'd rather tell you that plainly than
-            imply a scale we haven't reached yet.</p>
         </details>
       </div>
     </div>
