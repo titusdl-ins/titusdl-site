@@ -367,16 +367,33 @@
 
   /* ---------- promo bar ---------- */
   .promo-bar{
-    display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap;
-    padding:11px 20px; text-align:center; text-decoration:none;
+    display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
+    padding:22px 24px; text-align:center; text-decoration:none;
     background:linear-gradient(90deg, var(--accent), var(--accent-2));
-    color:#fff; font-size:0.86rem; font-weight:600;
+    color:#fff; font-size:clamp(1.05rem, 2.1vw, 1.4rem); font-weight:700;
+    box-shadow:0 4px 24px rgba(79,109,245,0.35);
+    position:relative; z-index:60;
   }
+  .promo-bar .promo-emoji{font-size:1.5em}
   .promo-bar strong{
-    background:rgba(255,255,255,0.24); padding:2px 10px; border-radius:999px; font-weight:800;
+    display:inline-block;
+    background:#fff; color:var(--accent);
+    padding:6px 18px; border-radius:999px; font-weight:800;
+    box-shadow:0 0 0 0 rgba(255,255,255,0.6);
+    animation:promoPulse 2.4s ease-in-out infinite;
   }
-  .promo-bar .promo-arrow{transition:transform .15s ease}
-  .promo-bar:hover .promo-arrow{transform:translateX(3px)}
+  @keyframes promoPulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,0.45)}
+    50%{box-shadow:0 0 0 10px rgba(255,255,255,0)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .promo-bar strong{animation:none}
+  }
+  .promo-bar .promo-arrow{font-size:1.2em; transition:transform .15s ease}
+  .promo-bar:hover .promo-arrow{transform:translateX(4px)}
+  @media (max-width:600px){
+    .promo-bar{padding:18px 16px; gap:8px 10px}
+  }
 
   /* ---------- pricing ---------- */
   .pricing-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px}
@@ -529,19 +546,19 @@
                   <span class="policy-pill medicare">Medicare</span>
                 </div>
                 <div class="client-row">
-                  <span class="avatar" style="background:linear-gradient(135deg,#22c1c3,#4f6df5)">SL</span>
-                  <div class="client-info"><div class="client-name">S. Lee</div><div class="client-sub">Renews in 12 days</div></div>
+                  <span class="avatar" style="background:linear-gradient(135deg,#22c1c3,#4f6df5)">LC</span>
+                  <div class="client-info"><div class="client-name">Chen family</div><div class="client-sub">Renews in 12 days</div></div>
                   <span class="policy-pill annuity">Annuity</span>
                 </div>
                 <div class="client-row">
-                  <span class="avatar" style="background:linear-gradient(135deg,#8a5cf6,#22c1c3)">MP</span>
-                  <div class="client-info"><div class="client-name">Park family</div><div class="client-sub">Medicare-65 in 3 mo</div></div>
+                  <span class="avatar" style="background:linear-gradient(135deg,#8a5cf6,#22c1c3)">MG</span>
+                  <div class="client-info"><div class="client-name">Garcia family</div><div class="client-sub">Medicare-65 in 3 mo</div></div>
                   <span class="policy-pill health">Health</span>
                   <span class="policy-pill group">Group</span>
                 </div>
                 <div class="client-row">
-                  <span class="avatar" style="background:linear-gradient(135deg,#4f6df5,#22c1c3)">TN</span>
-                  <div class="client-info"><div class="client-name">T. Nguyen</div><div class="client-sub">Birthday this week</div></div>
+                  <span class="avatar" style="background:linear-gradient(135deg,#4f6df5,#22c1c3)">JS</span>
+                  <div class="client-info"><div class="client-name">Smith family</div><div class="client-sub">Birthday this week</div></div>
                   <span class="policy-pill ltc">LTC</span>
                 </div>
               </div>
