@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Titus Data Labs — Software built around what your business needs</title>
+<meta name="description" content="Titus Data Labs builds practical software for solo-run businesses, starting with a real insurance agent CRM running a live 2,000-client book every day." />
+<meta property="og:title" content="Titus Data Labs" />
+<meta property="og:description" content="Practical software for solo-run businesses. Built module by module, starting with a CRM that runs a real 2,000-client insurance book every day." />
+<meta property="og:image" content="https://titusdl.com/assets/og-image.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://titusdl.com/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b8def'/%3E%3Cstop offset='1' stop-color='%23a06bf2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3C/svg%3E" />
+
+<style>
+  :root{
+    --ink: #14161f;
+    --ink-soft: #454a58;
+    --ink-faint: #6b7182;
+    --surface: #f5f6fa;
+    --panel: rgba(255,255,255,0.72);
+    --panel-solid: rgba(255,255,255,0.92);
+    --panel-border: rgba(255,255,255,0.55);
+    --glass-blur: 18px;
+    --accent: #4f6df5;
+    --accent-2: #8a5cf6;
+    --accent-3: #22c1c3;
+    --good: #1a9c6b;
+    --warn: #b4881a;
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+    --shadow-soft: 0 8px 30px rgba(20,22,40,0.08), 0 2px 8px rgba(20,22,40,0.05);
+    --shadow-lift: 0 20px 60px rgba(30,30,60,0.16), 0 6px 20px rgba(30,30,60,0.08);
+    --maxw: 1120px;
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:88px}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--surface);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .skip-link{position:absolute;left:16px;top:-60px;background:#14161f;color:#fff;padding:10px 16px;border-radius:8px;z-index:1000;transition:top .2s}
+  .skip-link:focus{top:16px}
+
+  /* ---------- mesh background ---------- */
+  .mesh-bg{
+    position:fixed; inset:0; z-index:-2; overflow:hidden;
+    background:
+      radial-gradient(60% 50% at 12% 8%, rgba(138,92,246,0.30), transparent 60%),
+      radial-gradient(55% 45% at 88% 4%, rgba(79,109,245,0.28), transparent 60%),
+      radial-gradient(60% 55% at 82% 60%, rgba(34,193,195,0.22), transparent 60%),
+      radial-gradient(70% 60% at 8% 78%, rgba(79,109,245,0.20), transparent 60%),
+      linear-gradient(180deg, #f7f7fb 0%, #f2f3f9 40%, #eef0f8 100%);
+    background-size:180% 180%;
+    animation: meshDrift 34s ease-in-out infinite alternate;
+  }
+  @keyframes meshDrift{
+    0%{background-position:0% 0%, 100% 0%, 100% 100%, 0% 100%, 0 0}
+    100%{background-position:10% 8%, 90% 6%, 88% 92%, 6% 90%, 0 0}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .mesh-bg{animation:none}
+  }
+
+  /* ---------- glass utility ---------- */
+  .glass{
+    background:var(--panel);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+    backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+    border:1px solid var(--panel-border);
+    box-shadow: var(--shadow-soft);
+  }
+  .glass-solid{
+    background:var(--panel-solid);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+    backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+    border:1px solid var(--panel-border);
+    box-shadow: var(--shadow-soft);
+  }
+  @media (prefers-reduced-transparency: reduce){
+    .glass, .glass-solid{
+      background: #ffffff;
+      -webkit-backdrop-filter:none;
+      backdrop-filter:none;
+    }
+  }
+
+  /* ---------- header ---------- */
+  header.site{
+    position:sticky; top:0; z-index:100;
+    padding:14px 0;
+  }
+  header.site .bar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 20px; border-radius:999px;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    font-weight:700; font-size:1.05rem; letter-spacing:-0.01em; text-decoration:none;
+  }
+  .logo .mark{
+    width:30px;height:30px;border-radius:9px;
+    background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    box-shadow: 0 2px 10px rgba(79,109,245,0.35);
+  }
+  nav.links{display:flex; gap:28px; align-items:center}
+  nav.links a{font-size:0.94rem; font-weight:500; text-decoration:none; color:var(--ink-soft)}
+  nav.links a:hover{color:var(--ink)}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px; border-radius:999px;
+    font-weight:600; font-size:0.92rem; text-decoration:none;
+    border:1px solid transparent; cursor:pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{
+    background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    color:#fff; box-shadow:0 8px 22px rgba(79,109,245,0.35);
+  }
+  .btn-ghost{
+    background:rgba(255,255,255,0.5);
+    border:1px solid rgba(20,22,40,0.12);
+    color:var(--ink);
+  }
+  .btn-sm{padding:9px 16px; font-size:0.86rem}
+  .nav-mobile-toggle{display:none}
+
+  /* ---------- sections ---------- */
+  section{padding:100px 0}
+  @media (max-width:768px){section{padding:64px 0}}
+  h1,h2,h3{margin:0; letter-spacing:-0.02em}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.78rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--accent); margin-bottom:14px;
+  }
+  .eyebrow::before{content:""; width:6px;height:6px;border-radius:50%; background:var(--accent)}
+
+  /* ---------- hero ---------- */
+  .hero{padding-top:64px}
+  .hero .container{
+    display:grid; grid-template-columns:1fr; gap:36px; text-align:center;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    font-weight:800; max-width:920px; margin:0 auto; text-wrap:balance;
+  }
+  .hero .lede{
+    font-size:1.2rem; color:var(--ink-soft); max-width:680px; margin:20px auto 0;
+    text-wrap:balance;
+  }
+  .hero .ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:32px}
+  .hero-badge{
+    display:inline-flex; align-items:center; gap:10px; margin:0 auto;
+    padding:8px 16px; border-radius:999px; font-size:0.86rem; font-weight:600; color:var(--ink-soft);
+  }
+  .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--good)}
+
+  /* abstract dashboard mockup, pure CSS/SVG */
+  .mockup-wrap{margin-top:56px}
+  .mockup{
+    border-radius:26px; padding:22px; max-width:920px; margin:0 auto;
+    position:relative;
+  }
+  .mockup-top{display:flex; gap:8px; margin-bottom:16px}
+  .mockup-top span{width:11px;height:11px;border-radius:50%; background:rgba(20,22,40,0.14)}
+  .mockup-grid{display:grid; grid-template-columns:1fr 2.2fr; gap:16px}
+  .mockup-side{display:flex; flex-direction:column; gap:10px}
+  .mockup-pill{height:14px; border-radius:7px; background:rgba(20,22,40,0.08)}
+  .mockup-pill.active{background:linear-gradient(135deg, var(--accent), var(--accent-2)); opacity:0.85}
+  .mockup-main{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .mockup-card{
+    border-radius:16px; padding:16px; background:rgba(255,255,255,0.6);
+    border:1px solid rgba(255,255,255,0.6);
+  }
+  .mockup-card .num{font-size:1.5rem; font-weight:800}
+  .mockup-card .lbl{font-size:0.78rem; color:var(--ink-faint); margin-top:4px}
+  .mockup-bar{height:8px;border-radius:4px;background:rgba(20,22,40,0.07); margin-top:10px; overflow:hidden}
+  .mockup-bar i{display:block;height:100%;background:linear-gradient(90deg, var(--accent-3), var(--accent))}
+
+  /* ---------- proof strip ---------- */
+  .proof{padding:70px 0}
+  .proof-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
+  }
+  @media (max-width:900px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
+  .proof-card{
+    border-radius:var(--radius-md); padding:22px; text-align:center;
+  }
+  .proof-card .num{font-size:2rem; font-weight:800; letter-spacing:-0.02em}
+  .proof-card .lbl{font-size:0.86rem; color:var(--ink-soft); margin-top:6px}
+
+  /* ---------- feature cards ---------- */
+  .section-head{max-width:640px; margin-bottom:48px}
+  .section-head.center{margin-left:auto; margin-right:auto; text-align:center}
+  .section-head h2{font-size:clamp(1.8rem,3vw,2.4rem); font-weight:800}
+  .section-head p{color:var(--ink-soft); font-size:1.08rem; margin-top:12px}
+
+  .feature-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  @media (max-width:900px){.feature-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:600px){.feature-grid{grid-template-columns:1fr}}
+  .feature-card{
+    border-radius:var(--radius-md); padding:26px;
+  }
+  .feature-icon{
+    width:44px;height:44px;border-radius:12px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(135deg, rgba(79,109,245,0.15), rgba(138,92,246,0.15));
+    margin-bottom:16px; color:var(--accent);
+  }
+  .feature-card h3{font-size:1.05rem; font-weight:700; margin-bottom:8px}
+  .feature-card p{color:var(--ink-soft); font-size:0.94rem; margin:0}
+
+  /* ---------- comparison table ---------- */
+  .table-wrap{border-radius:var(--radius-lg); padding:8px; overflow-x:auto}
+  table{width:100%; border-collapse:collapse; min-width:720px}
+  th,td{padding:14px 16px; text-align:left; font-size:0.92rem}
+  thead th{
+    color:var(--ink-faint); font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.04em;
+    border-bottom:1px solid rgba(20,22,40,0.08);
+  }
+  tbody tr:not(:last-child) td{border-bottom:1px solid rgba(20,22,40,0.06)}
+  td.yes{color:var(--good); font-weight:700}
+  td.no{color:#c14a4a; font-weight:700}
+  td.mid{color:var(--warn); font-weight:700}
+  .our-col{background:rgba(79,109,245,0.06); border-radius:12px}
+
+  /* ---------- roadmap / vision ---------- */
+  .roadmap-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
+  @media (max-width:900px){.roadmap-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.roadmap-grid{grid-template-columns:1fr}}
+  .roadmap-card{border-radius:var(--radius-md); padding:24px; position:relative}
+  .roadmap-card .step{
+    font-size:0.75rem; font-weight:800; color:var(--accent); letter-spacing:0.06em; text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .roadmap-card h3{font-size:1.1rem; font-weight:700; margin-bottom:8px}
+  .roadmap-card p{color:var(--ink-soft); font-size:0.9rem; margin:0}
+  .roadmap-card.live{border:1px solid rgba(26,156,107,0.35)}
+  .roadmap-card.live .step{color:var(--good)}
+  .roadmap-note{
+    margin-top:28px; padding:18px 22px; border-radius:var(--radius-md);
+    font-size:0.94rem; color:var(--ink-soft);
+  }
+
+  /* ---------- proof-not-promises ---------- */
+  .facts-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  @media (max-width:900px){.facts-grid{grid-template-columns:1fr}}
+  .fact-card{border-radius:var(--radius-md); padding:26px}
+  .fact-card .fact-icon{color:var(--accent); margin-bottom:14px}
+  .fact-card p{color:var(--ink-soft); font-size:0.95rem; margin:0}
+  .fact-card strong{color:var(--ink); display:block; margin-bottom:6px; font-size:1.02rem}
+
+  /* ---------- pricing ---------- */
+  .pricing-banner{
+    text-align:center; border-radius:var(--radius-lg); padding:32px; margin-bottom:44px;
+  }
+  .pricing-banner .headline{font-size:1.5rem; font-weight:800}
+  .pricing-banner .headline b{color:var(--accent)}
+  .pricing-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px}
+  @media (max-width:800px){.pricing-grid{grid-template-columns:1fr}}
+  .price-card{border-radius:var(--radius-lg); padding:32px; display:flex; flex-direction:column}
+  .price-card.featured{
+    background:linear-gradient(160deg, rgba(79,109,245,0.94), rgba(138,92,246,0.94));
+    color:#fff; border:1px solid rgba(255,255,255,0.25);
+    box-shadow: var(--shadow-lift);
+  }
+  .price-card h3{font-size:1.3rem; font-weight:700}
+  .price-card .tag{
+    display:inline-block; margin-left:8px; font-size:0.72rem; font-weight:700; padding:4px 10px; border-radius:999px;
+    background:rgba(255,255,255,0.25); color:#fff;
+  }
+  .price-card .amount{font-size:2.6rem; font-weight:800; margin:14px 0}
+  .price-card .amount span{font-size:1rem; font-weight:500; opacity:0.7}
+  .price-card ul{list-style:none; margin:0 0 24px; padding:0; display:flex; flex-direction:column; gap:12px}
+  .price-card li{display:flex; gap:10px; font-size:0.94rem; align-items:flex-start}
+  .price-card:not(.featured) li{color:var(--ink-soft)}
+  .price-card.featured li{color:rgba(255,255,255,0.92)}
+  .check{flex-shrink:0; margin-top:2px}
+  .custom-note{
+    margin-top:22px; text-align:center; border-radius:var(--radius-md); padding:16px 20px; font-size:0.92rem; color:var(--ink-soft);
+  }
+
+  /* ---------- faq ---------- */
+  .faq-list{display:flex; flex-direction:column; gap:12px; max-width:760px; margin:0 auto}
+  details.faq-item{border-radius:var(--radius-md); padding:6px 22px}
+  details.faq-item summary{
+    cursor:pointer; font-weight:600; padding:16px 0; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  }
+  details.faq-item summary::-webkit-details-marker{display:none}
+  details.faq-item summary .chev{transition:transform .2s ease; flex-shrink:0; color:var(--ink-faint)}
+  details.faq-item[open] summary .chev{transform:rotate(180deg)}
+  details.faq-item p{color:var(--ink-soft); margin:0 0 18px; font-size:0.95rem}
+
+  /* ---------- contact ---------- */
+  .contact-panel{
+    border-radius:var(--radius-lg); padding:56px 40px; text-align:center;
+    background:linear-gradient(160deg, rgba(79,109,245,0.95), rgba(138,92,246,0.9));
+    color:#fff;
+  }
+  .contact-panel h2{font-size:clamp(1.8rem,3.4vw,2.6rem); font-weight:800; max-width:640px; margin:0 auto}
+  .contact-panel p{opacity:0.92; font-size:1.05rem; max-width:560px; margin:16px auto 30px}
+  .contact-panel .btn-primary{background:#fff; color:var(--accent); box-shadow:0 8px 24px rgba(0,0,0,0.18)}
+
+  footer.site{padding:40px 0; text-align:center; color:var(--ink-faint); font-size:0.88rem}
+  footer.site a{text-decoration:underline}
+
+  .sticky-cta{
+    position:fixed; left:16px; right:16px; bottom:16px; z-index:90; display:none;
+  }
+  @media (max-width:768px){.sticky-cta{display:block}}
+  .sticky-cta a{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px; border-radius:999px; font-weight:700; text-decoration:none;
+    background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#fff;
+    box-shadow:0 10px 30px rgba(79,109,245,0.4);
+  }
+
+  @media (max-width:900px){
+    header.site .bar{flex-wrap:wrap; gap:10px 16px; border-radius:24px}
+    nav.links{
+      order:3; width:100%; justify-content:flex-start;
+      gap:18px; overflow-x:auto; padding-top:4px;
+    }
+    nav.links a{white-space:nowrap; font-size:0.88rem}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="mesh-bg" aria-hidden="true"></div>
+
+<header class="site">
+  <div class="container">
+    <div class="bar glass">
+      <a href="#top" class="logo">
+        <span class="mark" aria-hidden="true"></span>
+        Titus Data Labs
+      </a>
+      <nav class="links" aria-label="Primary">
+        <a href="#product">Product</a>
+        <a href="#proof">Proof</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#contact" class="btn btn-primary btn-sm">Talk to us</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <div class="container">
+      <span class="hero-badge glass"><span class="dot" aria-hidden="true"></span> Live in production — real client data, every day</span>
+      <h1>We build what your business actually needs — not what's trendy.</h1>
+      <p class="lede">
+        We started with a CRM built for insurance agents, because agents live with the real stakes:
+        compliance, family policies, renewal deadlines. It's running a real ~2,000-client book today.
+        That's how we build everything — one module at a time, driven by what operators actually need.
+      </p>
+      <div class="ctas">
+        <a href="#product" class="btn btn-primary">See what's live</a>
+        <a href="#contact" class="btn btn-ghost glass">Talk to us about your business</a>
+      </div>
+
+      <div class="mockup-wrap">
+        <div class="mockup glass-solid">
+          <div class="mockup-top" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mockup-grid">
+            <div class="mockup-side" aria-hidden="true">
+              <div class="mockup-pill active" style="width:70%"></div>
+              <div class="mockup-pill" style="width:85%"></div>
+              <div class="mockup-pill" style="width:60%"></div>
+              <div class="mockup-pill" style="width:75%"></div>
+              <div class="mockup-pill" style="width:50%"></div>
+            </div>
+            <div class="mockup-main" aria-hidden="true">
+              <div class="mockup-card">
+                <div class="num">8</div>
+                <div class="lbl">Policy types tracked</div>
+                <div class="mockup-bar"><i style="width:80%"></i></div>
+              </div>
+              <div class="mockup-card">
+                <div class="num">2FA</div>
+                <div class="lbl">Required on every login</div>
+                <div class="mockup-bar"><i style="width:100%"></i></div>
+              </div>
+              <div class="mockup-card">
+                <div class="num">RLS</div>
+                <div class="lbl">Agent-isolated by default</div>
+                <div class="mockup-bar"><i style="width:95%"></i></div>
+              </div>
+              <div class="mockup-card">
+                <div class="num">0</div>
+                <div class="lbl">SSNs collected</div>
+                <div class="mockup-bar"><i style="width:15%"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="text-align:center; font-size:0.8rem; color:var(--ink-faint); margin-top:14px">
+          Illustrative preview, not a live screenshot.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP -->
+  <section id="proof" class="proof">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Proof, not promises</span>
+        <h2>Real numbers from a real, running business</h2>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-card glass">
+          <div class="num">8</div>
+          <div class="lbl">Insurance policy types tracked in one view</div>
+        </div>
+        <div class="proof-card glass">
+          <div class="num">~2,000</div>
+          <div class="lbl">Clients in the one real book run on this CRM, daily</div>
+        </div>
+        <div class="proof-card glass">
+          <div class="num">100%</div>
+          <div class="lbl">Logins require two-factor authentication</div>
+        </div>
+        <div class="proof-card glass">
+          <div class="num">0</div>
+          <div class="lbl">Social Security numbers collected, by design</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT / FEATURES -->
+  <section id="product">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What's live today</span>
+        <h2>A CRM built for how insurance agents actually work</h2>
+        <p>Not a generic CRM with insurance fields bolted on. Every screen assumes you're tracking policies,
+          families, and deadlines that matter for compliance — because that's what it was built to do.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card glass">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg>
+          </div>
+          <h3>8 policy types, one view</h3>
+          <p>Life, Medicare, health, annuity, cancer, long-term care, business retirement plans, and group health — each with the fields that product actually needs.</p>
+        </div>
+        <div class="feature-card glass">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 2.5-5 6-5s6 2 6 5M12 20c0-3 2.5-5 6-5"/></svg>
+          </div>
+          <h3>Family & joint policies</h3>
+          <p>Link family members and joint-owned policies so a household shows up as one connected picture, not scattered records.</p>
+        </div>
+        <div class="feature-card glass">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
+          </div>
+          <h3>Deadlines that calculate themselves</h3>
+          <p>Birthdays, renewals, RMD dates, and Medicare-65 eligibility are computed automatically as you view a client — not tracked by hand.</p>
+        </div>
+        <div class="feature-card glass">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+          </div>
+          <h3>Recurring to-dos</h3>
+          <p>Follow-up tasks generate on a recurring schedule, so nothing depends on remembering to add it to a list.</p>
+        </div>
+        <div class="feature-card glass">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
+          </div>
+          <h3>Product status dashboard</h3>
+          <p>See every client's status across all eight product lines at once, instead of switching between separate screens.</p>
+        </div>
+        <div class="feature-card glass">
+          <div class="feature-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+          </div>
+          <h3>Agent-isolated by default</h3>
+          <p>Database-level row security keeps each agent's book separate — and it's re-verified by an automated test on every single code change, not just at launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIATORS -->
+  <section id="compare">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">How it compares</span>
+        <h2>Built for insurance, not adapted for it</h2>
+        <p>General-purpose tools can be configured to sort of work. This is built around insurance workflows from the schema up.</p>
+      </div>
+      <div class="table-wrap glass">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Zoho CRM</th>
+              <th>Notion</th>
+              <th>Slack</th>
+              <th>Monday.com</th>
+              <th class="our-col">Titus Data Labs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Native insurance policy views</td>
+              <td class="no">Custom setup required</td>
+              <td class="no">Not native</td>
+              <td class="no">Not a CRM</td>
+              <td class="no">No specific view</td>
+              <td class="yes our-col">8 built-in views</td>
+            </tr>
+            <tr>
+              <td>Family & joint-policy linking</td>
+              <td class="no">Manual effort</td>
+              <td class="no">Manual effort</td>
+              <td class="no">Not a CRM</td>
+              <td class="no">No specific feature</td>
+              <td class="yes our-col">Built in</td>
+            </tr>
+            <tr>
+              <td>Auto-calculated dates (RMD, Medicare-65)</td>
+              <td class="mid">Requires setup</td>
+              <td class="mid">Manual calendar</td>
+              <td class="no">Needs separate app</td>
+              <td class="mid">Requires setup</td>
+              <td class="yes our-col">Computed automatically</td>
+            </tr>
+            <tr>
+              <td>Agent-level data isolation, CI-verified</td>
+              <td class="mid">Role config, not DB-level</td>
+              <td class="no">No row-level security</td>
+              <td class="no">Not applicable</td>
+              <td class="mid">Role config, not DB-level</td>
+              <td class="yes our-col">Postgres RLS + automated test</td>
+            </tr>
+            <tr>
+              <td>Setup effort</td>
+              <td class="no">Complex</td>
+              <td class="no">Build it yourself</td>
+              <td class="no">Needs integrations</td>
+              <td class="mid">Template-based</td>
+              <td class="yes our-col">Same-day onboarding</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP / VISION -->
+  <section id="roadmap">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Where we're headed</span>
+        <h2>The Agency OS — built module by module</h2>
+        <p>Insurance agents are our first customer, but they're really our proof that solo-run
+          businesses need one operating system instead of five disconnected tools. Sales is live.
+          The rest ships only when it's proven, not just planned.</p>
+      </div>
+      <div class="roadmap-grid">
+        <div class="roadmap-card glass live">
+          <div class="step">01 — Live</div>
+          <h3>Sales & clients</h3>
+          <p>The CRM you see on this page. Running a real book, in production, today.</p>
+        </div>
+        <div class="roadmap-card glass">
+          <div class="step">02 — Next</div>
+          <h3>Marketing automation</h3>
+          <p>Turning the client and family data already in the CRM into outreach that doesn't require a separate tool.</p>
+        </div>
+        <div class="roadmap-card glass">
+          <div class="step">03 — Next</div>
+          <h3>Finance & commissions</h3>
+          <p>Commission tracking tied to the same policy records agents already manage here.</p>
+        </div>
+        <div class="roadmap-card glass">
+          <div class="step">04 — Next</div>
+          <h3>Operations & compliance</h3>
+          <p>The audit trails and access controls already underneath the CRM, extended into a standalone compliance layer.</p>
+        </div>
+      </div>
+      <p class="roadmap-note glass">
+        Honest note: none of modules 2–4 exist yet. We're not listing them because they're available —
+        we're listing them because this is the order we've committed to, and we'd rather tell you the plan
+        than let a mockup imply the product does more than it does today.
+      </p>
+    </div>
+  </section>
+
+  <!-- FACTS INSTEAD OF TESTIMONIALS -->
+  <section id="facts">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Why no testimonial wall</span>
+        <h2>We have one real customer. Here's what that actually means.</h2>
+        <p>We could invent a wall of five-star quotes. We're not going to. Here's what's real instead.</p>
+      </div>
+      <div class="facts-grid">
+        <div class="fact-card glass">
+          <div class="fact-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+          </div>
+          <strong>One real book, running daily</strong>
+          <p>An independent agency runs its entire client book — about 2,000 clients across all eight product lines — on this CRM every working day. Not a pilot. Production.</p>
+        </div>
+        <div class="fact-card glass">
+          <div class="fact-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+          </div>
+          <strong>Isolation tested on every change</strong>
+          <p>Agent-to-agent data separation isn't a policy we wrote once — it's enforced by the database and checked by an automated test that has to pass before any code change ships.</p>
+        </div>
+        <div class="fact-card glass">
+          <div class="fact-icon" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+          </div>
+          <strong>We removed a field instead of adding one</strong>
+          <p>Social Security numbers used to be collected. We looked at how agents actually use client records day to day, decided it wasn't needed, and took it out of the product.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <div class="container">
+      <div class="pricing-banner glass">
+        <p class="headline">2026 launch offer: <b>2 months free</b> on any plan, plus free data migration.</p>
+      </div>
+      <div class="section-head center">
+        <span class="eyebrow">Pricing</span>
+        <h2>Simple, per-agent pricing</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card glass">
+          <h3>Standard</h3>
+          <div class="amount">$49.99 <span>/ user / month</span></div>
+          <ul>
+            <li><span class="check" aria-hidden="true">✓</span> All 8 policy views</li>
+            <li><span class="check" aria-hidden="true">✓</span> Family & joint policy linking</li>
+            <li><span class="check" aria-hidden="true">✓</span> Auto-calculated renewal & compliance dates</li>
+            <li><span class="check" aria-hidden="true">✓</span> Recurring to-dos</li>
+            <li><span class="check" aria-hidden="true">✓</span> 2FA + access audit log</li>
+          </ul>
+          <a href="mailto:info@titusdl.com?subject=Inquiry_Standard_Plan" class="btn btn-ghost">Get started</a>
+        </div>
+        <div class="price-card featured">
+          <h3>Pro <span class="tag">Recommended</span></h3>
+          <div class="amount">$99.99 <span>/ user / month</span></div>
+          <ul>
+            <li><span class="check" aria-hidden="true">✓</span> Everything in Standard</li>
+            <li><span class="check" aria-hidden="true">✓</span> Automated email & notification triggers</li>
+            <li><span class="check" aria-hidden="true">✓</span> Proactive birthday / renewal / follow-up alerts</li>
+            <li><span class="check" aria-hidden="true">✓</span> Custom status & workflow automations</li>
+            <li><span class="check" aria-hidden="true">✓</span> Priority support</li>
+          </ul>
+          <a href="mailto:info@titusdl.com?subject=Inquiry_Pro_Plan" class="btn btn-primary" style="background:#fff;color:var(--accent)">Choose Pro</a>
+        </div>
+      </div>
+      <p class="custom-note glass">
+        Need custom fields, workflow changes, or an integration? Email
+        <a href="mailto:info@titusdl.com">info@titusdl.com</a> — we build what your team actually needs, not just what's on this page.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">FAQ</span>
+        <h2>Straight answers</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item glass">
+          <summary>What is this actually built on?<span class="chev" aria-hidden="true">▾</span></summary>
+          <p>It runs on Supabase (Postgres) and Next.js, hosted on Google Cloud Run. It replaced an earlier
+            AppSheet-based version in 2026 — a full rebuild, not a re-skin.</p>
+        </details>
+        <details class="faq-item glass">
+          <summary>Where is my data stored?<span class="chev" aria-hidden="true">▾</span></summary>
+          <p>In a dedicated Supabase Postgres database — not in your Google Workspace. Each agent's data is
+            isolated at the database level, and every login requires two-factor authentication.</p>
+        </details>
+        <details class="faq-item glass">
+          <summary>Do you collect Social Security numbers?<span class="chev" aria-hidden="true">▾</span></summary>
+          <p>No. SSN collection was removed from the product — it wasn't needed for how agents actually use
+            client records day to day.</p>
+        </details>
+        <details class="faq-item glass">
+          <summary>Does it work on mobile and tablet?<span class="chev" aria-hidden="true">▾</span></summary>
+          <p>Yes — it's a responsive web app, so the same interface works in a browser on your phone, tablet,
+            or desktop. There's no separate native app to install.</p>
+        </details>
+        <details class="faq-item glass">
+          <summary>How many agencies use this today?<span class="chev" aria-hidden="true">▾</span></summary>
+          <p>One, running a real ~2,000-client book in production. We'd rather tell you that plainly than
+            imply a scale we haven't reached yet.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-panel">
+        <h2>Tell us what your business actually needs.</h2>
+        <p>Whether that's the CRM as it is today, a customization, or a conversation about what module
+          comes after Sales — we'd rather build the right thing slowly than the wrong thing fast.</p>
+        <a href="mailto:info@titusdl.com" class="btn btn-primary">
+          Email info@titusdl.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <p>© 2026 Titus Data Labs. All rights reserved. · <a href="mailto:info@titusdl.com">info@titusdl.com</a></p>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <a href="mailto:info@titusdl.com">Email us</a>
+</div>
+
+</body>
+</html>
