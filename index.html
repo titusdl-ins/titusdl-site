@@ -150,29 +150,39 @@
   .eyebrow::before{content:""; width:6px;height:6px;border-radius:50%; background:var(--accent)}
 
   /* ---------- hero ---------- */
-  .hero{padding-top:64px}
-  .hero .container{
-    display:grid; grid-template-columns:1fr; gap:36px; text-align:center;
+  .hero{padding-top:36px; padding-bottom:56px; overflow:hidden}
+  .hero-inner{
+    display:grid; grid-template-columns:1.08fr 1fr; align-items:center; gap:44px;
+  }
+  @media (max-width:980px){
+    .hero-inner{grid-template-columns:1fr; text-align:center; gap:40px}
   }
   .hero h1{
-    font-size:clamp(2.4rem, 5vw, 3.6rem);
-    font-weight:800; max-width:920px; margin:0 auto; text-wrap:balance;
+    font-size:clamp(2.1rem, 3.4vw, 3.1rem);
+    font-weight:800; margin:0; text-wrap:balance; line-height:1.12;
+  }
+  .grad-text{
+    background:linear-gradient(135deg, var(--accent), var(--accent-2));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
   }
   .hero .lede{
-    font-size:1.2rem; color:var(--ink-soft); max-width:680px; margin:20px auto 0;
+    font-size:1.14rem; color:var(--ink-soft); max-width:560px; margin:20px 0 0;
     text-wrap:balance;
   }
-  .hero .ctas{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:32px}
+  @media (max-width:980px){.hero .lede{margin-left:auto; margin-right:auto}}
+  .hero .ctas{display:flex; gap:14px; flex-wrap:wrap; margin-top:30px}
+  @media (max-width:980px){.hero .ctas{justify-content:center}}
   .hero-badge{
-    display:inline-flex; align-items:center; gap:10px; margin:0 auto;
+    display:inline-flex; align-items:center; gap:10px;
     padding:8px 16px; border-radius:999px; font-size:0.86rem; font-weight:600; color:var(--ink-soft);
   }
   .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--good)}
 
   /* hero policy tag chips */
   .tag-row{
-    display:flex; flex-wrap:wrap; gap:8px; justify-content:center; max-width:720px; margin:26px auto 0;
+    display:flex; flex-wrap:wrap; gap:8px; max-width:520px; margin:24px 0 0;
   }
+  @media (max-width:980px){.tag-row{justify-content:center; margin-left:auto; margin-right:auto}}
   .tag-chip{
     font-size:0.78rem; font-weight:700; padding:6px 14px; border-radius:999px;
     background:rgba(255,255,255,0.6); border:1px solid rgba(20,22,40,0.08); color:var(--ink-soft);
@@ -187,37 +197,40 @@
   .tag-chip.group{color:#22c1c3; border-color:rgba(34,193,195,0.3); background:rgba(34,193,195,0.08)}
 
   /* dashboard mockup, pure CSS/SVG (illustrative sample data) */
-  .mockup-wrap{margin-top:56px}
+  .mockup-wrap{position:relative}
+  .mockup-glow{
+    position:absolute; inset:-40px; z-index:-1;
+    background:radial-gradient(60% 60% at 50% 40%, rgba(79,109,245,0.35), transparent 70%);
+    filter:blur(10px);
+  }
   .mockup{
-    border-radius:26px; padding:22px; max-width:920px; margin:0 auto;
-    position:relative; text-align:left;
+    border-radius:24px; padding:20px; max-width:460px; margin:0 auto;
+    position:relative; text-align:left; box-shadow:var(--shadow-lift);
+    transform:rotate(-1.2deg);
   }
-  .mockup-top{display:flex; align-items:center; gap:8px; margin-bottom:18px}
-  .mockup-top span:not(.mockup-top-label){width:11px;height:11px;border-radius:50%; background:rgba(20,22,40,0.14)}
-  .mockup-top-label{margin-left:10px; font-size:0.82rem; font-weight:700; color:var(--ink-faint)}
-  .mockup-grid{display:grid; grid-template-columns:1fr 2.4fr; gap:18px}
-  @media (max-width:640px){.mockup-grid{grid-template-columns:1fr}}
-  .mockup-side{display:flex; flex-direction:column; gap:4px}
-  .mockup-side-item{
-    display:flex; align-items:center; gap:10px; padding:9px 10px; border-radius:10px;
-    font-size:0.84rem; font-weight:600; color:var(--ink-faint);
+  @media (max-width:980px){.mockup{transform:none; max-width:480px}}
+  .mockup-top{display:flex; align-items:center; gap:8px; margin-bottom:16px}
+  .mockup-top span:not(.mockup-top-label){width:10px;height:10px;border-radius:50%; background:rgba(20,22,40,0.14)}
+  .mockup-top-label{margin-left:8px; font-size:0.8rem; font-weight:700; color:var(--ink-faint)}
+  .mockup-tabs{display:flex; gap:7px; overflow-x:auto; margin-bottom:14px; padding-bottom:2px}
+  .mockup-tab{
+    font-size:0.72rem; font-weight:700; padding:6px 12px; border-radius:999px; white-space:nowrap;
+    background:rgba(20,22,40,0.05); color:var(--ink-faint);
   }
-  .mockup-side-item .side-dot{width:7px;height:7px;border-radius:50%; background:rgba(20,22,40,0.18); flex-shrink:0}
-  .mockup-side-item.active{background:rgba(79,109,245,0.1); color:var(--accent)}
-  .mockup-side-item.active .side-dot{background:var(--accent)}
-  .mockup-main{display:flex; flex-direction:column; gap:10px}
+  .mockup-tab.active{background:rgba(79,109,245,0.14); color:var(--accent)}
+  .mockup-main{display:flex; flex-direction:column; gap:8px}
   .client-row{
-    display:flex; align-items:center; gap:12px; padding:12px 14px; border-radius:14px;
-    background:rgba(255,255,255,0.6); border:1px solid rgba(255,255,255,0.6); flex-wrap:wrap;
+    display:flex; align-items:center; gap:10px; padding:11px 12px; border-radius:14px;
+    background:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.6); flex-wrap:wrap;
   }
   .avatar{
-    width:34px;height:34px;border-radius:50%; flex-shrink:0; color:#fff; font-size:0.72rem; font-weight:700;
+    width:30px;height:30px;border-radius:50%; flex-shrink:0; color:#fff; font-size:0.68rem; font-weight:700;
     display:flex; align-items:center; justify-content:center;
   }
-  .client-info{flex:1; min-width:110px}
-  .client-name{font-size:0.9rem; font-weight:700}
-  .client-sub{font-size:0.76rem; color:var(--ink-faint); margin-top:1px}
-  .policy-pill{font-size:0.72rem; font-weight:700; padding:5px 11px; border-radius:999px; white-space:nowrap}
+  .client-info{flex:1; min-width:96px}
+  .client-name{font-size:0.86rem; font-weight:700}
+  .client-sub{font-size:0.73rem; color:var(--ink-faint); margin-top:1px}
+  .policy-pill{font-size:0.68rem; font-weight:700; padding:4px 10px; border-radius:999px; white-space:nowrap}
   .policy-pill.life{color:#4f6df5; background:rgba(79,109,245,0.12)}
   .policy-pill.medicare{color:#8a5cf6; background:rgba(138,92,246,0.12)}
   .policy-pill.health{color:#22c1c3; background:rgba(34,193,195,0.12)}
@@ -423,71 +436,75 @@
   <!-- HERO -->
   <section id="top" class="hero">
     <div class="container">
-      <span class="hero-badge glass"><span class="dot" aria-hidden="true"></span> Purpose-built for insurance agents</span>
-      <h1>Never miss a renewal. Never lose a family record.</h1>
-      <p class="lede">
-        One CRM built around how insurance agents actually work — family and joint policies linked
-        automatically, renewal and Medicare-65 dates calculated for you, and every client record locked
-        down behind bank-grade access controls.
-      </p>
-      <div class="tag-row" aria-hidden="true">
-        <span class="tag-chip life">Life</span>
-        <span class="tag-chip medicare">Medicare</span>
-        <span class="tag-chip health">Health</span>
-        <span class="tag-chip annuity">Annuity</span>
-        <span class="tag-chip cancer">Cancer</span>
-        <span class="tag-chip ltc">Long-Term Care</span>
-        <span class="tag-chip retire">Business Retirement</span>
-        <span class="tag-chip group">Group Health</span>
-      </div>
-      <div class="ctas">
-        <a href="#product" class="btn btn-primary">See how it works</a>
-        <a href="#contact" class="btn btn-ghost glass">Get started</a>
-      </div>
-
-      <div class="mockup-wrap">
-        <div class="mockup glass-solid">
-          <div class="mockup-top" aria-hidden="true">
-            <span></span><span></span><span></span>
-            <span class="mockup-top-label">Client book</span>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="hero-badge glass"><span class="dot" aria-hidden="true"></span> Purpose-built for insurance agents</span>
+          <h1>Never miss a <span class="grad-text">renewal</span>. Never lose a <span class="grad-text">family record</span>.</h1>
+          <p class="lede">
+            One CRM built around how insurance agents actually work — family and joint policies linked
+            automatically, renewal and Medicare-65 dates calculated for you, and every client record
+            locked down behind bank-grade access controls.
+          </p>
+          <div class="tag-row" aria-hidden="true">
+            <span class="tag-chip life">Life</span>
+            <span class="tag-chip medicare">Medicare</span>
+            <span class="tag-chip health">Health</span>
+            <span class="tag-chip annuity">Annuity</span>
+            <span class="tag-chip cancer">Cancer</span>
+            <span class="tag-chip ltc">Long-Term Care</span>
+            <span class="tag-chip retire">Business Retirement</span>
+            <span class="tag-chip group">Group Health</span>
           </div>
-          <div class="mockup-grid">
-            <div class="mockup-side" aria-hidden="true">
-              <div class="mockup-side-item active"><i class="side-dot"></i>All clients</div>
-              <div class="mockup-side-item"><i class="side-dot"></i>Renewals this month</div>
-              <div class="mockup-side-item"><i class="side-dot"></i>Birthdays</div>
-              <div class="mockup-side-item"><i class="side-dot"></i>Families</div>
-              <div class="mockup-side-item"><i class="side-dot"></i>Follow-ups</div>
-            </div>
-            <div class="mockup-main" aria-hidden="true">
-              <div class="client-row">
-                <span class="avatar" style="background:linear-gradient(135deg,#4f6df5,#8a5cf6)">JK</span>
-                <div class="client-info"><div class="client-name">Kim family</div><div class="client-sub">4 linked policies</div></div>
-                <span class="policy-pill life">Life</span>
-                <span class="policy-pill medicare">Medicare</span>
-              </div>
-              <div class="client-row">
-                <span class="avatar" style="background:linear-gradient(135deg,#22c1c3,#4f6df5)">SL</span>
-                <div class="client-info"><div class="client-name">S. Lee</div><div class="client-sub">Renews in 12 days</div></div>
-                <span class="policy-pill annuity">Annuity</span>
-              </div>
-              <div class="client-row">
-                <span class="avatar" style="background:linear-gradient(135deg,#8a5cf6,#22c1c3)">MP</span>
-                <div class="client-info"><div class="client-name">Park family</div><div class="client-sub">Medicare-65 in 3 mo</div></div>
-                <span class="policy-pill health">Health</span>
-                <span class="policy-pill group">Group</span>
-              </div>
-              <div class="client-row">
-                <span class="avatar" style="background:linear-gradient(135deg,#4f6df5,#22c1c3)">TN</span>
-                <div class="client-info"><div class="client-name">T. Nguyen</div><div class="client-sub">Birthday this week</div></div>
-                <span class="policy-pill ltc">LTC</span>
-              </div>
-            </div>
+          <div class="ctas">
+            <a href="#product" class="btn btn-primary">See how it works</a>
+            <a href="#contact" class="btn btn-ghost glass">Get started</a>
           </div>
         </div>
-        <p style="text-align:center; font-size:0.8rem; color:var(--ink-faint); margin-top:14px">
-          Illustrative preview built with sample data, not a live screenshot.
-        </p>
+
+        <div class="hero-visual">
+          <div class="mockup-wrap">
+            <div class="mockup-glow" aria-hidden="true"></div>
+            <div class="mockup glass-solid">
+              <div class="mockup-top" aria-hidden="true">
+                <span></span><span></span><span></span>
+                <span class="mockup-top-label">Client book</span>
+              </div>
+              <div class="mockup-tabs" aria-hidden="true">
+                <span class="mockup-tab active">All clients</span>
+                <span class="mockup-tab">Renewals</span>
+                <span class="mockup-tab">Birthdays</span>
+                <span class="mockup-tab">Families</span>
+              </div>
+              <div class="mockup-main" aria-hidden="true">
+                <div class="client-row">
+                  <span class="avatar" style="background:linear-gradient(135deg,#4f6df5,#8a5cf6)">JK</span>
+                  <div class="client-info"><div class="client-name">Kim family</div><div class="client-sub">4 linked policies</div></div>
+                  <span class="policy-pill life">Life</span>
+                  <span class="policy-pill medicare">Medicare</span>
+                </div>
+                <div class="client-row">
+                  <span class="avatar" style="background:linear-gradient(135deg,#22c1c3,#4f6df5)">SL</span>
+                  <div class="client-info"><div class="client-name">S. Lee</div><div class="client-sub">Renews in 12 days</div></div>
+                  <span class="policy-pill annuity">Annuity</span>
+                </div>
+                <div class="client-row">
+                  <span class="avatar" style="background:linear-gradient(135deg,#8a5cf6,#22c1c3)">MP</span>
+                  <div class="client-info"><div class="client-name">Park family</div><div class="client-sub">Medicare-65 in 3 mo</div></div>
+                  <span class="policy-pill health">Health</span>
+                  <span class="policy-pill group">Group</span>
+                </div>
+                <div class="client-row">
+                  <span class="avatar" style="background:linear-gradient(135deg,#4f6df5,#22c1c3)">TN</span>
+                  <div class="client-info"><div class="client-name">T. Nguyen</div><div class="client-sub">Birthday this week</div></div>
+                  <span class="policy-pill ltc">LTC</span>
+                </div>
+              </div>
+            </div>
+            <p style="text-align:center; font-size:0.76rem; color:var(--ink-faint); margin-top:16px">
+              Illustrative preview built with sample data, not a live screenshot.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
