@@ -370,6 +370,10 @@
     background:rgba(239,68,68,0.08); border:1.5px solid rgba(239,68,68,0.35);
   }
   .value-stat.warn .num{color:#dc2626}
+  .value-stat.warn .warn-floor{
+    font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em;
+    color:#dc2626; opacity:0.85; margin-top:2px;
+  }
   .value-stat.warn .lbl{color:#7a2e2e}
   .setup-cost-emphasis{
     text-align:center; font-size:1.05rem; font-weight:700; color:var(--ink);
@@ -718,7 +722,7 @@
           <div class="proof-icon" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.4 7.8-8 9-4.6-1.2-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
-          <span class="tag">SSNs collected</span>
+          <span class="tag">SSN</span>
           <div class="num">0</div>
           <div class="lbl">By design — one less sensitive field to protect</div>
         </div>
@@ -860,6 +864,7 @@
         </div>
         <div class="value-stat warn">
           <div class="num">$150&ndash;$250/mo</div>
+          <div class="warn-floor">and that's the floor</div>
           <div class="lbl">Every fix, field change &amp; new-agent setup after that &mdash; and it never stops</div>
         </div>
         <div class="value-stat highlight">
@@ -869,7 +874,10 @@
       </div>
       <p class="setup-cost-emphasis">
         The build is day one. Every change after that &mdash; a new field, a broken automation, onboarding the next
-        agent &mdash; is a recurring bill that compounds for as long as you keep the tool.
+        agent &mdash; is a recurring bill that compounds for as long as you keep the tool. And in practice it's
+        rarely a quick patch: what usually needs fixing is something that was never built to be changed, so agents
+        end up rebuilding parts of it from scratch &mdash; at real cost in time and money &mdash; or they give up
+        and go back to spreadsheets.
       </p>
       <p class="value-note">
         Illustrative, not a promise: based on the custom fields, family-linking workarounds, reminder automations,
