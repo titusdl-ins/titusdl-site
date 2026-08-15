@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>__TITLE__</title>
+<style>
+  :root{
+    --ink:#14161f; --ink-soft:#454a58; --ink-faint:#6b7182;
+    --accent:#4f6df5; --accent-2:#8a5cf6; --good:#1a9c6b;
+    --surface:#f5f6fa; --panel:rgba(255,255,255,0.85); --panel-border:rgba(20,22,40,0.06);
+    --header-bg:rgba(255,255,255,0.75); --header-border:rgba(20,22,40,0.06);
+    --problem-bg:#fff5f5; --problem-label:#c14a4a; --problem-text:#7a3535;
+    --radius-lg:26px; --radius-md:16px;
+    --shadow-soft:0 8px 30px rgba(20,22,40,0.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#eef0f6; --ink-soft:#b7bccb; --ink-faint:#868da0;
+      --surface:#101219; --panel:rgba(255,255,255,0.05); --panel-border:rgba(255,255,255,0.09);
+      --header-bg:rgba(16,18,25,0.75); --header-border:rgba(255,255,255,0.08);
+      --problem-bg:rgba(193,74,74,0.12); --problem-label:#e18888; --problem-text:#f0c6c6;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#eef0f6; --ink-soft:#b7bccb; --ink-faint:#868da0;
+    --surface:#101219; --panel:rgba(255,255,255,0.05); --panel-border:rgba(255,255,255,0.09);
+    --header-bg:rgba(16,18,25,0.75); --header-border:rgba(255,255,255,0.08);
+    --problem-bg:rgba(193,74,74,0.12); --problem-label:#e18888; --problem-text:#f0c6c6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--surface);line-height:1.55}
+  .container{max-width:1080px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+
+  header.site{position:sticky;top:0;z-index:50;padding:16px 0;background:var(--header-bg);backdrop-filter:blur(14px);border-bottom:1px solid var(--header-border)}
+  header.site .bar{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.02rem;text-decoration:none}
+  .logo .mark{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+  .sample-tag{font-size:0.72rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--accent);background:rgba(79,109,245,0.1);padding:6px 12px;border-radius:999px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:700;font-size:0.94rem;text-decoration:none;border:none;cursor:pointer}
+  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;box-shadow:0 8px 22px rgba(79,109,245,0.35)}
+  .btn-light{background:#fff;color:#14161f}
+
+  /* HERO: full-bleed real photo */
+  .hero{
+    position:relative; min-height:88vh; display:flex; align-items:flex-end;
+    background-image:
+      linear-gradient(180deg, rgba(10,12,24,0.05) 0%, rgba(10,12,24,0.22) 45%, rgba(8,10,20,0.74) 100%),
+      url('__IMAGE__');
+    background-size:cover; background-position:__POSITION__;
+  }
+  .hero-inner{position:relative;z-index:2;padding:64px 0 56px;color:#fff}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-size:0.84rem;font-weight:700;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.3);backdrop-filter:blur(10px);margin-bottom:22px}
+  .hero-badge .dot{width:7px;height:7px;border-radius:50%;background:#5eead4}
+  .hero h1{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:800;line-height:1.14;max-width:760px;margin:0 0 20px;text-wrap:balance}
+  .hero .lede{font-size:1.14rem;max-width:600px;color:rgba(255,255,255,0.88);margin:0 0 30px;text-wrap:balance}
+  .hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* PAIN / SOLUTION callout */
+  .callout{padding:64px 0}
+  .callout-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft)}
+  @media (max-width:760px){.callout-grid{grid-template-columns:1fr}}
+  .callout-side{padding:36px 34px}
+  .callout-side.problem{background:var(--problem-bg)}
+  .callout-side.solution{background:linear-gradient(160deg,var(--accent),var(--accent-2));color:#fff}
+  .callout-label{font-size:0.72rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px;display:block}
+  .callout-side.problem .callout-label{color:var(--problem-label)}
+  .callout-side.solution .callout-label{color:rgba(255,255,255,0.8)}
+  .callout-side p{font-size:1.14rem;font-weight:600;margin:0;line-height:1.4}
+  .callout-side.problem p{color:var(--problem-text)}
+
+  /* PROOF strip */
+  .proof{padding:0 0 70px}
+  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media (max-width:760px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
+  .proof-card{background:var(--panel);border:1px solid var(--panel-border);border-radius:var(--radius-md);padding:20px;text-align:center;box-shadow:var(--shadow-soft)}
+  .proof-card .num{font-size:1.7rem;font-weight:800}
+  .proof-card .lbl{font-size:0.82rem;color:var(--ink-soft);margin-top:4px}
+
+  /* CONTACT */
+  .contact{padding:20px 0 80px}
+  .contact-panel{border-radius:var(--radius-lg);padding:48px 40px;text-align:center;background:linear-gradient(160deg,rgba(79,109,245,0.95),rgba(138,92,246,0.9));color:#fff}
+  .contact-panel h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin:0 0 14px}
+  .contact-panel p{opacity:0.92;max-width:520px;margin:0 auto 26px}
+
+  footer{text-align:center;color:var(--ink-faint);font-size:0.84rem;padding:30px 0}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="container bar">
+    <a href="#" class="logo"><span class="mark" aria-hidden="true"></span> Titus Data Labs</a>
+    <span class="sample-tag">__SAMPLE_LABEL__</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <span class="hero-badge"><span class="dot" aria-hidden="true"></span> __EYEBROW__</span>
+    <h1>__HEADLINE__</h1>
+    <p class="lede">__SUBHEAD__</p>
+    <div class="ctas">
+      <a href="#" class="btn btn-primary">See how it works</a>
+      <a href="#" class="btn btn-light">Get started</a>
+    </div>
+  </div>
+</section>
+
+<section class="callout">
+  <div class="container">
+    <div class="callout-grid">
+      <div class="callout-side problem">
+        <span class="callout-label">The problem</span>
+        <p>__PAIN__</p>
+      </div>
+      <div class="callout-side solution">
+        <span class="callout-label">How we solved it</span>
+        <p>__SOLUTION__</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="container">
+    <div class="proof-grid">
+      <div class="proof-card"><div class="num">8</div><div class="lbl">Insurance policy types, one view</div></div>
+      <div class="proof-card"><div class="num">Auto</div><div class="lbl">Renewal & Medicare-65 dates</div></div>
+      <div class="proof-card"><div class="num">2FA</div><div class="lbl">Required on every login</div></div>
+      <div class="proof-card"><div class="num">0</div><div class="lbl">SSNs collected, by design</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="container">
+    <div class="contact-panel">
+      <h2>See it with your own book of clients.</h2>
+      <p>No migration project, no long onboarding — just your clients, organized.</p>
+      <a href="#" class="btn btn-light">Email info@titusdl.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Titus Data Labs. Design sample — photo via Unsplash, for internal review only.</footer>
+
+</body>
+</html>
