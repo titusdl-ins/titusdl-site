@@ -452,7 +452,19 @@
     border-radius:var(--radius-md); padding:20px 18px; margin:0 0 22px; text-align:center;
   }
   .pro-value-num{font-size:1.1rem; font-weight:800; line-height:1.35; color:#fff}
-  .pro-value-sub{font-size:0.76rem; color:rgba(255,255,255,0.7); margin-top:8px; line-height:1.5}
+  .pro-value-sub{font-size:0.72rem; color:rgba(255,255,255,0.6); margin-top:10px}
+  .pv-math{display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:wrap; margin-top:14px}
+  .pv-math-op{font-size:0.9rem; font-weight:700; color:rgba(255,255,255,0.5); flex-shrink:0}
+  .pv-math-chip{
+    display:flex; flex-direction:column; align-items:center; gap:1px;
+    padding:8px 12px; border-radius:12px;
+    background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.22);
+  }
+  .pv-math-chip strong{font-size:0.9rem; font-weight:800; color:#fff}
+  .pv-math-chip small{font-size:0.6rem; font-weight:600; color:rgba(255,255,255,0.65); text-transform:uppercase; letter-spacing:0.03em}
+  .pv-math-chip.pv-math-result{background:#fff; border-color:transparent}
+  .pv-math-chip.pv-math-result strong{color:#dc2626}
+  .pv-math-chip.pv-math-result small{color:#dc2626; opacity:0.75}
   .pro-roi{display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:16px}
   .roi-arrow{color:rgba(255,255,255,0.5); flex-shrink:0}
   .roi-pill{
@@ -1108,7 +1120,14 @@
               <span class="roi-pill roi-result">20&ndash;50×</span>
             </div>
             <div class="pro-value-num">That's the return Pro is built to deliver.</div>
-            <div class="pro-value-sub">Illustrative: assumes ~20&ndash;40 renewals a year that would've slipped, at a typical few-hundred-to-low-thousand-dollar commission each &mdash; swap in your own numbers.</div>
+            <div class="pv-math">
+              <span class="pv-math-chip"><strong>20&ndash;40</strong><small>saves / yr</small></span>
+              <span class="pv-math-op" aria-hidden="true">&times;</span>
+              <span class="pv-math-chip"><strong>$600&ndash;$1.5K</strong><small>avg commission</small></span>
+              <span class="pv-math-op" aria-hidden="true">=</span>
+              <span class="pv-math-chip pv-math-result"><strong>$25K&ndash;$60K</strong><small>caught / yr</small></span>
+            </div>
+            <div class="pro-value-sub">Illustrative &mdash; swap in your own numbers.</div>
           </div>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Everything in Standard</li>
