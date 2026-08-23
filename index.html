@@ -449,10 +449,28 @@
   .price-card{border-radius:var(--radius-lg); padding:32px; display:flex; flex-direction:column}
   .pro-value{
     background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.3);
-    border-radius:var(--radius-md); padding:16px 18px; margin:0 0 22px;
+    border-radius:var(--radius-md); padding:20px 18px; margin:0 0 22px; text-align:center;
   }
-  .pro-value-num{font-size:1.12rem; font-weight:800; line-height:1.35; color:#fff}
-  .pro-value-sub{font-size:0.78rem; color:rgba(255,255,255,0.75); margin-top:6px; line-height:1.5}
+  .pro-value-num{font-size:1.1rem; font-weight:800; line-height:1.35; color:#fff}
+  .pro-value-sub{font-size:0.76rem; color:rgba(255,255,255,0.7); margin-top:8px; line-height:1.5}
+  .pro-roi{display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:16px}
+  .roi-arrow{color:rgba(255,255,255,0.5); flex-shrink:0}
+  .roi-pill{
+    display:flex; flex-direction:column; align-items:center; gap:1px;
+    padding:10px 14px; border-radius:14px; line-height:1.15;
+  }
+  .roi-pill small{font-size:0.62rem; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; opacity:0.8}
+  .roi-pill strong{font-size:1.02rem; font-weight:800}
+  .roi-pill.roi-cost{background:rgba(255,255,255,0.16); color:#fff; border:1px solid rgba(255,255,255,0.3)}
+  .roi-pill.roi-save{background:#fff; color:#dc2626}
+  .roi-pill.roi-save small{color:#dc2626}
+  .roi-pill.roi-result{
+    background:#fff; color:var(--accent); font-size:1.5rem; font-weight:800;
+    padding:10px 22px; border-radius:999px;
+  }
+  @media (max-width:420px){
+    .roi-arrow{transform:rotate(90deg)}
+  }
   .price-card.featured{
     background:linear-gradient(160deg, rgba(79,109,245,0.94), rgba(138,92,246,0.94));
     color:#fff; border:1px solid rgba(255,255,255,0.25);
@@ -1082,8 +1100,15 @@
           <h3>Pro <span class="tag">Recommended</span></h3>
           <div class="amount">$99.99 <span>/ user / month</span></div>
           <div class="pro-value">
-            <div class="pro-value-num">One missed renewal costs more than a year of Pro.</div>
-            <div class="pro-value-sub">Illustrative: a single lapsed policy's lost commission commonly outweighs $1,200/year — swap in your own book's numbers. Pro exists to catch it before it goes quiet.</div>
+            <div class="pro-roi">
+              <span class="roi-pill roi-cost"><small>Pro / yr</small><strong>$1,200</strong></span>
+              <svg class="roi-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <span class="roi-pill roi-save"><small>Renewals it catches / yr</small><strong>$25K&ndash;$60K</strong></span>
+              <svg class="roi-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <span class="roi-pill roi-result">20&ndash;50×</span>
+            </div>
+            <div class="pro-value-num">That's the return Pro is built to deliver.</div>
+            <div class="pro-value-sub">Illustrative: assumes ~20&ndash;40 renewals a year that would've slipped, at a typical few-hundred-to-low-thousand-dollar commission each &mdash; swap in your own numbers.</div>
           </div>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Everything in Standard</li>
