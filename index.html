@@ -439,9 +439,20 @@
   }
 
   /* ---------- pricing ---------- */
+  .pricing-lede{
+    text-align:center; font-size:1.12rem; font-weight:700; color:var(--ink);
+    margin:-8px 0 30px;
+  }
+  .pricing-lede strong{color:var(--accent)}
   .pricing-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px}
   @media (max-width:800px){.pricing-grid{grid-template-columns:1fr}}
   .price-card{border-radius:var(--radius-lg); padding:32px; display:flex; flex-direction:column}
+  .pro-value{
+    background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.3);
+    border-radius:var(--radius-md); padding:16px 18px; margin:0 0 22px;
+  }
+  .pro-value-num{font-size:1.12rem; font-weight:800; line-height:1.35; color:#fff}
+  .pro-value-sub{font-size:0.78rem; color:rgba(255,255,255,0.75); margin-top:6px; line-height:1.5}
   .price-card.featured{
     background:linear-gradient(160deg, rgba(79,109,245,0.94), rgba(138,92,246,0.94));
     color:#fff; border:1px solid rgba(255,255,255,0.25);
@@ -1053,6 +1064,7 @@
         <span class="eyebrow">Pricing</span>
         <h2>Simple, per-agent pricing</h2>
       </div>
+      <p class="pricing-lede">Standard: <strong>you have to remember.</strong> Pro: <strong>it reaches out first.</strong></p>
       <div class="pricing-grid">
         <div class="price-card glass">
           <h3>Standard</h3>
@@ -1069,6 +1081,10 @@
         <div class="price-card featured">
           <h3>Pro <span class="tag">Recommended</span></h3>
           <div class="amount">$99.99 <span>/ user / month</span></div>
+          <div class="pro-value">
+            <div class="pro-value-num">One missed renewal costs more than a year of Pro.</div>
+            <div class="pro-value-sub">Illustrative: a single lapsed policy's lost commission commonly outweighs $1,200/year — swap in your own book's numbers. Pro exists to catch it before it goes quiet.</div>
+          </div>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Everything in Standard</li>
             <li><span class="check" aria-hidden="true">✓</span> Automated email & notification triggers</li>
