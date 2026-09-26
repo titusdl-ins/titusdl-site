@@ -271,27 +271,6 @@
   }
   .pain-cta p{font-size:1.25rem; font-weight:700; margin:0 0 20px}
 
-  /* ---------- proof strip ---------- */
-  .proof{padding:70px 0}
-  .proof-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:16px;
-  }
-  @media (max-width:900px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
-  .proof-card{
-    border-radius:var(--radius-md); padding:22px; text-align:center;
-  }
-  .proof-icon{
-    width:38px; height:38px; border-radius:11px; display:flex; align-items:center; justify-content:center;
-    margin:0 auto 14px; background:linear-gradient(135deg, rgba(79,109,245,0.15), rgba(138,92,246,0.15));
-    color:var(--accent);
-  }
-  .proof-card .tag{
-    display:block; font-size:0.68rem; font-weight:800; letter-spacing:0.05em; text-transform:uppercase;
-    color:var(--accent); margin-bottom:8px;
-  }
-  .proof-card .num{font-size:2rem; font-weight:800; letter-spacing:-0.02em}
-  .proof-card .lbl{font-size:0.86rem; color:var(--ink-soft); margin-top:6px}
-
   /* ---------- feature cards ---------- */
   .section-head{max-width:640px; margin-bottom:48px}
   .section-head.center{margin-left:auto; margin-right:auto; text-align:center}
@@ -326,24 +305,6 @@
   td.mid{color:var(--warn); font-weight:700}
   .our-col{background:rgba(79,109,245,0.06); border-radius:12px}
 
-  /* ---------- roadmap / vision ---------- */
-  .roadmap-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px}
-  @media (max-width:900px){.roadmap-grid{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:560px){.roadmap-grid{grid-template-columns:1fr}}
-  .roadmap-card{border-radius:var(--radius-md); padding:24px; position:relative}
-  .roadmap-card .step{
-    font-size:0.75rem; font-weight:800; color:var(--accent); letter-spacing:0.06em; text-transform:uppercase;
-    margin-bottom:10px;
-  }
-  .roadmap-card h3{font-size:1.1rem; font-weight:700; margin-bottom:8px}
-  .roadmap-card p{color:var(--ink-soft); font-size:0.9rem; margin:0}
-  .roadmap-card.live{border:1px solid rgba(26,156,107,0.35)}
-  .roadmap-card.live .step{color:var(--good)}
-  .roadmap-note{
-    margin-top:28px; padding:18px 22px; border-radius:var(--radius-md);
-    font-size:0.94rem; color:var(--ink-soft);
-  }
-
   /* ---------- proof-not-promises ---------- */
   .facts-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
   @media (max-width:900px){.facts-grid{grid-template-columns:1fr}}
@@ -351,54 +312,6 @@
   .fact-card .fact-icon{color:var(--accent); margin-bottom:14px}
   .fact-card p{color:var(--ink-soft); font-size:0.95rem; margin:0}
   .fact-card strong{color:var(--ink); display:block; margin-bottom:6px; font-size:1.02rem}
-
-  /* ---------- value / roi ---------- */
-  .value-summary{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px;
-  }
-  .value-summary--four{grid-template-columns:repeat(4,1fr)}
-  @media (max-width:900px){.value-summary--four{grid-template-columns:repeat(2,1fr)}}
-  @media (max-width:760px){.value-summary{grid-template-columns:1fr}}
-  .value-stat{border-radius:var(--radius-md); padding:22px; text-align:center}
-  .value-stat .num{font-size:1.9rem; font-weight:800; letter-spacing:-0.02em}
-  .value-stat .lbl{font-size:0.86rem; color:var(--ink-soft); margin-top:6px}
-  .value-stat.highlight{
-    background:linear-gradient(160deg, rgba(79,109,245,0.95), rgba(138,92,246,0.9)); color:#fff;
-  }
-  .value-stat.highlight .lbl{color:rgba(255,255,255,0.85)}
-  .value-stat.warn{
-    background:rgba(239,68,68,0.08); border:1.5px solid rgba(239,68,68,0.35);
-  }
-  .value-stat.warn .num{color:#dc2626}
-  .value-stat.warn .warn-floor{
-    font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em;
-    color:#dc2626; opacity:0.85; margin-top:2px;
-  }
-  .value-stat.warn .lbl{color:#7a2e2e}
-  .setup-cost-emphasis{
-    text-align:center; font-size:1.2rem; font-weight:800; color:var(--ink);
-    max-width:520px; margin:14px auto 0; line-height:1.4;
-  }
-  .rebuild-loop{
-    display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap;
-    margin-top:36px;
-  }
-  .rebuild-step{
-    font-size:0.86rem; font-weight:800; padding:9px 18px; border-radius:999px;
-    background:rgba(20,22,40,0.06); color:var(--ink-soft);
-  }
-  .rebuild-step.warn{background:rgba(239,68,68,0.12); color:#dc2626}
-  .rebuild-arrow{color:var(--ink-faint); flex-shrink:0}
-  .rebuild-arrow.loop-back{color:#dc2626}
-  td.num-cell{font-variant-numeric:tabular-nums; font-weight:700}
-  .value-note{
-    margin-top:20px; padding:16px 20px; border-radius:var(--radius-md);
-    font-size:0.86rem; color:var(--ink-faint); line-height:1.6;
-  }
-  .setup-cost-lede{
-    text-align:center; font-size:1.05rem; font-weight:700; color:var(--ink);
-    margin:36px 0 20px;
-  }
 
   /* ---------- promo bar ---------- */
   .promo-bar{
@@ -447,39 +360,6 @@
   .pricing-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px}
   @media (max-width:800px){.pricing-grid{grid-template-columns:1fr}}
   .price-card{border-radius:var(--radius-lg); padding:32px; display:flex; flex-direction:column}
-  .pro-value{
-    background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.3);
-    border-radius:var(--radius-md); padding:20px 18px; margin:0 0 22px; text-align:center;
-  }
-  .pro-value-num{font-size:1.1rem; font-weight:800; line-height:1.35; color:#fff}
-  .pro-value-sub{font-size:0.72rem; color:rgba(255,255,255,0.6); margin-top:10px}
-  .pv-math{display:flex; align-items:center; justify-content:center; gap:6px; flex-wrap:wrap; margin-top:14px}
-  .pv-math-op{font-size:0.9rem; font-weight:700; color:rgba(255,255,255,0.5); flex-shrink:0}
-  .pv-math-chip{
-    display:flex; flex-direction:column; align-items:center; gap:1px;
-    padding:8px 12px; border-radius:12px;
-    background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.22);
-  }
-  .pv-math-chip strong{font-size:0.9rem; font-weight:800; color:#fff}
-  .pv-math-chip small{font-size:0.6rem; font-weight:600; color:rgba(255,255,255,0.65); text-transform:uppercase; letter-spacing:0.03em}
-  .pro-roi{display:flex; align-items:center; justify-content:center; gap:8px; flex-wrap:wrap; margin-bottom:16px}
-  .roi-arrow{color:rgba(255,255,255,0.5); flex-shrink:0}
-  .roi-pill{
-    display:flex; flex-direction:column; align-items:center; gap:1px;
-    padding:10px 14px; border-radius:14px; line-height:1.15;
-  }
-  .roi-pill small{font-size:0.62rem; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; opacity:0.8}
-  .roi-pill strong{font-size:1.02rem; font-weight:800}
-  .roi-pill.roi-cost{background:rgba(255,255,255,0.16); color:#fff; border:1px solid rgba(255,255,255,0.3)}
-  .roi-pill.roi-save{background:#fff; color:#dc2626}
-  .roi-pill.roi-save small{color:#dc2626}
-  .roi-pill.roi-result{
-    background:#fff; color:var(--accent); font-size:1.5rem; font-weight:800;
-    padding:10px 22px; border-radius:999px;
-  }
-  @media (max-width:420px){
-    .roi-arrow{transform:rotate(90deg)}
-  }
   .price-card.featured{
     background:linear-gradient(160deg, rgba(79,109,245,0.94), rgba(138,92,246,0.94));
     color:#fff; border:1px solid rgba(255,255,255,0.25);
@@ -544,6 +424,48 @@
     }
     nav.links a{white-space:nowrap; font-size:0.88rem}
   }
+  /* ---------- real product screens ---------- */
+  .shot{
+    border-radius:18px; overflow:hidden; background:#fff;
+    border:1px solid rgba(20,22,40,0.08); box-shadow:var(--shadow-lift);
+  }
+  .shot-bar{display:flex; align-items:center; gap:6px; padding:10px 14px; background:rgba(20,22,40,0.04); border-bottom:1px solid rgba(20,22,40,0.06)}
+  .shot-bar span{width:9px;height:9px;border-radius:50%;background:rgba(20,22,40,0.16)}
+  .shot img{width:100%; height:auto}
+  .hero-inner.stacked{grid-template-columns:1fr; text-align:center; gap:48px}
+  .hero-inner.stacked .lede,.hero-inner.stacked .tag-row{margin-left:auto; margin-right:auto}
+  .hero-inner.stacked .ctas{justify-content:center}
+  .hero-shots{position:relative; max-width:1000px; margin:0 auto; padding-right:120px}
+  .hero-shots .shot-phone{
+    position:absolute; right:0; bottom:-36px; width:210px;
+    border-radius:26px; border:6px solid #14161f; overflow:hidden; box-shadow:var(--shadow-lift);
+    background:#fff;
+  }
+  .shot-phone img{width:100%; height:auto}
+  @media (max-width:760px){
+    .hero-shots{padding-right:0}
+    .hero-shots .shot-phone{position:relative; width:46%; margin:-40px 4% 0 auto; bottom:auto}
+  }
+  .shot-caption{font-size:0.8rem; color:var(--ink-faint); margin-top:52px; text-align:center}
+
+  .tour{display:flex; flex-direction:column; gap:72px}
+  .tour-step{display:grid; grid-template-columns:320px 1fr; gap:40px; align-items:center}
+  @media (max-width:900px){.tour-step{grid-template-columns:1fr; gap:22px}}
+  .tour-copy h3{font-size:1.45rem; font-weight:800; line-height:1.25; margin-bottom:12px; text-wrap:balance}
+  .tour-copy p{color:var(--ink-soft); margin:0 0 14px}
+  .tour-copy ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:8px}
+  .tour-copy li{display:flex; gap:10px; font-size:0.95rem}
+  .tour-copy li::before{content:"✓"; color:var(--good); font-weight:800}
+
+  /* ---------- spreadsheet vs titus ---------- */
+  .vs-table table{min-width:560px}
+  .vs-table td:first-child{font-weight:600}
+
+  .one-line-roi{
+    text-align:center; font-size:1.02rem; font-weight:700; margin:0 0 22px; padding:14px 18px;
+    border-radius:var(--radius-md); background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.3);
+  }
+  .hero .cta-note{font-size:0.86rem; color:var(--ink-faint); margin-top:14px}
 </style>
 </head>
 <body>
@@ -565,12 +487,11 @@
       </a>
       <nav class="links" aria-label="Primary">
         <a href="#product">Product</a>
-        <a href="#proof">Proof</a>
-        <a href="#roadmap">Roadmap</a>
+        <a href="#security">Security</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a href="#contact" class="btn btn-primary btn-sm">Talk to us</a>
+      <a href="mailto:info@titusdl.com" class="btn btn-primary btn-sm js-book">Book a demo</a>
     </div>
   </div>
 </header>
@@ -580,16 +501,15 @@
   <!-- HERO -->
   <section id="top" class="hero">
     <div class="container">
-      <div class="hero-inner">
+      <div class="hero-inner stacked">
         <div class="hero-copy">
-          <span class="hero-badge glass"><span class="dot" aria-hidden="true"></span> Purpose-built for insurance agents</span>
+          <span class="hero-badge glass"><span class="dot" aria-hidden="true"></span> Live today, running real books</span>
           <h1>Never miss a <span class="grad-text">renewal</span>. Never lose a <span class="grad-text">family record</span>.</h1>
           <p class="lede">
-            One CRM built around how insurance agents actually work — family and joint policies linked
-            automatically, renewal and Medicare-65 dates calculated for you, and every client record
-            locked down behind bank-grade access controls.
+            The CRM built for insurance agents. Open it in the morning and it tells you who to call:
+            overdue follow-ups, renewals, birthdays, and clients about to turn 65.
           </p>
-          <div class="tag-row" aria-hidden="true">
+          <div class="tag-row" aria-label="Product lines tracked">
             <span class="tag-chip life">Life</span>
             <span class="tag-chip medicare">Medicare</span>
             <span class="tag-chip health">Health</span>
@@ -600,54 +520,25 @@
             <span class="tag-chip group">Group Health</span>
           </div>
           <div class="ctas">
-            <a href="#product" class="btn btn-primary">See how it works</a>
-            <a href="#contact" class="btn btn-ghost glass">Get started</a>
+            <a href="mailto:info@titusdl.com" class="btn btn-primary js-book">Book a 15-min demo</a>
+            <a href="mailto:info@titusdl.com" class="btn btn-ghost glass js-start">Start 2 months free</a>
           </div>
+          <p class="cta-note">We move your spreadsheet in for you. No setup on your side.</p>
         </div>
 
         <div class="hero-visual">
-          <div class="mockup-wrap">
-            <div class="mockup-glow" aria-hidden="true"></div>
-            <div class="mockup glass-solid">
-              <div class="mockup-top" aria-hidden="true">
-                <span></span><span></span><span></span>
-                <span class="mockup-top-label">Client book</span>
-              </div>
-              <div class="mockup-tabs" aria-hidden="true">
-                <span class="mockup-tab active">All clients</span>
-                <span class="mockup-tab">Renewals</span>
-                <span class="mockup-tab">Birthdays</span>
-                <span class="mockup-tab">Families</span>
-              </div>
-              <div class="mockup-main" aria-hidden="true">
-                <div class="client-row">
-                  <span class="avatar" style="background:linear-gradient(135deg,#4f6df5,#8a5cf6)">JK</span>
-                  <div class="client-info"><div class="client-name">Kim family</div><div class="client-sub">4 linked policies</div></div>
-                  <span class="policy-pill life">Life</span>
-                  <span class="policy-pill medicare">Medicare</span>
-                </div>
-                <div class="client-row">
-                  <span class="avatar" style="background:linear-gradient(135deg,#22c1c3,#4f6df5)">LC</span>
-                  <div class="client-info"><div class="client-name">Chen family</div><div class="client-sub">Renews in 12 days</div></div>
-                  <span class="policy-pill annuity">Annuity</span>
-                </div>
-                <div class="client-row">
-                  <span class="avatar" style="background:linear-gradient(135deg,#8a5cf6,#22c1c3)">MG</span>
-                  <div class="client-info"><div class="client-name">Garcia family</div><div class="client-sub">Medicare-65 in 3 mo</div></div>
-                  <span class="policy-pill health">Health</span>
-                  <span class="policy-pill group">Group</span>
-                </div>
-                <div class="client-row">
-                  <span class="avatar" style="background:linear-gradient(135deg,#4f6df5,#22c1c3)">JS</span>
-                  <div class="client-info"><div class="client-name">Smith family</div><div class="client-sub">Birthday this week</div></div>
-                  <span class="policy-pill ltc">LTC</span>
-                </div>
-              </div>
+          <div class="hero-shots">
+            <div class="shot">
+              <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+              <img src="assets/product/home.jpg" width="2000" height="583"
+                   alt="The CRM's Today screen: an overdue health-insurance renewal follow-up, an annuity task due today, and a client birthday" />
             </div>
-            <p style="text-align:center; font-size:0.76rem; color:var(--ink-faint); margin-top:16px">
-              Illustrative preview built with sample data, not a live screenshot.
-            </p>
+            <div class="shot-phone">
+              <img src="assets/product/mobile.jpg" width="755" height="1200"
+                   alt="The same Today screen on a phone" />
+            </div>
           </div>
+          <p class="shot-caption">The real product. Every client shown is sample data.</p>
         </div>
       </div>
     </div>
@@ -659,7 +550,6 @@
       <div class="section-head center">
         <span class="eyebrow">Sound familiar?</span>
         <h2>You didn't get into insurance to fight your CRM</h2>
-        <p>Five things almost every agent runs into. Here's exactly how we solved each one.</p>
       </div>
     </div>
 
@@ -667,126 +557,94 @@
 
       <div class="pain-row">
         <div class="pain-photo">
-          <img src="assets/pain/organization.jpg" loading="lazy" alt="An agent's laptop showing a dense spreadsheet of client and policy data, in a busy office" />
+          <img src="assets/pain/medicare.jpg" loading="lazy" alt="A senior couple reviewing paperwork together on their couch" />
         </div>
         <div class="pain-copy">
-          <span class="pain-tag">Organization</span>
-          <h3>No single spreadsheet has the whole client — so you keep switching between six.</h3>
-          <p class="pain-problem">Client info scattered across spreadsheet tabs, old emails, and sticky notes means bouncing between them for one answer.</p>
-          <p class="pain-fix"><span class="fix-check" aria-hidden="true">✓</span> One searchable client book — every policy, every family, in one place.</p>
+          <span class="pain-tag">Medicare & senior clients</span>
+          <h3>When Medicare-65 hits, you'll already know. Before they call asking.</h3>
+          <p class="pain-problem">A missed eligibility date makes a longtime client feel forgotten, and another agent is happy to call them first.</p>
+          <p class="pain-fix"><span class="fix-check" aria-hidden="true">✓</span> Medicare-65, renewal and RMD dates work themselves out from what's already on file.</p>
         </div>
       </div>
 
       <div class="pain-row reverse">
-        <div class="pain-photo">
-          <img src="assets/pain/responsiveness.jpg" loading="lazy" alt="A young agent smiling while helping an older client with his phone" />
-        </div>
-        <div class="pain-copy">
-          <span class="pain-tag">Responsiveness</span>
-          <h3>The client who calls today shouldn't wait until tomorrow.</h3>
-          <p class="pain-problem">Slow response is the number one reason agents lose renewals to a competitor.</p>
-          <p class="pain-fix"><span class="fix-check" aria-hidden="true">✓</span> Renewal, RMD & Medicare-65 dates calculate themselves — nothing depends on remembering.</p>
-        </div>
-      </div>
-
-      <div class="pain-row">
         <div class="pain-photo">
           <img src="assets/pain/family.jpg" loading="lazy" alt="A three-generation family posing together outside their home" />
         </div>
         <div class="pain-copy">
           <span class="pain-tag">Family & household</span>
           <h3>Three generations. One family. One record that stays connected.</h3>
-          <p class="pain-problem">When a family's policies live in five disconnected records, you miss the cross-sell and the client feels like a stranger every time they call.</p>
-          <p class="pain-fix"><span class="fix-check" aria-hidden="true">✓</span> Family & joint policies linked automatically — one household, one view.</p>
-        </div>
-      </div>
-
-      <div class="pain-row reverse">
-        <div class="pain-photo">
-          <img src="assets/pain/medicare.jpg" loading="lazy" alt="A senior couple reviewing paperwork together on their couch" />
-        </div>
-        <div class="pain-copy">
-          <span class="pain-tag">Medicare & senior clients</span>
-          <h3>When Medicare-65 hits, you'll already know — before they call asking.</h3>
-          <p class="pain-problem">Senior clients don't want to be sold to twice, and a missed eligibility date makes a longtime client feel forgotten.</p>
-          <p class="pain-fix"><span class="fix-check" aria-hidden="true">✓</span> Medicare-65, renewal, and RMD dates calculated automatically — you reach out first.</p>
+          <p class="pain-problem">When a family's policies sit in five separate rows, you miss the cross-sell and the client feels like a stranger every time they call.</p>
+          <p class="pain-fix"><span class="fix-check" aria-hidden="true">✓</span> Link family members and joint policies, and see the whole household together.</p>
         </div>
       </div>
 
       <div class="pain-row">
         <div class="pain-photo">
-          <img src="assets/pain/mobile.jpg" loading="lazy" alt="Two people reviewing a tablet together outdoors on a bench" />
+          <img src="assets/pain/organization.jpg" loading="lazy" alt="An agent's laptop showing a dense spreadsheet of client and policy data, in a busy office" />
         </div>
         <div class="pain-copy">
-          <span class="pain-tag">Mobile & in-field</span>
-          <h3>Everything you know about this client — in your hand, right now.</h3>
-          <p class="pain-problem">Your best conversations happen outside the office, one step removed from the client file back at your desk.</p>
-          <p class="pain-fix"><span class="fix-check" aria-hidden="true">✓</span> A responsive web app — the same client book on phone, tablet, or desktop.</p>
+          <span class="pain-tag">Organization</span>
+          <h3>No single spreadsheet has the whole client, so you keep switching between six.</h3>
+          <p class="pain-problem">Tabs, old emails and sticky notes mean a client on the phone waits while you hunt for one answer.</p>
+          <p class="pain-fix"><span class="fix-check" aria-hidden="true">✓</span> One search box finds any client and every policy they hold, on your phone too.</p>
         </div>
       </div>
 
-    </div>
-
-    <div class="container">
-      <div class="pain-cta glass">
-        <p>Recognize your day in here?</p>
-        <a href="#contact" class="btn btn-primary">Talk to us about your book</a>
-      </div>
     </div>
   </section>
 
-  <!-- PROOF STRIP -->
-  <section id="proof" class="proof">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">Built for the way you work</span>
-        <h2>Everything a general CRM makes you configure — already built in</h2>
-      </div>
-      <div class="proof-grid">
-        <div class="proof-card glass">
-          <div class="proof-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg>
-          </div>
-          <span class="tag">Policy types</span>
-          <div class="num">8</div>
-          <div class="lbl">Tracked natively, in one view — no custom fields required</div>
-        </div>
-        <div class="proof-card glass">
-          <div class="proof-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4M9 15l2 2 4-4"/></svg>
-          </div>
-          <span class="tag">Key dates</span>
-          <div class="num">Automatic</div>
-          <div class="lbl">Renewal, RMD & Medicare-65 dates calculated for you</div>
-        </div>
-        <div class="proof-card glass">
-          <div class="proof-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
-          </div>
-          <span class="tag">Login security</span>
-          <div class="num">2FA required</div>
-          <div class="lbl">On every login, for every agent — no exceptions</div>
-        </div>
-        <div class="proof-card glass">
-          <div class="proof-icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.4 7.8-8 9-4.6-1.2-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
-          </div>
-          <span class="tag">SSN</span>
-          <div class="num">0</div>
-          <div class="lbl">By design — one less sensitive field to protect</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT / FEATURES -->
+  <!-- PRODUCT TOUR -->
   <section id="product">
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">What's live today</span>
-        <h2>A CRM built for how insurance agents actually work</h2>
-        <p>Not a generic CRM with insurance fields bolted on. Every screen assumes you're tracking policies,
-          families, and deadlines that matter for compliance — because that's what it was built to do.</p>
+        <h2>See exactly what you'd be using</h2>
+        <p>These are real screens from the product, filled with sample clients.</p>
+      </div>
+
+      <div class="tour">
+        <div class="tour-step">
+          <div class="tour-copy">
+            <h3>Your whole book in one list</h3>
+            <p>Every client, their status on each product line, and how many are prospects, pending or issued, at a glance.</p>
+            <ul>
+              <li>Search by name, phone, email or address</li>
+              <li>Tap a count to see just those clients</li>
+            </ul>
+          </div>
+          <div class="shot">
+            <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="assets/product/customers.jpg" loading="lazy" width="2000" height="1055"
+                 alt="The customer list: counts of prospects, pending, issued and cancelled clients above a table of clients with each policy and its status" />
+          </div>
+        </div>
+
+        <div class="tour-step">
+          <div class="tour-copy">
+            <h3>One client, every policy</h3>
+            <p>Cancer, health, life and the rest each get their own table with the fields that product actually needs. Nothing is squeezed into "custom field 7".</p>
+            <ul>
+              <li>All 8 product lines, built in</li>
+              <li>Each plan year kept, so renewals have history</li>
+            </ul>
+          </div>
+          <div class="shot">
+            <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="assets/product/detail.jpg" loading="lazy" width="2000" height="1000"
+                 alt="One client's page: profile on the left, and separate cancer, health insurance and life insurance policy tables on the right" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Built in, not bolted on</span>
+        <h2>Everything a general CRM makes you set up yourself</h2>
       </div>
 
       <div class="feature-grid">
@@ -794,295 +652,149 @@
           <div class="feature-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg>
           </div>
-          <h3>8 policy types, one view</h3>
-          <p>Life, Medicare, health, annuity, cancer, long-term care, business retirement plans, and group health — each with the fields that product actually needs.</p>
+          <h3>8 product lines, one view</h3>
+          <p>Life, Medicare, health, annuity, cancer, long-term care, business retirement and group health.</p>
         </div>
         <div class="feature-card glass">
           <div class="feature-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 2.5-5 6-5s6 2 6 5M12 20c0-3 2.5-5 6-5"/></svg>
           </div>
-          <h3>Family & joint policies</h3>
-          <p>Link family members and joint-owned policies so a household shows up as one connected picture, not scattered records.</p>
+          <h3>Families & joint policies</h3>
+          <p>Link a household once and every call starts with the whole picture.</p>
         </div>
         <div class="feature-card glass">
           <div class="feature-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
           </div>
-          <h3>Deadlines that calculate themselves</h3>
-          <p>Birthdays, renewals, RMD dates, and Medicare-65 eligibility are computed automatically as you view a client — not tracked by hand.</p>
+          <h3>Dates that work themselves out</h3>
+          <p>Birthdays, renewals, RMDs and Medicare-65 land on your calendar without you typing them in.</p>
         </div>
         <div class="feature-card glass">
           <div class="feature-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
           </div>
-          <h3>Recurring to-dos</h3>
-          <p>Follow-up tasks generate on a recurring schedule, so nothing depends on remembering to add it to a list.</p>
+          <h3>Follow-ups that come back</h3>
+          <p>Recurring to-dos reappear on schedule, so a quarterly check-in never depends on memory.</p>
         </div>
         <div class="feature-card glass">
           <div class="feature-icon" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
           </div>
-          <h3>Product status dashboard</h3>
-          <p>See every client's status across all eight product lines at once, instead of switching between separate screens.</p>
+          <h3>Status across every line</h3>
+          <p>Issued, pending, prospect, cancelled: see where your whole book stands in one screen.</p>
         </div>
         <div class="feature-card glass">
           <div class="feature-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg>
           </div>
-          <h3>Agent-isolated by default</h3>
-          <p>Database-level row security keeps each agent's book separate — and it's re-verified by an automated test on every single code change, not just at launch.</p>
+          <h3>Works on your phone</h3>
+          <p>The same client book on phone, tablet or desktop, in the browser. Nothing to install.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DIFFERENTIATORS -->
+  <!-- SPREADSHEET VS TITUS -->
   <section id="compare">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow">How it compares</span>
-        <h2>Built for insurance, not adapted for it</h2>
-        <p>General-purpose tools can be configured to sort of work. This is built around insurance workflows from the schema up.</p>
+        <span class="eyebrow">Still on spreadsheets?</span>
+        <h2>What changes on day one</h2>
       </div>
-      <div class="table-wrap glass">
+      <div class="table-wrap glass vs-table">
         <table>
           <thead>
             <tr>
-              <th>Feature</th>
-              <th>Zoho CRM</th>
-              <th>Notion</th>
-              <th>Slack</th>
-              <th>Monday.com</th>
+              <th>When you need to…</th>
+              <th>Spreadsheets</th>
               <th class="our-col">Titus Data Labs</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Native insurance policy views</td>
-              <td class="no">Custom setup required</td>
-              <td class="no">Not native</td>
-              <td class="no">Not a CRM</td>
-              <td class="no">No specific view</td>
-              <td class="yes our-col">8 built-in views</td>
+              <td>Find a client's full picture</td>
+              <td class="mid">Search across tabs and files</td>
+              <td class="yes our-col">One search, every policy</td>
             </tr>
             <tr>
-              <td>Family & joint-policy linking</td>
-              <td class="no">Manual effort</td>
-              <td class="no">Manual effort</td>
-              <td class="no">Not a CRM</td>
-              <td class="no">No specific feature</td>
-              <td class="yes our-col">Built in</td>
+              <td>Know who turns 65 soon</td>
+              <td class="no">Work it out by hand</td>
+              <td class="yes our-col">On your calendar automatically</td>
             </tr>
             <tr>
-              <td>Auto-calculated dates (RMD, Medicare-65)</td>
-              <td class="mid">Requires setup</td>
-              <td class="mid">Manual calendar</td>
-              <td class="no">Needs separate app</td>
-              <td class="mid">Requires setup</td>
-              <td class="yes our-col">Computed automatically</td>
+              <td>Catch a renewal in time</td>
+              <td class="no">Hope you remember</td>
+              <td class="yes our-col">Shows up on your Today screen</td>
             </tr>
             <tr>
-              <td>Agent-level data isolation, CI-verified</td>
-              <td class="mid">Role config, not DB-level</td>
-              <td class="no">No row-level security</td>
-              <td class="no">Not applicable</td>
-              <td class="mid">Role config, not DB-level</td>
-              <td class="yes our-col">Postgres RLS + automated test</td>
+              <td>See a whole family</td>
+              <td class="no">Separate rows, no link</td>
+              <td class="yes our-col">Linked in one household</td>
             </tr>
             <tr>
-              <td>Setup effort</td>
-              <td class="no">Complex</td>
-              <td class="no">Build it yourself</td>
-              <td class="no">Needs integrations</td>
-              <td class="mid">Template-based</td>
-              <td class="yes our-col">Same-day onboarding</td>
+              <td>Keep client data private</td>
+              <td class="no">Anyone with the file sees all of it</td>
+              <td class="yes our-col">Each agent sees only their own book</td>
             </tr>
           </tbody>
         </table>
       </div>
-
-      <p class="setup-cost-lede">"Build it yourself" isn't free, either &mdash; here's what that row above actually costs.</p>
-      <div class="value-summary value-summary--four">
-        <div class="value-stat glass">
-          <div class="num">20&ndash;40 hrs</div>
-          <div class="lbl">Configuring a general tool for insurance workflows, one-time</div>
-        </div>
-        <div class="value-stat glass">
-          <div class="num">$800&ndash;$1,600</div>
-          <div class="lbl">At $40/hr &mdash; the one-time build only</div>
-        </div>
-        <div class="value-stat warn">
-          <div class="num">$150&ndash;$250/mo</div>
-          <div class="warn-floor">and that's the floor</div>
-          <div class="lbl">Every fix, field change &amp; new-agent setup after that &mdash; and it never stops</div>
-        </div>
-        <div class="value-stat highlight">
-          <div class="num">$0 setup</div>
-          <div class="lbl">Same-day onboarding, with Titus Data Labs</div>
-        </div>
-      </div>
-      <div class="rebuild-loop" aria-hidden="true">
-        <span class="rebuild-step">Build</span>
-        <svg class="rebuild-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        <span class="rebuild-step">Break</span>
-        <svg class="rebuild-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        <span class="rebuild-step warn">Rebuild</span>
-        <svg class="rebuild-arrow loop-back" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6M3 22v-6h6M3.5 9a9 9 0 0114.5-4.5L21 8M20.5 15a9 9 0 01-14.5 4.5L3 16"/></svg>
-      </div>
-      <p class="setup-cost-emphasis">Not a patch. A rebuild. Or they give up and go back to spreadsheets.</p>
-      <p class="value-note">
-        Illustrative, not a promise: based on the custom fields, family-linking workarounds, reminder automations,
-        and integrations a general-purpose tool needs before it handles insurance workflows at all, at a $40/hour
-        blended rate &mdash; swap in your own number. The monthly figure assumes 4&ndash;6 hours of upkeep as your
-        book, your team, or your compliance needs change.
-      </p>
     </div>
   </section>
 
-  <!-- ROADMAP / VISION -->
-  <section id="roadmap">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">Where we're headed</span>
-        <h2>The Agency OS — built module by module</h2>
-        <p>Insurance agents are our first customer, but they're really our proof that solo-run
-          businesses need one operating system instead of five disconnected tools. Sales is live.
-          The rest ships only when it's proven, not just planned.</p>
-      </div>
-      <div class="roadmap-grid">
-        <div class="roadmap-card glass live">
-          <div class="step">01 — Live</div>
-          <h3>Sales & clients</h3>
-          <p>The CRM you see on this page. Running a real book, in production, today.</p>
-        </div>
-        <div class="roadmap-card glass">
-          <div class="step">02 — Next</div>
-          <h3>Marketing automation</h3>
-          <p>Turning the client and family data already in the CRM into outreach that doesn't require a separate tool.</p>
-        </div>
-        <div class="roadmap-card glass">
-          <div class="step">03 — Next</div>
-          <h3>Finance & commissions</h3>
-          <p>Commission tracking tied to the same policy records agents already manage here.</p>
-        </div>
-        <div class="roadmap-card glass">
-          <div class="step">04 — Next</div>
-          <h3>Operations & compliance</h3>
-          <p>The audit trails and access controls already underneath the CRM, extended into a standalone compliance layer.</p>
-        </div>
-      </div>
-      <p class="roadmap-note glass">
-        Honest note: none of modules 2–4 exist yet. We're not listing them because they're available —
-        we're listing them because this is the order we've committed to, and we'd rather tell you the plan
-        than let a mockup imply the product does more than it does today.
-      </p>
-    </div>
-  </section>
-
-  <!-- WHY AGENTS TRUST IT -->
-  <section id="facts">
+  <!-- SECURITY -->
+  <section id="security">
     <div class="container">
       <div class="section-head center">
         <span class="eyebrow">Why agents trust it</span>
-        <h2>Built for insurance compliance, not bolted on after the fact</h2>
-        <p>The details that matter to an examiner are the same details that make your day easier.</p>
+        <h2>Your clients' data stays yours</h2>
       </div>
       <div class="facts-grid">
         <div class="fact-card glass">
           <div class="fact-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
           </div>
-          <strong>Purpose-built, not adapted</strong>
-          <p>Eight real insurance product lines — life, Medicare, health, annuity, cancer, long-term care, business retirement, group health — designed into the schema from day one, not relabeled generic fields.</p>
+          <strong>Other agents can't see your book</strong>
+          <p>Even inside the same agency, no other agent can open your clients. We re-test this before every update goes out.</p>
         </div>
         <div class="fact-card glass">
           <div class="fact-icon" aria-hidden="true">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
           </div>
-          <strong>Isolation enforced by the database</strong>
-          <p>Agent-to-agent data separation isn't a policy on paper — it's enforced at the database level and re-checked by an automated test before any code change can ship.</p>
+          <strong>A code on every sign-in</strong>
+          <p>Every login needs a password and a code from your phone. A stolen password alone gets nobody in.</p>
         </div>
         <div class="fact-card glass">
           <div class="fact-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.4 7.8-8 9-4.6-1.2-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
-          <strong>Less liability, not more</strong>
-          <p>We don't collect Social Security numbers — one less sensitive field for you to protect, store, and explain to compliance if something ever goes wrong.</p>
+          <strong>Not a shared spreadsheet</strong>
+          <p>Your book lives in a private database, not a Google Sheet that can be forwarded, copied or left open on a shared drive.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VALUE / ROI -->
-  <section id="value">
+  <!--
+    CUSTOMER STORIES: add once the first agent agrees to be quoted.
+    Put this section between SECURITY and PRICING, and add
+    <a href="#stories">Customers</a> to the nav.
+
+  <section id="stories">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow">What it's actually worth</span>
-        <h2>The spreadsheet isn't free. It just doesn't send you a bill.</h2>
-        <p>Here's what the manual version of this job actually costs — in the hours it eats out of your week.</p>
+        <span class="eyebrow">From agents using it</span>
+        <h2>...</h2>
       </div>
-      <div class="table-wrap glass">
-        <table>
-          <thead>
-            <tr>
-              <th>Where the time goes</th>
-              <th>Doing it yourself</th>
-              <th>With Titus Data Labs</th>
-              <th class="our-col">Time back</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Finding a client's full policy picture</td>
-              <td class="mid">~3 min per lookup, ~15×/week</td>
-              <td class="yes">Under 30 sec, one search</td>
-              <td class="num-cell our-col">≈ 40 min/week</td>
-            </tr>
-            <tr>
-              <td>Tracking renewal, RMD &amp; Medicare-65 dates</td>
-              <td class="mid">~2 hrs/week on a manual tickler</td>
-              <td class="yes">Calculated automatically</td>
-              <td class="num-cell our-col">≈ 2 hrs/week</td>
-            </tr>
-            <tr>
-              <td>Cross-referencing family policies</td>
-              <td class="mid">~1.5 hrs/week reconciling by hand</td>
-              <td class="yes">Linked automatically</td>
-              <td class="num-cell our-col">≈ 1.5 hrs/week</td>
-            </tr>
-            <tr>
-              <td>Getting set up on a new system</td>
-              <td class="no">15&ndash;30 hrs building it in Notion/Zoho</td>
-              <td class="yes">Same-day onboarding</td>
-              <td class="num-cell our-col">≈ 20 hrs, once</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="value-summary">
-        <div class="value-stat glass">
-          <div class="num">≈ 17 hrs</div>
-          <div class="lbl">Given back per month, recurring</div>
-        </div>
-        <div class="value-stat glass">
-          <div class="num">≈ $680</div>
-          <div class="lbl">Value of that time at $40/hr</div>
-        </div>
-        <div class="value-stat highlight">
-          <div class="num">$49.99&ndash;$99.99</div>
-          <div class="lbl">What the CRM actually costs, per month</div>
+      <div class="facts-grid">
+        <div class="fact-card glass">
+          <p>"Quote in the agent's own words, with one concrete result."</p>
+          <strong>Name, agency, city · product lines</strong>
         </div>
       </div>
-
-      <p class="value-note">
-        Illustrative, not a promise: based on 4 hours/week of manual lookups, renewal tracking, and family-policy
-        reconciling across spreadsheets and a general-purpose tool, at a $40/hour blended value of an agent's time
-        &mdash; a number worth swapping for your own. It doesn't include the cost of a missed renewal or a compliance
-        incident, which we've deliberately left out because we don't have a defensible number for it yet.
-      </p>
     </div>
   </section>
+  -->
 
   <!-- PRICING -->
   <section id="pricing">
@@ -1097,33 +809,18 @@
           <h3>Standard</h3>
           <div class="amount">$49.99 <span>/ user / month</span></div>
           <ul>
-            <li><span class="check" aria-hidden="true">✓</span> All 8 policy views</li>
+            <li><span class="check" aria-hidden="true">✓</span> All 8 product lines</li>
             <li><span class="check" aria-hidden="true">✓</span> Family & joint policy linking</li>
-            <li><span class="check" aria-hidden="true">✓</span> Auto-calculated renewal & compliance dates</li>
+            <li><span class="check" aria-hidden="true">✓</span> Renewal, RMD & Medicare-65 dates, automatic</li>
             <li><span class="check" aria-hidden="true">✓</span> Recurring to-dos</li>
-            <li><span class="check" aria-hidden="true">✓</span> 2FA + access audit log</li>
+            <li><span class="check" aria-hidden="true">✓</span> 2-step sign-in + access log</li>
           </ul>
-          <a href="mailto:info@titusdl.com?subject=Inquiry_Standard_Plan" class="btn btn-ghost">Get started</a>
+          <a href="mailto:info@titusdl.com" class="btn btn-ghost js-start" data-plan="Standard">Start 2 months free</a>
         </div>
         <div class="price-card featured">
           <h3>Pro <span class="tag">Recommended</span></h3>
           <div class="amount">$99.99 <span>/ user / month</span></div>
-          <div class="pro-value">
-            <div class="pro-roi">
-              <span class="roi-pill roi-cost"><small>Pro / yr</small><strong>$1,200</strong></span>
-              <svg class="roi-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              <span class="roi-pill roi-save"><small>Renewals it catches / yr</small><strong>$25K&ndash;$60K</strong></span>
-              <svg class="roi-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              <span class="roi-pill roi-result">20&ndash;50×</span>
-            </div>
-            <div class="pro-value-num">That's the return Pro is built to deliver.</div>
-            <div class="pv-math">
-              <span class="pv-math-chip"><strong>20&ndash;40</strong><small>saves / yr</small></span>
-              <span class="pv-math-op" aria-hidden="true">&times;</span>
-              <span class="pv-math-chip"><strong>$600&ndash;$1.5K</strong><small>avg commission</small></span>
-            </div>
-            <div class="pro-value-sub">Illustrative &mdash; swap in your own numbers.</div>
-          </div>
+          <p class="one-line-roi">Save one or two renewals a year and Pro has paid for itself.</p>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Everything in Standard</li>
             <li><span class="check" aria-hidden="true">✓</span> Automated email & notification triggers</li>
@@ -1131,12 +828,11 @@
             <li><span class="check" aria-hidden="true">✓</span> Custom status & workflow automations</li>
             <li><span class="check" aria-hidden="true">✓</span> Priority support</li>
           </ul>
-          <a href="mailto:info@titusdl.com?subject=Inquiry_Pro_Plan" class="btn btn-primary" style="background:#fff;color:var(--accent)">Choose Pro</a>
+          <a href="mailto:info@titusdl.com" class="btn btn-primary js-start" data-plan="Pro" style="background:#fff;color:var(--accent)">Start Pro free</a>
         </div>
       </div>
       <p class="custom-note glass">
-        Need custom fields, workflow changes, or an integration? Email
-        <a href="mailto:info@titusdl.com">info@titusdl.com</a> — we build what your team actually needs, not just what's on this page.
+        Need custom fields, a workflow change, or an integration? <a href="mailto:info@titusdl.com">Tell us</a>. We build what your team actually needs.
       </p>
     </div>
   </section>
@@ -1150,19 +846,23 @@
       </div>
       <div class="faq-list">
         <details class="faq-item glass">
-          <summary>Where is my data stored?<span class="chev" aria-hidden="true">▾</span></summary>
-          <p>In a dedicated, private database — not in your Google Workspace. Each agent's data is
-            isolated so no one else can see it, and every login requires two-factor authentication.</p>
+          <summary>How do I get my clients in?<span class="chev" aria-hidden="true">▾</span></summary>
+          <p>Send us your spreadsheet. We move it in for you, free during the launch offer, and you start the
+            same day with your book already there.</p>
         </details>
         <details class="faq-item glass">
-          <summary>Do you collect Social Security numbers?<span class="chev" aria-hidden="true">▾</span></summary>
-          <p>No. SSN collection was removed from the product — it wasn't needed for how agents actually use
-            client records day to day.</p>
+          <summary>What happens on the demo?<span class="chev" aria-hidden="true">▾</span></summary>
+          <p>15 minutes. We show you the product with sample clients, look at how you track your book today,
+            and tell you honestly whether it fits.</p>
+        </details>
+        <details class="faq-item glass">
+          <summary>Where is my data stored?<span class="chev" aria-hidden="true">▾</span></summary>
+          <p>In a dedicated, private database, not in your Google Workspace. Each agent's book is
+            kept separate so other agents can't see it, and every login needs two-factor authentication.</p>
         </details>
         <details class="faq-item glass">
           <summary>Does it work on mobile and tablet?<span class="chev" aria-hidden="true">▾</span></summary>
-          <p>Yes — it's a responsive web app, so the same interface works in a browser on your phone, tablet,
-            or desktop. There's no separate native app to install.</p>
+          <p>Yes. It runs in the browser on your phone, tablet or desktop. There's no app to install.</p>
         </details>
       </div>
     </div>
@@ -1172,12 +872,9 @@
   <section id="contact">
     <div class="container">
       <div class="contact-panel">
-        <h2>Tell us what your business actually needs.</h2>
-        <p>Whether that's the CRM as it is today, a customization, or a conversation about what module
-          comes after Sales — we'd rather build the right thing slowly than the wrong thing fast.</p>
-        <a href="mailto:info@titusdl.com" class="btn btn-primary">
-          Email info@titusdl.com
-        </a>
+        <h2>See your own book in it, in 15 minutes.</h2>
+        <p>Book a quick demo. If it fits, we move your spreadsheet in and your first 2 months are free.</p>
+        <a href="mailto:info@titusdl.com" class="btn btn-primary js-book">Book a 15-min demo</a>
       </div>
     </div>
   </section>
@@ -1191,8 +888,31 @@
 </footer>
 
 <div class="sticky-cta">
-  <a href="mailto:info@titusdl.com">Email us</a>
+  <a href="mailto:info@titusdl.com" class="js-book">Book a 15-min demo</a>
 </div>
+
+<script>
+  // Paste a scheduling link (Calendly, Google appointment page, ...) here and
+  // every "Book a demo" button opens it instead of a pre-filled email.
+  var BOOKING_URL = "";
+
+  var mail = function (subject, body) {
+    return "mailto:info@titusdl.com?subject=" + encodeURIComponent(subject) +
+           "&body=" + encodeURIComponent(body);
+  };
+  document.querySelectorAll(".js-book").forEach(function (a) {
+    if (BOOKING_URL) { a.href = BOOKING_URL; a.target = "_blank"; a.rel = "noopener"; return; }
+    a.href = mail("15-min demo request",
+      "Hi Titus Data Labs,\n\nI'd like a 15-minute demo.\n\n" +
+      "Best days/times for me:\nPhone:\nRoughly how many clients I have:\n");
+  });
+  document.querySelectorAll(".js-start").forEach(function (a) {
+    var plan = a.getAttribute("data-plan");
+    a.href = mail("Start my 2 free months" + (plan ? " (" + plan + ")" : ""),
+      "Hi Titus Data Labs,\n\nI'd like to start the 2-month free offer" + (plan ? " on " + plan : "") + ".\n\n" +
+      "Name:\nPhone:\nWhere my clients live today (Excel, Google Sheets, another CRM):\n");
+  });
+</script>
 
 </body>
 </html>
