@@ -372,6 +372,29 @@
   }
   .price-card .amount{font-size:2.6rem; font-weight:800; margin:14px 0}
   .price-card .amount span{font-size:1rem; font-weight:500; opacity:0.7}
+  .price-card{position:relative}
+  .launch-ribbon{
+    position:absolute; top:-14px; right:24px;
+    font-size:0.72rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase;
+    padding:7px 14px; border-radius:999px; background:#ef4444; color:#fff;
+    box-shadow:0 6px 18px rgba(239,68,68,0.4);
+  }
+  .price-was{display:flex; align-items:center; gap:10px; margin-top:16px; flex-wrap:wrap}
+  .price-was s{
+    font-size:1.25rem; font-weight:700; opacity:0.55;
+    text-decoration-color:#ef4444; text-decoration-thickness:2.5px;
+  }
+  .price-card.featured .price-was s{opacity:0.8; text-decoration-color:#fff}
+  .price-save{
+    font-size:0.78rem; font-weight:800; padding:5px 11px; border-radius:999px;
+    background:rgba(239,68,68,0.12); color:#dc2626;
+  }
+  .price-card.featured .price-save{background:#fff; color:#dc2626}
+  .price-card .amount.sale{margin:4px 0 6px}
+  .price-ends{font-size:0.84rem; font-weight:600; margin:0 0 22px; color:var(--ink-soft)}
+  .price-card.featured .price-ends{color:rgba(255,255,255,0.85)}
+  .price-ends strong{color:#dc2626}
+  .price-card.featured .price-ends strong{color:#fff; text-decoration:underline; text-underline-offset:3px}
   .price-card ul{list-style:none; margin:0 0 24px; padding:0; display:flex; flex-direction:column; gap:12px}
   .price-card li{display:flex; gap:10px; font-size:0.94rem; align-items:flex-start}
   .price-card:not(.featured) li{color:var(--ink-soft)}
@@ -474,7 +497,7 @@
 
 <a href="#pricing" class="promo-bar">
   <span class="promo-emoji" aria-hidden="true">🎉</span>
-  2026 launch offer: <strong>2 months free</strong> on any plan, plus <strong class="promo-red">free data migration</strong>
+  2026 launch special: <strong>up to 40% off</strong> plus 2 months free and <strong class="promo-red">free data migration</strong>
   <span class="promo-arrow" aria-hidden="true">→</span>
 </a>
 
@@ -800,14 +823,17 @@
   <section id="pricing">
     <div class="container">
       <div class="section-head center">
-        <span class="eyebrow">Pricing</span>
-        <h2>Simple, per-agent pricing</h2>
+        <span class="eyebrow">2026 launch special</span>
+        <h2>Launch pricing, this year only</h2>
       </div>
       <p class="pricing-lede">Standard: <strong>you have to remember.</strong> Pro: <strong>it reaches out first.</strong></p>
       <div class="pricing-grid">
         <div class="price-card glass">
           <h3>Standard</h3>
-          <div class="amount">$49.99 <span>/ user / month</span></div>
+          <span class="launch-ribbon">Launch special</span>
+          <div class="price-was"><s aria-label="Regular price $49.99">$49.99</s><span class="price-save">Save 20%</span></div>
+          <div class="amount sale">$39.99 <span>/ user / month</span></div>
+          <p class="price-ends">+ first 2 months free · Ends Dec 31, 2026<span class="js-days-left"></span></p>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> All 8 product lines</li>
             <li><span class="check" aria-hidden="true">✓</span> Family & joint policy linking</li>
@@ -819,7 +845,10 @@
         </div>
         <div class="price-card featured">
           <h3>Pro <span class="tag">Recommended</span></h3>
-          <div class="amount">$99.99 <span>/ user / month</span></div>
+          <span class="launch-ribbon">Launch special</span>
+          <div class="price-was"><s aria-label="Regular price $99.99">$99.99</s><span class="price-save">Save 40%</span></div>
+          <div class="amount sale">$59.99 <span>/ user / month</span></div>
+          <p class="price-ends">+ first 2 months free · Ends Dec 31, 2026<span class="js-days-left"></span></p>
           <p class="one-line-roi">Save one or two renewals a year and Pro has paid for itself.</p>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Everything in Standard</li>
@@ -905,6 +934,11 @@
     a.href = mail("15-min demo request",
       "Hi Titus Data Labs,\n\nI'd like a 15-minute demo.\n\n" +
       "Best days/times for me:\nPhone:\nRoughly how many clients I have:\n");
+  });
+  // "· N days left" next to the launch-special end date; hidden once it has passed.
+  var daysLeft = Math.ceil((new Date(2027, 0, 1) - new Date()) / 864e5);
+  if (daysLeft > 0) document.querySelectorAll(".js-days-left").forEach(function (el) {
+    el.innerHTML = " · <strong>" + daysLeft + (daysLeft === 1 ? " day" : " days") + " left</strong>";
   });
   document.querySelectorAll(".js-start").forEach(function (a) {
     var plan = a.getAttribute("data-plan");
