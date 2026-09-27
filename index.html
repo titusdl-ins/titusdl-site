@@ -497,7 +497,7 @@
 
 <a href="#pricing" class="promo-bar">
   <span class="promo-emoji" aria-hidden="true">🎉</span>
-  2026 launch special: <strong>up to 40% off</strong> plus 2 months free and <strong class="promo-red">free data migration</strong>
+  2026 launch special: <strong>up to 40% off</strong> plus 1 month free and <strong class="promo-red">free data migration</strong>
   <span class="promo-arrow" aria-hidden="true">→</span>
 </a>
 
@@ -544,7 +544,7 @@
           </div>
           <div class="ctas">
             <a href="mailto:info@titusdl.com" class="btn btn-primary js-book">Book a 15-min demo</a>
-            <a href="mailto:info@titusdl.com" class="btn btn-ghost glass js-start">Start 2 months free</a>
+            <a href="mailto:info@titusdl.com" class="btn btn-ghost glass js-start">Start 1 month free</a>
           </div>
           <p class="cta-note">We move your spreadsheet in for you. No setup on your side.</p>
         </div>
@@ -833,7 +833,7 @@
           <span class="launch-ribbon">Launch special</span>
           <div class="price-was"><s aria-label="Regular price $49.99">$49.99</s><span class="price-save">Save 20%</span></div>
           <div class="amount sale">$39.99 <span>/ user / month</span></div>
-          <p class="price-ends">+ first 2 months free · Ends Dec 31, 2026<span class="js-days-left"></span></p>
+          <p class="price-ends">+ first month free · Ends Dec 31, 2026<span class="js-days-left"></span></p>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> All 8 product lines</li>
             <li><span class="check" aria-hidden="true">✓</span> Family & joint policy linking</li>
@@ -841,14 +841,14 @@
             <li><span class="check" aria-hidden="true">✓</span> Recurring to-dos</li>
             <li><span class="check" aria-hidden="true">✓</span> 2-step sign-in + access log</li>
           </ul>
-          <a href="mailto:info@titusdl.com" class="btn btn-ghost js-start" data-plan="Standard">Start 2 months free</a>
+          <a href="mailto:info@titusdl.com" class="btn btn-ghost js-start" data-plan="Standard">Start 1 month free</a>
         </div>
         <div class="price-card featured">
           <h3>Pro <span class="tag">Recommended</span></h3>
           <span class="launch-ribbon">Launch special</span>
           <div class="price-was"><s aria-label="Regular price $99.99">$99.99</s><span class="price-save">Save 40%</span></div>
           <div class="amount sale">$59.99 <span>/ user / month</span></div>
-          <p class="price-ends">+ first 2 months free · Ends Dec 31, 2026<span class="js-days-left"></span></p>
+          <p class="price-ends">+ first month free · Ends Dec 31, 2026<span class="js-days-left"></span></p>
           <p class="one-line-roi">Save one or two renewals a year and Pro has paid for itself.</p>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Everything in Standard</li>
@@ -902,7 +902,7 @@
     <div class="container">
       <div class="contact-panel">
         <h2>See your own book in it, in 15 minutes.</h2>
-        <p>Book a quick demo. If it fits, we move your spreadsheet in and your first 2 months are free.</p>
+        <p>Book a quick demo. If it fits, we move your spreadsheet in and your first month is free.</p>
         <a href="mailto:info@titusdl.com" class="btn btn-primary js-book">Book a 15-min demo</a>
       </div>
     </div>
@@ -942,8 +942,8 @@
   });
   document.querySelectorAll(".js-start").forEach(function (a) {
     var plan = a.getAttribute("data-plan");
-    a.href = mail("Start my 2 free months" + (plan ? " (" + plan + ")" : ""),
-      "Hi Titus Data Labs,\n\nI'd like to start the 2-month free offer" + (plan ? " on " + plan : "") + ".\n\n" +
+    a.href = mail("Start my free month" + (plan ? " (" + plan + ")" : ""),
+      "Hi Titus Data Labs,\n\nI'd like to start the 1-month free offer" + (plan ? " on " + plan : "") + ".\n\n" +
       "Name:\nPhone:\nWhere my clients live today (Excel, Google Sheets, another CRM):\n");
   });
 </script>
