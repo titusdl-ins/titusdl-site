@@ -875,10 +875,10 @@
         </div>
         <div class="price-card premium">
           <h3>Premium <span class="tag">Coming soon</span></h3>
-          <span class="launch-ribbon">Launch special</span>
+          <span class="launch-ribbon">Early member price</span>
           <div class="price-was"><s aria-label="Regular price $150">$150</s><span class="price-save">Save 33%</span></div>
           <div class="amount sale">$99.99 <span>/ user / month</span></div>
-          <p class="price-ends">Waitlist members get the launch price when Premium opens.</p>
+          <p class="price-ends"><strong>Early members keep $99.99</strong> for as long as they stay subscribed. After launch, new members pay $150.</p>
           <p class="one-line-roi">Upload the application. The client and policy are in your CRM.</p>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Everything in Pro</li>
@@ -970,7 +970,7 @@
   });
   document.querySelectorAll(".js-waitlist").forEach(function (a) {
     a.href = mail("Premium waitlist",
-      "Hi Titus Data Labs,\n\nPlease add me to the Premium waitlist.\n\n" +
+      "Hi Titus Data Labs,\n\nPlease add me to the Premium waitlist as an early member ($99.99/month, kept for as long as I stay subscribed).\n\n" +
       "Name:\nPhone:\nRoughly how many applications I write a month:\n");
   });
   document.querySelectorAll(".js-start").forEach(function (a) {
