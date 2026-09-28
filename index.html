@@ -357,8 +357,22 @@
     margin:-8px 0 30px;
   }
   .pricing-lede strong{color:var(--accent)}
-  .pricing-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px}
-  @media (max-width:800px){.pricing-grid{grid-template-columns:1fr}}
+  .pricing-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:stretch}
+  @media (max-width:1000px){.pricing-grid{grid-template-columns:1fr; max-width:520px; margin:0 auto}}
+  .price-card > .btn{margin-top:auto; justify-content:center}
+  .price-card.premium{
+    background:linear-gradient(160deg, #1b1d2b, #2a2140); color:#fff;
+    border:1px solid rgba(214,178,94,0.45); box-shadow:var(--shadow-lift);
+  }
+  .price-card.premium:not(.featured) li{color:rgba(255,255,255,0.88)}
+  .price-card.premium .price-save{background:#fff; color:#dc2626}
+  .price-card.premium .check{color:#e2c275}
+  .price-card.premium .tag{background:rgba(226,194,117,0.18); color:#e2c275}
+  .price-card.premium .price-was s{opacity:0.7; text-decoration-color:#ef4444}
+  .price-card.premium .price-ends{color:rgba(255,255,255,0.75)}
+  .price-card.premium .price-ends strong{color:#e2c275}
+  .price-card.premium .one-line-roi{background:rgba(226,194,117,0.1); border-color:rgba(226,194,117,0.35)}
+  .btn-gold{background:linear-gradient(135deg,#e2c275,#c89b3c); color:#1b1d2b; box-shadow:0 8px 22px rgba(200,155,60,0.35)}
   .price-card{border-radius:var(--radius-lg); padding:32px; display:flex; flex-direction:column}
   .price-card.featured{
     background:linear-gradient(160deg, rgba(79,109,245,0.94), rgba(138,92,246,0.94));
@@ -826,7 +840,7 @@
         <span class="eyebrow">2026 launch special</span>
         <h2>Launch pricing, this year only</h2>
       </div>
-      <p class="pricing-lede">Standard: <strong>you have to remember.</strong> Pro: <strong>it reaches out first.</strong></p>
+      <p class="pricing-lede">Standard: <strong>you have to remember.</strong> Pro: <strong>it reaches out first.</strong> Premium: <strong>it fills itself in.</strong></p>
       <div class="pricing-grid">
         <div class="price-card glass">
           <h3>Standard</h3>
@@ -858,6 +872,20 @@
             <li><span class="check" aria-hidden="true">✓</span> Priority support</li>
           </ul>
           <a href="mailto:info@titusdl.com" class="btn btn-primary js-start" data-plan="Pro" style="background:#fff;color:var(--accent)">Start Pro free</a>
+        </div>
+        <div class="price-card premium">
+          <h3>Premium <span class="tag">Coming soon</span></h3>
+          <span class="launch-ribbon">Launch special</span>
+          <div class="price-was"><s aria-label="Regular price $150">$150</s><span class="price-save">Save 33%</span></div>
+          <div class="amount sale">$99.99 <span>/ user / month</span></div>
+          <p class="price-ends">Waitlist members get the launch price when Premium opens.</p>
+          <p class="one-line-roi">Upload the application. The client and policy are in your CRM.</p>
+          <ul>
+            <li><span class="check" aria-hidden="true">✓</span> Everything in Pro</li>
+            <li><span class="check" aria-hidden="true">✓</span> Application upload: client & policy filled in for you</li>
+            <li><span class="check" aria-hidden="true">✓</span> AI features, as each one ships</li>
+          </ul>
+          <a href="mailto:info@titusdl.com" class="btn btn-gold js-waitlist">Join the Premium waitlist</a>
         </div>
       </div>
       <p class="custom-note glass">
@@ -939,6 +967,11 @@
   var daysLeft = Math.ceil((new Date(2027, 0, 1) - new Date()) / 864e5);
   if (daysLeft > 0) document.querySelectorAll(".js-days-left").forEach(function (el) {
     el.innerHTML = " · <strong>" + daysLeft + (daysLeft === 1 ? " day" : " days") + " left</strong>";
+  });
+  document.querySelectorAll(".js-waitlist").forEach(function (a) {
+    a.href = mail("Premium waitlist",
+      "Hi Titus Data Labs,\n\nPlease add me to the Premium waitlist.\n\n" +
+      "Name:\nPhone:\nRoughly how many applications I write a month:\n");
   });
   document.querySelectorAll(".js-start").forEach(function (a) {
     var plan = a.getAttribute("data-plan");
