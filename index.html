@@ -414,6 +414,15 @@
   .price-card:not(.featured) li{color:var(--ink-soft)}
   .price-card.featured li{color:rgba(255,255,255,0.92)}
   .check{flex-shrink:0; margin-top:2px}
+  .price-2027{margin-top:26px; border-radius:var(--radius-lg); padding:26px 28px}
+  .price-2027 h3{font-size:1.15rem; font-weight:800; margin:0 0 6px}
+  .price-2027 > p{color:var(--ink-soft); margin:0 0 16px; font-size:0.95rem}
+  .price-2027 table{min-width:0}
+  .price-2027 th,.price-2027 td{padding:11px 12px}
+  .price-2027 td{white-space:nowrap}
+  .price-2027 td small{display:block; color:var(--ink-faint); font-weight:500; font-size:0.8rem}
+  .price-2027 .save{color:var(--good); font-weight:800}
+  @media (max-width:560px){.price-2027{padding:20px 14px} .price-2027 th,.price-2027 td{padding:10px 6px; font-size:0.86rem}}
   .custom-note{
     margin-top:22px; text-align:center; border-radius:var(--radius-md); padding:16px 20px; font-size:0.92rem; color:var(--ink-soft);
   }
@@ -887,6 +896,21 @@
           </ul>
           <a href="mailto:info@titusdl.com" class="btn btn-gold js-waitlist">Join the Premium waitlist</a>
         </div>
+      </div>
+      <div class="price-2027 glass">
+        <span class="eyebrow">From January 1, 2027</span>
+        <h3>Regular prices, or <span class="save">20% off</span> when you pay for the year</h3>
+        <p>Launch prices end December 31, 2026. After that, plans go back to their regular monthly price, and paying for a full year up front takes 20% off.</p>
+        <table>
+          <thead>
+            <tr><th>Plan</th><th>Monthly</th><th>Yearly, paid up front</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Standard</td><td>$49.99 / mo</td><td><strong>$479.90 / yr</strong><small>about $39.99 / mo</small></td></tr>
+            <tr><td>Pro</td><td>$99.99 / mo</td><td><strong>$959.90 / yr</strong><small>about $79.99 / mo</small></td></tr>
+            <tr><td>Premium</td><td>$150 / mo</td><td><strong>$1,440 / yr</strong><small>about $120 / mo</small></td></tr>
+          </tbody>
+        </table>
       </div>
       <p class="custom-note glass">
         Need custom fields, a workflow change, or an integration? <a href="mailto:info@titusdl.com">Tell us</a>. We build what your team actually needs.
