@@ -423,6 +423,10 @@
   .price-2027 td small{display:block; color:var(--ink-faint); font-weight:500; font-size:0.8rem}
   .price-2027 .save{color:var(--good); font-weight:800}
   @media (max-width:560px){.price-2027{padding:20px 14px} .price-2027 th,.price-2027 td{padding:10px 6px; font-size:0.86rem}}
+  .tax-note{margin:14px 0 0; padding:12px 14px; border-radius:12px; font-size:0.88rem; line-height:1.5;
+    background:rgba(180,136,26,0.09); border:1px solid rgba(180,136,26,0.28); color:var(--ink)}
+  .tax-note strong{color:#8a6510}
+  .price-fineprint{text-align:center; font-size:0.82rem; color:var(--ink-faint); margin:16px 0 0}
   .custom-note{
     margin-top:22px; text-align:center; border-radius:var(--radius-md); padding:16px 20px; font-size:0.92rem; color:var(--ink-soft);
   }
@@ -897,6 +901,7 @@
           <a href="mailto:info@titusdl.com" class="btn btn-gold js-waitlist">Join the Premium waitlist</a>
         </div>
       </div>
+      <p class="price-fineprint">Prices in USD, before sales tax.</p>
       <div class="price-2027 glass">
         <span class="eyebrow">From January 1, 2027</span>
         <h3>Regular prices, or <span class="save">2 months free</span> when you pay for the year</h3>
@@ -911,6 +916,9 @@
             <tr><td>Premium</td><td>$150 / mo</td><td><strong>$1,500 / yr</strong><small>2 months free</small></td></tr>
           </tbody>
         </table>
+        <p class="tax-note"><strong>Sales tax from 2027:</strong> starting January 1, 2027, California charges sales tax on software
+          subscriptions (SB 122). If your business is in California, sales tax for your area is added to each bill from then on.
+          Prices above don't include it.</p>
       </div>
       <p class="custom-note glass">
         Need custom fields, a workflow change, or an integration? <a href="mailto:info@titusdl.com">Tell us</a>. We build what your team actually needs.
@@ -940,6 +948,11 @@
           <summary>Where is my data stored?<span class="chev" aria-hidden="true">▾</span></summary>
           <p>In a dedicated, private database, not in your Google Workspace. Each agent's book is
             kept separate so other agents can't see it, and every login needs two-factor authentication.</p>
+        </details>
+        <details class="faq-item glass">
+          <summary>Do I pay sales tax?<span class="chev" aria-hidden="true">▾</span></summary>
+          <p>Not in 2026. Starting January 1, 2027, California charges sales tax on software subscriptions,
+            so California customers will see their local sales tax added to each bill. Our listed prices don't include tax.</p>
         </details>
         <details class="faq-item glass">
           <summary>Does it work on mobile and tablet?<span class="chev" aria-hidden="true">▾</span></summary>
