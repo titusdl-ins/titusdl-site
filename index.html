@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>TitusDL CRM, the CRM for independent insurance agents</title>
-<meta name="description" content="TitusDL CRM alerts you before the dates that matter: clients turning 65, Medigap open enrollment, RMDs, term life ending, renewals and birthdays. HIPAA BAA included. Pay $0 until your first issued policy." />
+<meta name="description" content="TitusDL CRM alerts you before the dates that matter: clients turning 65, Medigap open enrollment, RMDs, term life ending, renewals and birthdays. HIPAA BAA included. Pay $0 until your first issued policy, for up to 90 days." />
 <meta property="og:title" content="TitusDL CRM, the CRM for independent insurance agents" />
 <meta property="og:description" content="Never miss a renewal. Never lose a family record. One CRM built around how insurance agents actually work." />
 <meta property="og:image" content="https://titusdl.com/assets/og-image.png" />
@@ -486,7 +486,7 @@
   .hero-inner.stacked{grid-template-columns:1fr; text-align:center; gap:48px}
   .hero-inner.stacked .lede,.hero-inner.stacked .tag-row{margin-left:auto; margin-right:auto}
   .hero-inner.stacked .ctas{justify-content:center}
-  .hero-shots{position:relative; max-width:1000px; margin:0 auto; padding-right:120px}
+  .hero-shots{position:relative; max-width:1000px; margin:0 auto; padding-right:120px; padding-top:110px}
   .hero-shots .shot-phone{
     position:absolute; right:0; bottom:-36px; width:210px;
     border-radius:26px; border:6px solid #14161f; overflow:hidden; box-shadow:var(--shadow-lift);
@@ -494,7 +494,7 @@
   }
   .shot-phone img{width:100%; height:auto}
   @media (max-width:760px){
-    .hero-shots{padding-right:0}
+    .hero-shots{padding-right:0; padding-top:0}
     .hero-shots .shot-phone{position:relative; width:46%; margin:-40px 4% 0 auto; bottom:auto}
   }
   .shot-caption{font-size:0.8rem; color:var(--ink-faint); margin-top:52px; text-align:center}
@@ -538,7 +538,7 @@
 
 <a href="#pricing" class="promo-bar">
   <span class="promo-emoji" aria-hidden="true">🎉</span>
-  Early access is open: <strong>$0 until your first issued policy</strong> and <strong class="promo-red">we import your book free</strong>
+  Early access is open: <strong>$0 until your first issued policy</strong> (up to 90 days) and <strong class="promo-red">we import your book free</strong>
   <span class="promo-arrow" aria-hidden="true">→</span>
 </a>
 
@@ -588,7 +588,7 @@
             <a href="mailto:info@titusdl.com" class="btn btn-primary js-book">Book a 15-min demo</a>
             <a href="mailto:info@titusdl.com" class="btn btn-ghost glass js-start">Join early access</a>
           </div>
-          <p class="cta-note">Pay $0 until you write your first policy in it. We import your current book for you.</p>
+          <p class="cta-note">Pay $0 until your first issued policy, for up to 90 days. We import your current book for you.</p>
         </div>
 
         <div class="hero-visual">
@@ -599,11 +599,11 @@
                    alt="The CRM's Today screen: an overdue health-insurance renewal follow-up, an annuity task due today, and this week's follow-ups" />
             </div>
             <div class="shot-phone">
-              <img src="assets/product/mobile.jpg" width="755" height="1200"
-                   alt="The same Today screen on a phone" />
+              <img src="assets/product/mobile.jpg" width="724" height="1300"
+                   alt="A push notification reading 'You have new alerts. Open to see them.' over the Alerts screen: a Medigap open enrollment ending and a client turning 26" />
             </div>
           </div>
-          <p class="shot-caption">The real product. Every client shown is sample data.</p>
+          <p class="shot-caption">The real product with sample clients. On the phone: the Alerts screen, and the push exactly as it appears.</p>
         </div>
       </div>
     </div>
@@ -710,7 +710,7 @@
       <div class="section-head center">
         <span class="eyebrow">Alerts that know insurance</span>
         <h2>It tracks the dates a spreadsheet can't</h2>
-        <p>Each alert is worked out from what's already on file and arrives ahead of the date, on your Alerts screen and as a push to your phone.</p>
+        <p>Each alert is worked out from what's already on file and arrives ahead of the date, on your Alerts screen and as a push to your phone. Alerts and push come with Pro.</p>
       </div>
       <div class="alert-grid">
         <div class="alert-card glass"><span class="alert-when">3 months ahead</span><h3>Turning 65</h3><p>Start the Medicare conversation before another agent does.</p></div>
@@ -811,7 +811,7 @@
             <tr>
               <td>Know who turns 65 soon</td>
               <td class="no">Work it out by hand</td>
-              <td class="yes our-col">Alert 3 months ahead</td>
+              <td class="yes our-col">Alert 3 months ahead (Pro)</td>
             </tr>
             <tr>
               <td>Catch a renewal in time</td>
@@ -826,7 +826,7 @@
             <tr>
               <td>Hear about a date before it passes</td>
               <td class="no">Only if you open the file</td>
-              <td class="yes our-col">Push alert on your phone</td>
+              <td class="yes our-col">Push alert on your phone (Pro)</td>
             </tr>
             <tr>
               <td>Keep client data private</td>
@@ -920,6 +920,7 @@
       <div class="section-head center">
         <span class="eyebrow">Early-access pricing</span>
         <h2>Pay nothing until your first policy is issued</h2>
+        <p>Billing starts when your first new policy is issued or 90 days after you join, whichever comes first.</p>
       </div>
       <p class="pricing-lede">Standard: <strong>you have to remember.</strong> Pro: <strong>it reaches out first.</strong> Premium: <strong>it fills itself in.</strong></p>
       <div class="pricing-grid">
@@ -928,13 +929,14 @@
           <span class="launch-ribbon">Launch special</span>
           <div class="price-was"><s aria-label="Regular price $49.99">$49.99</s><span class="price-save">Save 20%</span></div>
           <div class="amount sale">$39.99 <span>/ user / month</span></div>
-          <p class="price-ends">$0 until your first issued policy · Join by Dec 31, 2026<span class="js-days-left"></span></p>
+          <p class="price-ends">$0 until your first issued policy (up to 90 days) · Join by Dec 31, 2026<span class="js-days-left"></span></p>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> All 8 product lines</li>
             <li><span class="check" aria-hidden="true">✓</span> Family & joint policy linking</li>
-            <li><span class="check" aria-hidden="true">✓</span> Renewal, RMD & Medicare-65 dates, automatic</li>
-            <li><span class="check" aria-hidden="true">✓</span> Recurring to-dos</li>
+            <li><span class="check" aria-hidden="true">✓</span> Renewal, RMD & Medicare-65 dates on your calendar</li>
+            <li><span class="check" aria-hidden="true">✓</span> Recurring to-do list</li>
             <li><span class="check" aria-hidden="true">✓</span> 2-step sign-in + access log</li>
+            <li><span class="check" aria-hidden="true">✓</span> HIPAA BAA included</li>
           </ul>
           <a href="mailto:info@titusdl.com" class="btn btn-ghost js-start" data-plan="Standard">Join early access</a>
         </div>
@@ -943,7 +945,7 @@
           <span class="launch-ribbon">Launch special</span>
           <div class="price-was"><s aria-label="Regular price $99.99">$99.99</s><span class="price-save">Save 40%</span></div>
           <div class="amount sale">$59.99 <span>/ user / month</span></div>
-          <p class="price-ends">$0 until your first issued policy · Join by Dec 31, 2026<span class="js-days-left"></span></p>
+          <p class="price-ends">$0 until your first issued policy (up to 90 days) · Join by Dec 31, 2026<span class="js-days-left"></span></p>
           <p class="one-line-roi">Save one or two renewals a year and Pro has paid for itself.</p>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Everything in Standard</li>
@@ -960,21 +962,21 @@
           <div class="price-was"><s aria-label="Regular price $150">$150</s><span class="price-save">Save 33%</span></div>
           <div class="amount sale">$99.99 <span>/ user / month</span></div>
           <p class="price-ends"><strong>Early members keep $99.99</strong> for as long as they stay subscribed. After launch, new members pay $150.</p>
-          <p class="one-line-roi">Upload the application. The client and policy are in your CRM.</p>
+          <p class="one-line-roi">Upload the application. Your CRM updates itself.</p>
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Everything in Pro</li>
-            <li><span class="check" aria-hidden="true">✓</span> Application upload: client & policy filled in for you</li>
+            <li><span class="check" aria-hidden="true">✓</span> Upload an application: the client, the policy and its dates update automatically</li>
             <li><span class="check" aria-hidden="true">✓</span> AI features, as each one ships</li>
           </ul>
           <a href="mailto:info@titusdl.com" class="btn btn-gold js-waitlist">Join the Premium waitlist</a>
         </div>
       </div>
-      <p class="lock-note">Agents who join early access by December 31, 2026 keep their launch price for as long as they stay subscribed.</p>
+      <p class="lock-note">Agents who join early access by December 31, 2026 keep their launch price for 12 months from the day billing starts.</p>
       <p class="price-fineprint">Prices in USD, before sales tax. Policies you bring in with your imported book don't start billing.</p>
       <div class="price-2027 glass">
         <span class="eyebrow">From January 1, 2027</span>
         <h3>Regular prices, or <span class="save">2 months free</span> when you pay for the year</h3>
-        <p>Agents who join after December 31, 2026 pay the regular monthly price, or 12 months for the price of 10 when they pay for the year up front. Billing still starts at their first issued policy.</p>
+        <p>Agents who join after December 31, 2026 pay the regular monthly price, or 12 months for the price of 10 when they pay for the year up front. Billing still starts at their first issued policy, or on day 90.</p>
         <table>
           <thead>
             <tr><th>Plan</th><th>Monthly</th><th>Yearly, paid up front</th></tr>
@@ -985,9 +987,9 @@
             <tr><td>Premium</td><td>$150 / mo</td><td><strong>$1,500 / yr</strong><small>2 months free</small></td></tr>
           </tbody>
         </table>
-        <p class="tax-note"><strong>Sales tax from 2027:</strong> starting January 1, 2027, California charges sales tax on software
-          subscriptions (SB 122). If your business is in California, sales tax for your area is added to each bill from then on.
-          Prices above don't include it.</p>
+        <p class="tax-note"><strong>Sales tax depends on your state.</strong> Some states tax software subscriptions and some don't.
+          Where yours does, we add the state and local sales tax for your business address to each bill. California starts
+          on January 1, 2027 (SB 122). Prices above don't include tax.</p>
       </div>
       <p class="custom-note glass">
         Need custom fields, a workflow change, or an integration? <a href="mailto:info@titusdl.com">Tell us</a>. We build what your team actually needs.
@@ -1009,8 +1011,13 @@
         </details>
         <details class="faq-item glass">
           <summary>When do I start paying?<span class="chev" aria-hidden="true">▾</span></summary>
-          <p>When the first new policy you write after joining is marked issued in the CRM. Until then you pay $0.
-            The policies in the book you import don't count.</p>
+          <p>On whichever comes first: the first new policy you write after joining is marked issued in the CRM, or
+            90 days after you join. Until then you pay $0. The policies in the book you import don't count.</p>
+        </details>
+        <details class="faq-item glass">
+          <summary>Can I pay yearly?<span class="chev" aria-hidden="true">▾</span></summary>
+          <p>Yes. Paying for a year up front gets you 12 months for the price of 10, at the price you're on. We'll
+            offer it when your billing starts.</p>
         </details>
         <details class="faq-item glass">
           <summary>Do you sign a BAA?<span class="chev" aria-hidden="true">▾</span></summary>
@@ -1034,8 +1041,9 @@
         </details>
         <details class="faq-item glass">
           <summary>Do I pay sales tax?<span class="chev" aria-hidden="true">▾</span></summary>
-          <p>Not in 2026. Starting January 1, 2027, California charges sales tax on software subscriptions,
-            so California customers will see their local sales tax added to each bill. Our listed prices don't include tax.</p>
+          <p>It depends on your state. Some states tax software subscriptions and some don't. Where yours does, we add
+            the state and local sales tax for your business address to each bill. California starts on January 1, 2027.
+            Listed prices don't include tax.</p>
         </details>
         <details class="faq-item glass">
           <summary>Does it work on mobile and tablet?<span class="chev" aria-hidden="true">▾</span></summary>
@@ -1050,7 +1058,7 @@
     <div class="container">
       <div class="contact-panel">
         <h2>See your own book in it, in 15 minutes.</h2>
-        <p>Book a quick demo. If it fits, we import your book and you pay nothing until your first new policy is issued.</p>
+        <p>Book a quick demo. If it fits, we import your book and you pay nothing until your first new policy is issued, for up to 90 days.</p>
         <a href="mailto:info@titusdl.com" class="btn btn-primary js-book">Book a 15-min demo</a>
       </div>
     </div>
