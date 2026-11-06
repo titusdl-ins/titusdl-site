@@ -490,24 +490,28 @@
   }
   .shot-caption{font-size:0.8rem; color:var(--ink-faint); margin-top:52px; text-align:center}
   /* hero: copy left, the real product right, both above the fold */
-  .hero-inner.hero-split{grid-template-columns:0.82fr 1.4fr; gap:48px; align-items:center}
-  .hero-split h1{font-size:clamp(2.3rem, 3.6vw, 3.3rem); line-height:1.07; letter-spacing:-0.03em; margin-top:18px}
-  .hero-split .lede{font-size:1.2rem; max-width:470px}
+  .hero-inner.hero-split{grid-template-columns:1fr 1.1fr; gap:56px; align-items:center}
+  .hero-split h1{font-size:clamp(2.8rem, 5.2vw, 4.6rem); line-height:1.0; letter-spacing:-0.035em; margin-top:20px}
+  .hero-split .lede{font-size:1.18rem; max-width:500px; margin-top:22px}
+  .hero-stats{display:flex; gap:28px; list-style:none; padding:0; margin:26px 0 0}
+  .hero-stats li{display:flex; flex-direction:column; gap:2px}
+  .hero-stats b{font-size:1.9rem; font-weight:800; letter-spacing:-0.02em; line-height:1; background:linear-gradient(135deg, var(--accent), var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .hero-stats span{font-size:0.82rem; color:var(--ink-faint); max-width:130px; line-height:1.3}
   .btn-lg{padding:16px 30px; font-size:1.06rem}
   .hero-proof{margin:18px 0 0; font-size:0.95rem; color:var(--ink-soft)}
   .hero-proof strong{color:var(--ink)}
-  .hero-stage{position:relative; padding:0 0 64px 0; margin-right:calc(-1 * max(24px, (100vw - 1120px) / 2 + 24px))}
-  .hero-stage .shot{border-top-right-radius:0; border-bottom-right-radius:0}
+  .hero-stage{position:relative; padding:0 0 56px 0}
+  
   .hero-stage .shot-phone{
     position:absolute; left:-40px; bottom:0; width:170px;
     border-radius:26px; border:6px solid #14161f; overflow:hidden; box-shadow:var(--shadow-lift); background:#fff;
   }
-  .hero-split .shot-caption{margin-top:10px; text-align:left; padding-left:150px}
+  .hero-split .shot-caption{margin-top:10px; text-align:right}
   @media (max-width:980px){
     .hero-inner.hero-split{grid-template-columns:1fr; gap:36px}
     .hero-split .lede{margin-left:auto; margin-right:auto}
     .hero-stage{margin-right:0; padding-bottom:40px}
-    .hero-stage .shot{border-radius:18px}
+    .hero-stats{justify-content:center}
     .hero-stage .shot-phone{left:auto; right:-6px; width:30%; min-width:110px}
     .hero-split .shot-caption{text-align:center; padding-left:0}
   }
@@ -583,15 +587,20 @@
       <div class="hero-inner hero-split">
         <div class="hero-copy">
           <span class="hero-badge glass"><span class="dot" aria-hidden="true"></span> Now enrolling early-access agents</span>
-          <h1>Never miss a <span class="grad-text">renewal</span>. Never lose a <span class="grad-text">family record</span>.</h1>
+          <h1>Never miss a <span class="grad-text">renewal</span> again.</h1>
           <p class="lede">
-            The CRM for independent insurance agents. Every morning it shows who to call, and your phone buzzes before a date slips.
+            Turning 65, RMDs, renewals, anniversaries. TitusDL CRM watches every date in your book and tells your phone first, so the call is yours, not another agent&rsquo;s.
           </p>
+          <ul class="hero-stats" aria-label="At a glance">
+            <li><b>10</b><span>kinds of dates watched</span></li>
+            <li><b>8</b><span>product lines, one client</span></li>
+            <li><b>3 days</b><span>to import your book, free</span></li>
+          </ul>
           <div class="ctas">
             <a href="mailto:info@titusdl.com" class="btn btn-primary btn-lg js-start">Join early access</a>
             <a href="#pricing" class="btn btn-ghost glass">See pricing</a>
           </div>
-          <p class="hero-proof"><strong>Free through Dec 31, 2026.</strong> We import your book. Decide in December. No card to join.</p>
+          <p class="hero-proof"><strong>Free through Dec 31, 2026.</strong> Decide in December. No card to join.</p>
         </div>
 
         <div class="hero-visual">
