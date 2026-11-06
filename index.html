@@ -419,6 +419,7 @@
     border-left:4px solid var(--accent); font-size:1rem; line-height:1.6; color:var(--ink);
   }
   .needs-note strong{color:var(--accent)}
+  .price-card li.note{margin:-6px 0 0 24px; font-size:0.82rem; opacity:0.75}
   .price-card li.hl{margin:0 -10px; padding:8px 10px; border-radius:10px; font-weight:700; background:rgba(255,255,255,0.2); color:#fff}
   .price-card.premium li.hl{background:rgba(214,170,70,0.2)}
 
@@ -547,7 +548,7 @@
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a href="mailto:info@titusdl.com" class="btn btn-primary btn-sm js-book">Book a demo</a>
+      <a href="mailto:info@titusdl.com" class="btn btn-primary btn-sm js-start">Join early access</a>
     </div>
   </div>
 </header>
@@ -576,8 +577,8 @@
             <span class="tag-chip group">Group Health</span>
           </div>
           <div class="ctas">
-            <a href="mailto:info@titusdl.com" class="btn btn-primary js-book">Book a 15-min demo</a>
-            <a href="mailto:info@titusdl.com" class="btn btn-ghost glass js-start">Join early access</a>
+            <a href="mailto:info@titusdl.com" class="btn btn-primary js-start">Join early access</a>
+            <a href="#pricing" class="btn btn-ghost glass">See pricing</a>
           </div>
           <p class="decide-note glass">
             <strong>Run your real book on it now. Decide in December.</strong>
@@ -955,6 +956,7 @@
           <ul>
             <li><span class="check" aria-hidden="true">✓</span> Everything in Pro</li>
             <li class="hl"><span class="check" aria-hidden="true">✓</span> Upload an application: the client, the policy and its dates update automatically</li>
+            <li class="note">After you upload an application, give it up to a day to show in your CRM.</li>
             <li><span class="check" aria-hidden="true">✓</span> AI features, as each one ships</li>
           </ul>
           <a href="mailto:info@titusdl.com" class="btn btn-gold js-waitlist">Join the Premium waitlist</a>
@@ -992,7 +994,9 @@
       <div class="faq-list">
         <details class="faq-item glass">
           <summary>How do I get my clients in?<span class="chev" aria-hidden="true">▾</span></summary>
-          <p>Send us your spreadsheet. We import it for you at no charge, so your book is already there the first time you sign in.</p>
+          <p>Once you&rsquo;ve signed in and accepted the BAA, upload your client list (Excel, Google Sheets, or an
+            export from your old CRM) on the Import screen. We check it and load it for you at no charge, within
+            3 days. Please don&rsquo;t email client files to us.</p>
         </details>
         <details class="faq-item glass">
           <summary>When do I start paying?<span class="chev" aria-hidden="true">▾</span></summary>
@@ -1028,13 +1032,8 @@
         </details>
         <details class="faq-item glass">
           <summary>When can I start?<span class="chev" aria-hidden="true">▾</span></summary>
-          <p>We're onboarding early-access agents one at a time. Join early access or book a demo, and we'll set up
-            your account with your book already imported.</p>
-        </details>
-        <details class="faq-item glass">
-          <summary>What happens on the demo?<span class="chev" aria-hidden="true">▾</span></summary>
-          <p>15 minutes. We show you the product with sample clients, look at how you track your book today,
-            and tell you honestly whether it fits.</p>
+          <p>Now. Join early access and we open your account and send you a short setup guide. Sign in, accept the
+            BAA, upload your client list, and your book is in within 3 days.</p>
         </details>
         <details class="faq-item glass">
           <summary>Where is my data stored?<span class="chev" aria-hidden="true">▾</span></summary>
@@ -1059,9 +1058,9 @@
   <section id="contact">
     <div class="container">
       <div class="contact-panel">
-        <h2>See your own book in it, in 15 minutes.</h2>
-        <p>Book a quick demo. If it fits, we import your book and you use Pro free through December 31, 2026.</p>
-        <a href="mailto:info@titusdl.com" class="btn btn-primary js-book">Book a 15-min demo</a>
+        <h2>Run your own book in it this year.</h2>
+        <p>Join early access and use Pro free through December 31, 2026. Upload your client list once you&rsquo;re in, and it&rsquo;s loaded within 3 days.</p>
+        <a href="mailto:info@titusdl.com" class="btn btn-primary js-start">Join early access</a>
       </div>
     </div>
   </section>
@@ -1075,24 +1074,14 @@
 </footer>
 
 <div class="sticky-cta">
-  <a href="mailto:info@titusdl.com" class="js-book">Book a 15-min demo</a>
+  <a href="mailto:info@titusdl.com" class="js-start">Join early access</a>
 </div>
 
 <script>
-  // Paste a scheduling link (Calendly, Google appointment page, ...) here and
-  // every "Book a demo" button opens it instead of a pre-filled email.
-  var BOOKING_URL = "";
-
   var mail = function (subject, body) {
     return "mailto:info@titusdl.com?subject=" + encodeURIComponent(subject) +
            "&body=" + encodeURIComponent(body);
   };
-  document.querySelectorAll(".js-book").forEach(function (a) {
-    if (BOOKING_URL) { a.href = BOOKING_URL; a.target = "_blank"; a.rel = "noopener"; return; }
-    a.href = mail("15-min demo request",
-      "Hi Titus Data Labs,\n\nI'd like a 15-minute demo.\n\n" +
-      "Best days/times for me:\nPhone:\nRoughly how many clients I have:\n");
-  });
   // "· N days left" next to the launch-special end date; hidden once it has passed.
   var daysLeft = Math.ceil((new Date(2027, 0, 1) - new Date()) / 864e5);
   if (daysLeft > 0) document.querySelectorAll(".js-days-left").forEach(function (el) {
