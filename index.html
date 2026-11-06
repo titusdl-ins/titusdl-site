@@ -549,6 +549,117 @@
   .hero .cta-note{font-size:0.86rem; color:var(--ink-faint); margin-top:14px}
   .decide-note{margin:18px auto 0; padding:14px 18px; border-radius:var(--radius-md); border-left:4px solid var(--accent); font-size:0.95rem; color:var(--ink-soft); max-width:560px}
   .decide-note strong{display:block; color:var(--ink); font-size:1.02rem; margin-bottom:4px}
+
+  /* =========================================================
+     Apple-style look (TK, 2026-11-06): white and #f5f5f7 bands,
+     big black type, one blue, no glass or gradient blobs.
+     Layered last so it wins over the rules above.
+     ========================================================= */
+  :root{
+    --ink:#1d1d1f; --ink-soft:#424245; --ink-faint:#6e6e73;
+    --accent:#0071e3; --accent-2:#0071e3; --surface:#ffffff;
+    --shadow-soft:none; --shadow-lift:0 30px 80px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.06);
+    --radius-lg:24px; --radius-md:20px; --maxw:1080px;
+  }
+  body{background:#fff; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Inter,Arial,sans-serif; line-height:1.5}
+  .mesh-bg{display:none}
+  .glass,.glass-solid{background:#fff; -webkit-backdrop-filter:none; backdrop-filter:none; border:0; box-shadow:none}
+  section{padding:120px 0}
+  @media (max-width:768px){section{padding:72px 0}}
+  main > section:nth-of-type(even){background:#f5f5f7}
+
+  /* promo: a quiet line, like Apple's banner */
+  .promo-bar{background:#f5f5f7; color:var(--ink); font-size:0.88rem; font-weight:400; padding:12px 16px; gap:6px; box-shadow:none}
+  .promo-bar strong,.promo-bar strong.promo-red{background:none; color:var(--ink); padding:0; font-weight:600; border-radius:0}
+  .promo-bar .promo-arrow{color:var(--accent)}
+
+  /* nav: full-width frosted bar */
+  header.site{padding:0; background:rgba(255,255,255,0.8); -webkit-backdrop-filter:saturate(180%) blur(20px); backdrop-filter:saturate(180%) blur(20px); border-bottom:1px solid rgba(0,0,0,0.08)}
+  header.site .bar{border-radius:0; padding:10px 24px; background:none; box-shadow:none; border:0}
+  .logo{font-weight:600; font-size:1rem}
+  .logo .mark{width:26px; height:26px; border-radius:7px; background:#1d1d1f; box-shadow:none}
+  nav.links a{font-size:0.82rem; font-weight:400; color:var(--ink)}
+  nav.links a:hover{color:var(--accent)}
+
+  /* buttons */
+  .btn{font-weight:500; transition:background .2s ease}
+  .btn:hover{transform:none}
+  .btn-primary{background:var(--accent); color:#fff; box-shadow:none}
+  .btn-primary:hover{background:#0077ed}
+  .btn-ghost{background:transparent; border:1px solid var(--accent); color:var(--accent)}
+  .btn-lg{padding:14px 28px; font-size:1.06rem}
+  .link-more{color:#0066cc; text-decoration:none; font-size:1.06rem}
+  .link-more:hover{text-decoration:underline}
+  .grad-text{background:none; color:var(--accent)}
+
+  /* type */
+  .eyebrow{color:var(--ink-faint); font-weight:600; letter-spacing:0.02em; text-transform:none; font-size:1rem}
+  .eyebrow::before{display:none}
+  .section-head{max-width:760px; margin:0 auto 64px; text-align:center}
+  .section-head h2{font-size:clamp(2.2rem,5vw,3.5rem); font-weight:700; letter-spacing:-0.03em; line-height:1.07}
+  .section-head p{font-size:1.25rem; color:var(--ink-faint); line-height:1.45}
+
+  /* hero */
+  .hero{padding:96px 0 120px; text-align:center}
+  .hero-head{max-width:900px; margin:0 auto}
+  .hero-kicker{margin:0 0 14px; font-size:1.1rem; font-weight:600; color:var(--ink-faint)}
+  .hero h1{font-size:clamp(3rem, 8.4vw, 6.4rem); font-weight:700; letter-spacing:-0.045em; line-height:1.0; margin:0; text-wrap:balance}
+  .hero-sub{font-size:clamp(1.2rem, 2.2vw, 1.6rem); color:var(--ink-faint); line-height:1.35; margin:24px auto 0; max-width:720px; text-wrap:balance}
+  .hero .ctas{justify-content:center; align-items:center; gap:28px; margin-top:36px}
+  .hero-fine{margin:18px 0 0; font-size:0.9rem; color:var(--ink-faint)}
+  .hero-visual{margin:72px auto 0; max-width:1000px}
+  .hero-stage{position:relative; padding:0 0 40px}
+  .hero-stage .shot{border-radius:16px; border:1px solid rgba(0,0,0,0.08); box-shadow:var(--shadow-lift)}
+  .hero-stage .shot-phone{position:absolute; right:-28px; bottom:0; width:200px; border-radius:30px; border:7px solid #1d1d1f; overflow:hidden; box-shadow:var(--shadow-lift); background:#fff}
+  .hero-stats{display:flex; justify-content:center; gap:0; list-style:none; padding:0; margin:64px auto 0; max-width:860px}
+  .hero-stats li{flex:1; display:flex; flex-direction:column; gap:6px; padding:0 24px; border-left:1px solid rgba(0,0,0,0.1)}
+  .hero-stats li:first-child{border-left:0}
+  .hero-stats b{font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-0.03em; line-height:1; color:var(--ink)}
+  .hero-stats span{font-size:0.95rem; color:var(--ink-faint)}
+  @media (max-width:760px){
+    .hero{padding:56px 0 72px}
+    .hero-visual{margin-top:44px}
+    .hero-stage .shot-phone{right:-6px; width:34%; border-width:5px; border-radius:22px}
+    .hero-stats li{padding:0 10px}
+    .hero-stats span{font-size:0.8rem}
+  }
+
+  /* cards and panels: flat, white on grey, grey on white */
+  .feature-card,.fact-card,.alert-card,.faq-item,.table-wrap,.needs-note,.push-note,.price-2027{background:#fff; border-radius:var(--radius-md)}
+  main > section:nth-of-type(odd) .feature-card,
+  main > section:nth-of-type(odd) .fact-card,
+  main > section:nth-of-type(odd) .alert-card,
+  main > section:nth-of-type(odd) .faq-item,
+  main > section:nth-of-type(odd) .table-wrap{background:#f5f5f7}
+  .feature-icon{background:none; color:var(--ink); margin-bottom:12px}
+  .alert-when{background:none; padding:0; color:#bf4800}
+  .shot{border-radius:16px; border:1px solid rgba(0,0,0,0.08); box-shadow:0 20px 50px rgba(0,0,0,0.08)}
+  .pain-photo{box-shadow:none !important}
+
+  /* pricing */
+  .price-card.featured{background:#1d1d1f; border:0}
+  .price-card.featured .btn{color:#1d1d1f !important}
+  .price-card.premium{background:#fff; color:var(--ink); border:1px solid rgba(0,0,0,0.1); box-shadow:none}
+  .price-card.premium:not(.featured) li{color:var(--ink-soft)}
+  .price-card.premium .price-was s{color:var(--ink-faint)}
+  .price-card.premium .price-ends{color:var(--ink-faint)}
+  .price-card.premium .price-ends strong{color:var(--ink)}
+  .price-card.premium .check{color:var(--accent)}
+  .price-card.premium .tag{background:#f5f5f7; color:var(--ink-faint)}
+  .price-card.premium .one-line-roi{background:#f5f5f7; border:0}
+  .btn-gold{background:var(--accent); color:#fff; box-shadow:none}
+  .one-line-roi{border:0}
+  .sticky-cta a{background:var(--accent) !important; box-shadow:none}
+  @media (max-width:768px){
+    header.site .bar{flex-wrap:nowrap; gap:14px; padding:10px 16px}
+    header.site .bar > .btn{display:none}
+    nav.links{order:0; width:auto; gap:14px; padding-top:0; margin-left:auto}
+    nav.links a{font-size:0.8rem}
+    .logo{white-space:nowrap; flex:none}
+  }
+  @media (max-width:480px){nav.links a[href="#security"],nav.links a[href="#alerts"]{display:none}}
+  .pain-photo,.pain-photo img{box-shadow:none !important}
+  .pain-photo::before,.pain-photo::after{display:none !important}
 </style>
 </head>
 <body>
@@ -584,40 +695,36 @@
   <!-- HERO -->
   <section id="top" class="hero">
     <div class="container">
-      <div class="hero-inner hero-split">
-        <div class="hero-copy">
-          <span class="hero-badge glass"><span class="dot" aria-hidden="true"></span> Now enrolling early-access agents</span>
-          <h1>Never miss a <span class="grad-text">renewal</span> again.</h1>
-          <p class="lede">
-            Turning 65, RMDs, renewals, anniversaries. TitusDL CRM watches every date in your book and tells your phone first, so the call is yours, not another agent&rsquo;s.
-          </p>
-          <ul class="hero-stats" aria-label="At a glance">
-            <li><b>10</b><span>kinds of dates watched</span></li>
-            <li><b>8</b><span>product lines, one client</span></li>
-            <li><b>3 days</b><span>to import your book, free</span></li>
-          </ul>
-          <div class="ctas">
-            <a href="mailto:info@titusdl.com" class="btn btn-primary btn-lg js-start">Join early access</a>
-            <a href="#pricing" class="btn btn-ghost glass">See pricing</a>
-          </div>
-          <p class="hero-proof"><strong>Free through Dec 31, 2026.</strong> Decide in December. No card to join.</p>
+      <div class="hero-head">
+        <p class="hero-kicker">TitusDL CRM <span aria-hidden="true">·</span> for independent insurance agents</p>
+        <h1>Never miss a renewal again.</h1>
+        <p class="hero-sub">Turning 65, RMDs, renewals, anniversaries. It watches every date in your book, and your phone knows first.</p>
+        <div class="ctas">
+          <a href="mailto:info@titusdl.com" class="btn btn-primary btn-lg js-start">Join early access</a>
+          <a href="#pricing" class="link-more">See pricing <span aria-hidden="true">›</span></a>
         </div>
+        <p class="hero-fine">Free through Dec 31, 2026. We import your book. No card to join.</p>
+      </div>
 
-        <div class="hero-visual">
-          <div class="hero-stage">
-            <div class="shot">
-              <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/product/customers.jpg" width="2000" height="1055" fetchpriority="high"
-                   alt="The customer list: counts of prospects, pending, issued and cancelled clients above a table of clients with each policy and its status" />
-            </div>
-            <div class="shot-phone">
-              <img src="assets/product/mobile.jpg" width="724" height="1300"
-                   alt="A push notification reading 'You have new alerts. Open to see them.' over the Alerts screen: a Medigap open enrollment ending and a client turning 26" />
-            </div>
+      <div class="hero-visual">
+        <div class="hero-stage">
+          <div class="shot">
+            <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <img src="assets/product/customers.jpg" width="2000" height="1055" fetchpriority="high"
+                 alt="The customer list: counts of prospects, pending, issued and cancelled clients above a table of clients with each policy and its status" />
           </div>
-          <p class="shot-caption">The real product, with sample clients.</p>
+          <div class="shot-phone">
+            <img src="assets/product/mobile.jpg" width="724" height="1300"
+                 alt="A push notification reading 'You have new alerts. Open to see them.' over the Alerts screen: a Medigap open enrollment ending and a client turning 26" />
+          </div>
         </div>
       </div>
+
+      <ul class="hero-stats" aria-label="At a glance">
+        <li><b>10</b><span>kinds of insurance dates watched</span></li>
+        <li><b>8</b><span>product lines under one client</span></li>
+        <li><b>3 days</b><span>to import your book, free</span></li>
+      </ul>
     </div>
   </section>
 
