@@ -676,6 +676,91 @@
   .tour-copy li::before{color:var(--accent)}
   .tour-step .shot{max-width:1080px; margin:0 auto; width:100%; border-radius:18px; box-shadow:0 40px 90px rgba(0,0,0,0.14), 0 10px 30px rgba(0,0,0,0.06)}
   @media (max-width:760px){.tour{gap:72px} .tour-copy ul{flex-direction:column; align-items:center}}
+
+  /* =========================================================
+     Liquid glass (TK, 2026-11-06): Siri-style smoky panels and
+     clear "water drop" glass, over soft colour washes so the blur
+     has something to bend.
+     ========================================================= */
+  :root{
+    --lg-light:linear-gradient(160deg, rgba(255,255,255,0.72), rgba(255,255,255,0.38));
+    --lg-light-edge:inset 0 1px 0 rgba(255,255,255,0.95), inset 0 -1px 0 rgba(255,255,255,0.35), inset 0 0 0 1px rgba(255,255,255,0.45);
+    --lg-dark:linear-gradient(170deg, rgba(18,18,22,0.82) 0%, rgba(58,58,64,0.62) 55%, rgba(120,120,128,0.45) 100%);
+    --lg-dark-edge:inset 0 1px 0 rgba(255,255,255,0.22), inset 0 0 0 1px rgba(255,255,255,0.10);
+    --lg-drop:0 24px 60px rgba(20,20,40,0.18), 0 6px 18px rgba(20,20,40,0.08);
+  }
+  .lg-blur{-webkit-backdrop-filter:blur(28px) saturate(180%); backdrop-filter:blur(28px) saturate(180%)}
+
+  /* floating glass nav */
+  header.site{background:none; border:0; -webkit-backdrop-filter:none; backdrop-filter:none; padding:12px 0 0}
+  header.site .bar{border-radius:999px; padding:10px 14px 10px 20px; background:var(--lg-light);
+    -webkit-backdrop-filter:blur(28px) saturate(180%); backdrop-filter:blur(28px) saturate(180%);
+    box-shadow:var(--lg-light-edge), 0 10px 30px rgba(20,20,40,0.10)}
+
+  /* colour washes behind the glass */
+  .hero, #alerts, #features, #security, #faq{position:relative; isolation:isolate}
+  .hero::before, #alerts::before, #features::before, #security::before, #faq::before{
+    content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+    background:
+      radial-gradient(38% 30% at 18% 62%, rgba(0,113,227,0.16), transparent 70%),
+      radial-gradient(34% 28% at 84% 38%, rgba(175,82,222,0.14), transparent 70%),
+      radial-gradient(30% 26% at 60% 92%, rgba(52,199,89,0.10), transparent 70%);
+  }
+
+  /* Siri-style card over the hero screen */
+  .hero-stage{isolation:isolate}
+  .hero-stage .shot-phone{left:auto}
+  .siri-card{
+    position:absolute; left:-36px; top:16%; z-index:3; width:min(420px, 46%); text-align:left;
+    padding:20px 22px 14px; border-radius:30px; color:#fff;
+    background:var(--lg-dark); -webkit-backdrop-filter:blur(26px) saturate(170%); backdrop-filter:blur(26px) saturate(170%);
+    box-shadow:var(--lg-dark-edge), 0 30px 70px rgba(0,0,0,0.30);
+  }
+  .siri-head{margin:0 0 10px; font-size:0.95rem; color:rgba(255,255,255,0.72); display:flex; align-items:center; gap:8px}
+  .siri-head b{color:#fff}
+  .siri-dot{width:8px; height:8px; border-radius:50%; background:#ff453a; box-shadow:0 0 10px #ff453a}
+  .siri-card ul{list-style:none; margin:0; padding:0}
+  .siri-card li{display:flex; gap:14px; align-items:center; padding:10px 0; border-top:1px solid rgba(255,255,255,0.10)}
+  .siri-card svg{flex:none; width:26px; height:26px; fill:none; stroke:#fff; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round}
+  .siri-card li span{display:flex; flex-direction:column; font-size:0.86rem; color:rgba(255,255,255,0.70); line-height:1.35}
+  .siri-card li b{font-size:1.02rem; font-weight:600; color:#fff}
+  @media (max-width:760px){
+    .siri-card{left:-6px; top:auto; bottom:-24px; width:78%; padding:14px 16px 8px; border-radius:22px}
+    .siri-card li b{font-size:0.9rem}
+    .siri-card li span{font-size:0.76rem}
+  }
+
+  /* clear glass cards */
+  .feature-card,.fact-card,.alert-card,.faq-item,.needs-note,
+  main > section:nth-of-type(odd) .feature-card,
+  main > section:nth-of-type(odd) .fact-card,
+  main > section:nth-of-type(odd) .alert-card,
+  main > section:nth-of-type(odd) .faq-item{
+    background:var(--lg-light); -webkit-backdrop-filter:blur(24px) saturate(180%); backdrop-filter:blur(24px) saturate(180%);
+    box-shadow:var(--lg-light-edge), var(--lg-drop); border-radius:26px;
+  }
+
+  /* smoky glass: push bubble and the Pro card */
+  .push-note{background:var(--lg-light); box-shadow:var(--lg-light-edge), var(--lg-drop); border-radius:26px}
+  .push-note .bubble{background:var(--lg-dark); -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px); box-shadow:var(--lg-dark-edge), 0 12px 30px rgba(0,0,0,0.25); border-radius:20px}
+  .price-card.featured{background:linear-gradient(170deg, rgba(18,18,22,0.92), rgba(44,44,50,0.86)); -webkit-backdrop-filter:blur(26px) saturate(170%); backdrop-filter:blur(26px) saturate(170%);
+    box-shadow:var(--lg-dark-edge), 0 30px 70px rgba(0,0,0,0.28); border-radius:32px}
+  #pricing{position:relative; isolation:isolate}
+  #pricing::before{content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+    background:radial-gradient(30% 40% at 35% 45%, rgba(0,113,227,0.22), transparent 70%), radial-gradient(28% 36% at 68% 55%, rgba(175,82,222,0.18), transparent 70%)}
+  .price-card.premium{background:var(--lg-light); -webkit-backdrop-filter:blur(26px) saturate(180%); backdrop-filter:blur(26px) saturate(180%);
+    box-shadow:var(--lg-light-edge), var(--lg-drop); border:0; border-radius:32px}
+
+  /* glass buttons */
+  .btn-ghost,.link-more{border-radius:999px}
+  .btn-ghost{background:var(--lg-light); border:0; box-shadow:var(--lg-light-edge), 0 6px 18px rgba(20,20,40,0.08)}
+  .sticky-cta a{box-shadow:inset 0 1px 0 rgba(255,255,255,0.35), 0 12px 30px rgba(0,113,227,0.35) !important}
+
+  @media (prefers-reduced-transparency: reduce){
+    header.site .bar,.siri-card,.feature-card,.fact-card,.alert-card,.faq-item,.price-card{-webkit-backdrop-filter:none !important; backdrop-filter:none !important}
+    .siri-card,.price-card.featured{background:#1d1d1f}
+    header.site .bar,.feature-card,.fact-card,.alert-card,.faq-item,.price-card.premium{background:#fff}
+  }
 </style>
 </head>
 <body>
@@ -724,6 +809,13 @@
 
       <div class="hero-visual">
         <div class="hero-stage">
+          <div class="siri-card" aria-label="Example of the Alerts screen, without client names">
+            <p class="siri-head"><span class="siri-dot" aria-hidden="true"></span>Act on these <b>2</b></p>
+            <ul>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span><b>Turning 65 in 3 months</b>Start the Medicare conversation</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span><b>Medigap window closes in 53 days</b>No medical underwriting until then</span></li>
+            </ul>
+          </div>
           <div class="shot">
             <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
             <img src="assets/product/customers.jpg" width="2000" height="970" fetchpriority="high"
