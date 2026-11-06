@@ -489,6 +489,28 @@
     .hero-shots .shot-phone{position:relative; width:46%; margin:-40px 4% 0 auto; bottom:auto}
   }
   .shot-caption{font-size:0.8rem; color:var(--ink-faint); margin-top:52px; text-align:center}
+  /* hero: copy left, the real product right, both above the fold */
+  .hero-inner.hero-split{grid-template-columns:0.82fr 1.4fr; gap:48px; align-items:center}
+  .hero-split h1{font-size:clamp(2.3rem, 3.6vw, 3.3rem); line-height:1.07; letter-spacing:-0.03em; margin-top:18px}
+  .hero-split .lede{font-size:1.2rem; max-width:470px}
+  .btn-lg{padding:16px 30px; font-size:1.06rem}
+  .hero-proof{margin:18px 0 0; font-size:0.95rem; color:var(--ink-soft)}
+  .hero-proof strong{color:var(--ink)}
+  .hero-stage{position:relative; padding:0 0 64px 0; margin-right:calc(-1 * max(24px, (100vw - 1120px) / 2 + 24px))}
+  .hero-stage .shot{border-top-right-radius:0; border-bottom-right-radius:0}
+  .hero-stage .shot-phone{
+    position:absolute; left:-40px; bottom:0; width:170px;
+    border-radius:26px; border:6px solid #14161f; overflow:hidden; box-shadow:var(--shadow-lift); background:#fff;
+  }
+  .hero-split .shot-caption{margin-top:10px; text-align:left; padding-left:150px}
+  @media (max-width:980px){
+    .hero-inner.hero-split{grid-template-columns:1fr; gap:36px}
+    .hero-split .lede{margin-left:auto; margin-right:auto}
+    .hero-stage{margin-right:0; padding-bottom:40px}
+    .hero-stage .shot{border-radius:18px}
+    .hero-stage .shot-phone{left:auto; right:-6px; width:30%; min-width:110px}
+    .hero-split .shot-caption{text-align:center; padding-left:0}
+  }
 
   .tour{display:flex; flex-direction:column; gap:72px}
   .tour-step{display:grid; grid-template-columns:320px 1fr; gap:40px; align-items:center}
@@ -558,48 +580,33 @@
   <!-- HERO -->
   <section id="top" class="hero">
     <div class="container">
-      <div class="hero-inner stacked">
+      <div class="hero-inner hero-split">
         <div class="hero-copy">
           <span class="hero-badge glass"><span class="dot" aria-hidden="true"></span> Now enrolling early-access agents</span>
           <h1>Never miss a <span class="grad-text">renewal</span>. Never lose a <span class="grad-text">family record</span>.</h1>
           <p class="lede">
-            TitusDL CRM is built for independent insurance agents. Open it in the morning and it tells you who to call:
-            overdue follow-ups, renewals, birthdays, and clients about to turn 65. When something comes due, your phone tells you.
+            The CRM for independent insurance agents. Every morning it shows who to call, and your phone buzzes before a date slips.
           </p>
-          <div class="tag-row" aria-label="Product lines tracked">
-            <span class="tag-chip life">Life</span>
-            <span class="tag-chip medicare">Medicare</span>
-            <span class="tag-chip health">Health</span>
-            <span class="tag-chip annuity">Annuity</span>
-            <span class="tag-chip cancer">Cancer</span>
-            <span class="tag-chip ltc">Long-Term Care</span>
-            <span class="tag-chip retire">Business Retirement</span>
-            <span class="tag-chip group">Group Health</span>
-          </div>
           <div class="ctas">
-            <a href="mailto:info@titusdl.com" class="btn btn-primary js-start">Join early access</a>
+            <a href="mailto:info@titusdl.com" class="btn btn-primary btn-lg js-start">Join early access</a>
             <a href="#pricing" class="btn btn-ghost glass">See pricing</a>
           </div>
-          <p class="decide-note glass">
-            <strong>Run your real book on it now. Decide in December.</strong>
-            Use it free through December 31, 2026, and we import your book for you. If it earns its place, keep it
-            in 2027 at the early-bird price. If it doesn&rsquo;t, tell us and you pay nothing. No card to join.
-          </p>
+          <p class="hero-proof"><strong>Free through Dec 31, 2026.</strong> We import your book. Decide in December. No card to join.</p>
         </div>
 
         <div class="hero-visual">
-          <div class="hero-shots">
+          <div class="hero-stage">
             <div class="shot">
               <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-              <img src="assets/product/home.jpg" width="2000" height="561"
-                   alt="The CRM's Today screen: an overdue health-insurance renewal follow-up, an annuity task due today, this week's follow-ups, and the Alerts tab with one new alert" />
+              <img src="assets/product/customers.jpg" width="2000" height="1055" fetchpriority="high"
+                   alt="The customer list: counts of prospects, pending, issued and cancelled clients above a table of clients with each policy and its status" />
             </div>
             <div class="shot-phone">
               <img src="assets/product/mobile.jpg" width="724" height="1300"
                    alt="A push notification reading 'You have new alerts. Open to see them.' over the Alerts screen: a Medigap open enrollment ending and a client turning 26" />
             </div>
           </div>
-          <p class="shot-caption">The real product with sample clients. On the phone: the Alerts screen, and the push exactly as it appears.</p>
+          <p class="shot-caption">The real product, with sample clients.</p>
         </div>
       </div>
     </div>
@@ -617,17 +624,17 @@
       <div class="tour">
         <div class="tour-step">
           <div class="tour-copy">
-            <h3>Your whole book in one list</h3>
-            <p>Every client, their status on each product line, and how many are prospects, pending or issued, at a glance.</p>
+            <h3>Your morning, already sorted</h3>
+            <p>Open it and the day is laid out: what is overdue, what is due today, and who to follow up with this week.</p>
             <ul>
-              <li>Search by name, phone, email or address</li>
-              <li>Tap a count to see just those clients</li>
+              <li>Overdue renewals and follow-ups on top</li>
+              <li>New alerts flagged on the Alerts tab</li>
             </ul>
           </div>
           <div class="shot">
             <div class="shot-bar" aria-hidden="true"><span></span><span></span><span></span></div>
-            <img src="assets/product/customers.jpg" loading="lazy" width="2000" height="1055"
-                 alt="The customer list: counts of prospects, pending, issued and cancelled clients above a table of clients with each policy and its status" />
+            <img src="assets/product/home.jpg" loading="lazy" width="2000" height="561"
+                 alt="The CRM's Today screen: an overdue health-insurance renewal follow-up, an annuity task due today, this week's follow-ups, and the Alerts tab with one new alert" />
           </div>
         </div>
 
