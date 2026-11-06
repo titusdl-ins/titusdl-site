@@ -663,6 +663,19 @@
   @media (max-width:480px){nav.links a[href="#security"],nav.links a[href="#alerts"]{display:none}}
   .pain-photo,.pain-photo img{box-shadow:none !important}
   .pain-photo::before,.pain-photo::after{display:none !important}
+
+  /* product tour: copy centred above, screenshot full width and large (TK, 2026-11-06) */
+  .tour{gap:120px}
+  #product .section-head{margin-bottom:110px}
+  .tour-step{grid-template-columns:1fr; gap:40px; text-align:center}
+  .tour-copy{max-width:720px; margin:0 auto}
+  .tour-copy h3{font-size:clamp(1.9rem,4vw,2.8rem); font-weight:700; letter-spacing:-0.03em; line-height:1.1}
+  .tour-copy p{font-size:1.2rem; color:var(--ink-faint); margin:14px auto 18px; max-width:620px}
+  .tour-copy ul{flex-direction:row; justify-content:center; flex-wrap:wrap; gap:10px 28px}
+  .tour-copy li{font-size:1rem; color:var(--ink-soft)}
+  .tour-copy li::before{color:var(--accent)}
+  .tour-step .shot{max-width:1080px; margin:0 auto; width:100%; border-radius:18px; box-shadow:0 40px 90px rgba(0,0,0,0.14), 0 10px 30px rgba(0,0,0,0.06)}
+  @media (max-width:760px){.tour{gap:72px} .tour-copy ul{flex-direction:column; align-items:center}}
 </style>
 </head>
 <body>
