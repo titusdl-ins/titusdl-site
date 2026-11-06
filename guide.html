@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Setup Guide · TitusDL CRM</title>
+<meta name="description" content="Get started with TitusDL CRM: sign in, set up 2-step sign-in, accept the agreements, upload your client list, and turn on alerts." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235b8def'/%3E%3Cstop offset='1' stop-color='%23a06bf2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<style>
+  :root{--ink:#14161f;--ink-soft:#454a58;--ink-faint:#6b7182;--accent:#4f6df5;--line:#e3e6ef;--card:#ffffff;--bg:#f6f7fb;--tip:#eef2ff;--warn:#fff4e5;--warn-ink:#8a4b00}
+  @media (prefers-color-scheme: dark){:root{--ink:#eef0f6;--ink-soft:#c3c7d3;--ink-faint:#9097a8;--accent:#8aa0ff;--line:#2a2e3b;--card:#171a23;--bg:#0f1117;--tip:#1c2340;--warn:#2e2412;--warn-ink:#f3c27a}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 16px 72px}
+  .brand{font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);text-decoration:none}
+  h1{font-size:2rem;line-height:1.2;margin:10px 0 8px;letter-spacing:-0.02em}
+  .lede{color:var(--ink-soft);margin:0 0 28px}
+  .toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:0;list-style:none}
+  .toc a{display:inline-block;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink-soft);text-decoration:none;font-size:0.88rem}
+  .toc a:hover{color:var(--accent);border-color:var(--accent)}
+  section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 22px 18px;margin:0 0 16px}
+  h2{display:flex;align-items:center;gap:12px;font-size:1.2rem;margin:0 0 10px}
+  .n{flex:none;display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-size:0.9rem;font-weight:700}
+  ol,ul{padding-left:22px;margin:8px 0}
+  li{margin:4px 0}
+  p{margin:8px 0}
+  code{font:0.9em ui-monospace,Menlo,monospace;background:var(--tip);padding:1px 6px;border-radius:6px}
+  .tip,.warn{border-radius:10px;padding:10px 14px;margin:12px 0 4px;font-size:0.94rem}
+  .tip{background:var(--tip)}
+  .warn{background:var(--warn);color:var(--warn-ink)}
+  a{color:var(--accent)}
+  footer{color:var(--ink-faint);font-size:0.88rem;text-align:center;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="brand" href="/">TitusDL CRM</a>
+  <h1>Setup guide</h1>
+  <p class="lede">About 10 minutes, once. Have your phone and your computer with you.</p>
+
+  <ul class="toc">
+    <li><a href="#sign-in">1. Sign in</a></li>
+    <li><a href="#two-step">2. 2-step sign-in</a></li>
+    <li><a href="#agree">3. NPN and agreements</a></li>
+    <li><a href="#import">4. Upload your clients</a></li>
+    <li><a href="#alerts">5. Alerts on your phone</a></li>
+    <li><a href="#daily">6. Your day in the CRM</a></li>
+    <li><a href="#help">Help</a></li>
+  </ul>
+
+  <section id="sign-in">
+    <h2><span class="n">1</span>Sign in</h2>
+    <ol>
+      <li>Open the email from TitusDL and click the link to set your password.</li>
+      <li>From then on, sign in at <a href="https://ins-crm.titusdl.com">ins-crm.titusdl.com</a>. Bookmark it.</li>
+    </ol>
+    <p>Use a computer for setup. You can use your phone for everything after.</p>
+  </section>
+
+  <section id="two-step">
+    <h2><span class="n">2</span>Set up 2-step sign-in</h2>
+    <p>Your clients' SSNs and medications are in the CRM, so every sign-in needs a 6-digit code from your phone as well as your password.</p>
+    <ol>
+      <li>On your phone, install <strong>Google Authenticator</strong> (Play Store on Android, App Store on iPhone). It's free.</li>
+      <li>After your first sign-in, the CRM shows a QR code. Leave that screen open.</li>
+      <li>In Google Authenticator, tap <strong>+</strong>, then <strong>Scan a QR code</strong>, and point it at the QR code on your computer.</li>
+      <li>Type the 6 digits the app shows into the CRM and confirm.</li>
+    </ol>
+    <div class="warn"><strong>Scan inside the authenticator app, not with your phone's camera.</strong> The camera only shows a long line of text and nothing gets set up. Don't refresh the setup screen until you're done, and never send a photo of the QR code to anyone.</div>
+    <p>A one-minute video on the setup screen shows each step.</p>
+    <p>Next time you sign in, open Google Authenticator and type the current 6 digits.</p>
+  </section>
+
+  <section id="agree">
+    <h2><span class="n">3</span>Your NPN and the agreements</h2>
+    <p>Before your account opens:</p>
+    <ol>
+      <li>Read the Terms of Service and the Business Associate Agreement (BAA). Scroll each one to the end.</li>
+      <li>Enter your <strong>NPN</strong> (National Producer Number). It's on your insurance license. If you don't have it handy, <a href="https://nipr.com/help/look-up-your-npn" target="_blank" rel="noreferrer">look it up on NIPR</a>.</li>
+      <li>Check the box and click <strong>Agree and continue</strong>.</li>
+    </ol>
+    <p>The BAA is what HIPAA requires before your clients' health information can be stored with us. You only do this step once.</p>
+  </section>
+
+  <section id="import">
+    <h2><span class="n">4</span>Upload your client list</h2>
+    <ol>
+      <li>Click <strong>Import</strong> in the menu.</li>
+      <li>Choose the spreadsheet you keep your clients in today (Excel or CSV, up to 20 MB) and click <strong>Upload</strong>.</li>
+      <li>Your clients will be in your CRM <strong>within 3 days</strong>. The Import screen shows <em>Loaded</em> when it's done.</li>
+    </ol>
+    <p>Send it as it is: one sheet or many tabs, your own column names. We map it for you. After it's loaded, we delete the file.</p>
+    <div class="warn">Please don't email client files to us. Email isn't a safe place for SSNs and health information. Use the Import screen.</div>
+  </section>
+
+  <section id="alerts">
+    <h2><span class="n">5</span>Alerts on your phone</h2>
+    <p>The CRM tells you ahead of time about the dates that matter: a client turning 65, an annuity RMD, a renewal, a policy anniversary. Each morning there's something new, you get one notification. It says what kind of alert it is and how urgent, never a client's name.</p>
+    <p><strong>iPhone or iPad:</strong></p>
+    <ol>
+      <li>Open <a href="https://ins-crm.titusdl.com">ins-crm.titusdl.com</a> in Safari and sign in.</li>
+      <li>Tap <strong>Share</strong>, then <strong>Add to Home Screen</strong>.</li>
+      <li>Open the CRM from the new icon on your Home Screen, go to <strong>Alerts</strong>, click <strong>Turn on notifications</strong>, and tap <strong>Allow</strong>.</li>
+    </ol>
+    <p><strong>Android:</strong> open the CRM in Chrome, go to <strong>Alerts</strong>, click <strong>Turn on notifications</strong>, and tap <strong>Allow</strong>.</p>
+    <div class="tip">Do this on each phone or computer where you want notifications.</div>
+  </section>
+
+  <section id="daily">
+    <h2><span class="n">6</span>Your day in the CRM</h2>
+    <ul>
+      <li><strong>Home:</strong> what's due today and this week.</li>
+      <li><strong>Customers:</strong> one search shows a client and every policy they hold. Link family members into one household.</li>
+      <li><strong>Alerts:</strong> everything coming up, with the dates you must act on first.</li>
+      <li><strong>Calendar</strong> and <strong>To-Do:</strong> renewals, RMDs and Medicare-65 dates, plus your own recurring tasks.</li>
+      <li><strong>Product Status:</strong> where each application stands, from prospect to issued.</li>
+    </ul>
+    <p>Medicare and health plans roll into the next plan year on their own. They're marked until you review them.</p>
+    <p><strong>Premium (coming soon):</strong> upload an application and the client, the policy and its dates fill in by themselves. Give it up to a day to appear.</p>
+  </section>
+
+  <section id="help">
+    <h2><span class="n">?</span>Help</h2>
+    <ul>
+      <li><strong>New phone, or lost your authenticator?</strong> Email us and we'll reset your 2-step sign-in.</li>
+      <li><strong>Forgot your password?</strong> On the sign-in screen, click <em>Get a link by email</em>.</li>
+      <li><strong>Missing a field, report or reminder?</strong> Tell us. Early-access requests get built first.</li>
+    </ul>
+    <p><a href="mailto:info@titusdl.com">info@titusdl.com</a></p>
+  </section>
+
+  <footer>TitusDL CRM · Titus Data Labs</footer>
+</div>
+</body>
+</html>
