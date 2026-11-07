@@ -796,12 +796,11 @@
 
   /* hero */
   .hero{overflow:hidden; background:radial-gradient(70% 55% at 50% 22%, #1a1a1c 0%, #050505 60%, #000 100%)}
-  .hero-ribbon{position:absolute; left:50%; top:-130px; width:min(1500px, 140vw); transform:translateX(-50%); pointer-events:none; z-index:0; opacity:0.95;
-    animation:ribbonBreath 9s ease-in-out infinite alternate}
+  .hero-ribbon{position:absolute; left:50%; top:-190px; width:min(1700px, 170vw); aspect-ratio:1300/520; transform:translateX(-50%); pointer-events:none; z-index:0; border:0}
   @keyframes ribbonBreath{0%{transform:translateX(-50%) scaleY(0.92); opacity:0.8} 100%{transform:translateX(-50%) scaleY(1.08); opacity:1}}
   @media (prefers-reduced-motion: reduce){.hero-ribbon{animation:none}}
   .hero .container{position:relative; z-index:1}
-  .hero-head{padding-top:260px}
+  .hero-head{padding-top:150px}
   .hero-kicker{color:var(--gold); font-size:1.15rem}
   .hero h1{color:#fff}
   .h1-dim{background:linear-gradient(180deg,#fff,rgba(255,255,255,0.5)); -webkit-background-clip:text; background-clip:text; color:transparent}
@@ -810,7 +809,7 @@
   .hero-stats b{color:#fff}
   .hero-stats li{border-left-color:rgba(255,255,255,0.14)}
   .hero-stats span{color:var(--ink-soft)}
-  @media (max-width:760px){.hero-head{padding-top:150px} .hero-ribbon{top:-10px; width:220vw}}
+  @media (max-width:760px){.hero-head{padding-top:80px} .hero-ribbon{top:-110px; width:220vw; height:auto}}
 
   /* readable text everywhere */
   .section-head p,.tour-copy p,.feature-card p,.fact-card p,.alert-card p,.push-note p,.faq-item p{color:var(--ink-soft)}
@@ -958,7 +957,7 @@
 
   <!-- HERO -->
   <section id="top" class="hero">
-    <img class="hero-ribbon" src="assets/brand/ribbon.svg" alt="" aria-hidden="true" />
+    <object class="hero-ribbon" type="image/svg+xml" data="assets/brand/horizon.svg" aria-hidden="true" tabindex="-1"></object>
     <div class="container">
       <div class="hero-head">
         <p class="hero-kicker">You built your book one client at a time.</p>

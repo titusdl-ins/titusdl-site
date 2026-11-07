@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-150 -110 1300 520">
+<defs>
+ <filter id="soft" filterUnits="userSpaceOnUse" x="-400" y="-300" width="1800" height="900"><feGaussianBlur stdDeviation="16"/></filter>
+ <filter id="halo" filterUnits="userSpaceOnUse" x="-400" y="-300" width="1800" height="900"><feGaussianBlur stdDeviation="46"/></filter>
+ <filter id="edge" filterUnits="userSpaceOnUse" x="-400" y="-300" width="1800" height="900"><feGaussianBlur stdDeviation="1.6"/></filter>
+ <filter id="gl" filterUnits="userSpaceOnUse" x="-400" y="-300" width="1800" height="900"><feGaussianBlur stdDeviation="2"/></filter>
+ <filter id="gl2" filterUnits="userSpaceOnUse" x="-400" y="-300" width="1800" height="900"><feGaussianBlur stdDeviation="10"/></filter>
+ <linearGradient id="h" x1="-200" x2="1200" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#b08840" stop-opacity="0"/><stop offset=".22" stop-color="#c99a4a" stop-opacity=".6"/>
+  <stop offset=".42" stop-color="#d9b56e"/><stop offset=".5" stop-color="#f6e7bf"/><stop offset=".58" stop-color="#d9b56e"/>
+  <stop offset=".78" stop-color="#c99a4a" stop-opacity=".6"/><stop offset="1" stop-color="#b08840" stop-opacity="0"/>
+ </linearGradient>
+ <radialGradient id="dome" cx="500" cy="150" r="440" gradientUnits="userSpaceOnUse" gradientTransform="translate(500 150) scale(1 .22) translate(-500 -150)">
+  <stop offset="0" stop-color="#fff4da"/><stop offset=".35" stop-color="#e8c987" stop-opacity=".85"/>
+  <stop offset=".75" stop-color="#b08840" stop-opacity=".18"/><stop offset="1" stop-color="#b08840" stop-opacity="0"/>
+ </radialGradient>
+ <radialGradient id="aura" cx="500" cy="130" r="520" gradientUnits="userSpaceOnUse" gradientTransform="translate(500 130) scale(1 .38) translate(-500 -130)">
+  <stop offset="0" stop-color="#d9b56e" stop-opacity=".5"/><stop offset="1" stop-color="#d9b56e" stop-opacity="0"/>
+ </radialGradient>
+ <radialGradient id="spark"><stop offset="0" stop-color="#fffaf0"/><stop offset=".45" stop-color="#e8c987" stop-opacity=".75"/><stop offset="1" stop-color="#d9b56e" stop-opacity="0"/></radialGradient>
+ <radialGradient id="core"><stop offset="0" stop-color="#ffffff"/><stop offset=".25" stop-color="#fff3d0"/><stop offset=".6" stop-color="#e2c275" stop-opacity=".55"/><stop offset="1" stop-color="#d9b56e" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="-150" y="-110" width="1300" height="300" fill="url(#aura)" filter="url(#halo)"/>
+<!-- the dome rises from the line (20% taller); the reflection below is a sliver -->
+<path d="M-200 150 L60 150 C300 136 400 82 500 82 C600 82 700 136 940 150 L1200 150 L940 150 C760 152 620 159 500 159 C380 159 240 152 60 150 Z" fill="url(#dome)" filter="url(#soft)"/>
+<path d="M200 150 C340 140 430 104 500 104 C570 104 660 140 800 150 C650 151 570 153 500 153 C430 153 350 151 230 150 Z" fill="#fff4da" opacity=".85" filter="url(#soft)"/>
+<path d="M-200 150 L60 150 C300 136 400 82 500 82 C600 82 700 136 940 150 L1200 150" fill="none" stroke="url(#h)" stroke-width="2.4" filter="url(#edge)"/>
+<path d="M-200 150 C200 150 380 148 500 146 C620 148 800 150 1200 150" fill="none" stroke="url(#h)" stroke-width="1.6" filter="url(#edge)"/>
+<path d="M-200 150 C200 150 380 148 500 146 C620 148 800 150 1200 150" fill="none" stroke="url(#h)" stroke-width="5" opacity=".35" filter="url(#gl2)"/>
+<!-- dates: closer, larger and brighter as they near today -->
+<style>@media (prefers-reduced-motion: reduce){.mv{display:none}}</style>
+<g filter="url(#gl)">
+<ellipse cx="-40" cy="150" rx="8.7" ry="1.5" fill="url(#spark)" opacity="0.37"/>
+<ellipse cx="1040" cy="150" rx="8.7" ry="1.5" fill="url(#spark)" opacity="0.37"/>
+<ellipse cx="90" cy="150" rx="11.3" ry="1.7" fill="url(#spark)" opacity="0.48"/>
+<ellipse cx="910" cy="150" rx="11.3" ry="1.7" fill="url(#spark)" opacity="0.48"/>
+<ellipse cx="200" cy="150" rx="14.0" ry="2.0" fill="url(#spark)" opacity="0.60"/>
+<ellipse cx="800" cy="150" rx="14.0" ry="2.0" fill="url(#spark)" opacity="0.60"/>
+<ellipse cx="295" cy="150" rx="16.7" ry="2.3" fill="url(#spark)" opacity="0.72"/>
+<ellipse cx="705" cy="150" rx="16.7" ry="2.3" fill="url(#spark)" opacity="0.72"/>
+<ellipse cx="370" cy="150" rx="19.3" ry="2.5" fill="url(#spark)" opacity="0.83"/>
+<ellipse cx="630" cy="150" rx="19.3" ry="2.5" fill="url(#spark)" opacity="0.83"/>
+<ellipse cx="430" cy="150" rx="22.0" ry="2.8" fill="url(#spark)" opacity="0.95"/>
+<ellipse cx="570" cy="150" rx="22.0" ry="2.8" fill="url(#spark)" opacity="0.95"/>
+<g class="mv">
+<ellipse cy="150" rx="14" ry="2" fill="url(#spark)">
+  <animate attributeName="cx" from="-150" to="500" dur="12s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .9 .6"/>
+  <animate attributeName="opacity" values="0;.9;.9;0" keyTimes="0;.3;.85;1" dur="12s" begin="0s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cy="150" rx="14" ry="2" fill="url(#spark)">
+  <animate attributeName="cx" from="-150" to="500" dur="12s" begin="-4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .9 .6"/>
+  <animate attributeName="opacity" values="0;.9;.9;0" keyTimes="0;.3;.85;1" dur="12s" begin="-4s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cy="150" rx="14" ry="2" fill="url(#spark)">
+  <animate attributeName="cx" from="-150" to="500" dur="12s" begin="-8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .9 .6"/>
+  <animate attributeName="opacity" values="0;.9;.9;0" keyTimes="0;.3;.85;1" dur="12s" begin="-8s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cy="150" rx="14" ry="2" fill="url(#spark)">
+  <animate attributeName="cx" from="1150" to="500" dur="12s" begin="0s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .9 .6"/>
+  <animate attributeName="opacity" values="0;.9;.9;0" keyTimes="0;.3;.85;1" dur="12s" begin="0s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cy="150" rx="14" ry="2" fill="url(#spark)">
+  <animate attributeName="cx" from="1150" to="500" dur="12s" begin="-4s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .9 .6"/>
+  <animate attributeName="opacity" values="0;.9;.9;0" keyTimes="0;.3;.85;1" dur="12s" begin="-4s" repeatCount="indefinite"/>
+</ellipse>
+<ellipse cy="150" rx="14" ry="2" fill="url(#spark)">
+  <animate attributeName="cx" from="1150" to="500" dur="12s" begin="-8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".4 0 .9 .6"/>
+  <animate attributeName="opacity" values="0;.9;.9;0" keyTimes="0;.3;.85;1" dur="12s" begin="-8s" repeatCount="indefinite"/>
+</ellipse>
+</g>
+</g>
+<!-- today: one hot point on the line, grading out to gold -->
+<ellipse cx="500" cy="146" rx="150" ry="16" fill="url(#core)" opacity=".7" filter="url(#gl2)"/>
+<ellipse cx="500" cy="146" rx="46" ry="9" fill="url(#core)" filter="url(#gl)"/>
+<ellipse cx="500" cy="146" rx="7" ry="3.2" fill="#ffffff"/>
+</svg>
