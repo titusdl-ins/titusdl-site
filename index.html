@@ -843,6 +843,56 @@
   @media (prefers-reduced-transparency: reduce){
     header.site .bar,.feature-card,.fact-card,.alert-card,.faq-item,.price-card.premium{background:#161618}
   }
+
+  /* =========================================================
+     Light below the hero (TK, 2026-11-06): the black hero stays;
+     everything after it is light again, easier on older eyes.
+     ========================================================= */
+  main > section:not(.hero){
+    --ink:#1d1d1f; --ink-soft:#3a3a3c; --ink-faint:#6e6e73; --accent:#0071e3; --accent-2:#0071e3; --good:#1a9c6b; --warn:#b4881a;
+    --lg-light:linear-gradient(160deg, rgba(255,255,255,0.85), rgba(255,255,255,0.55));
+    --lg-light-edge:inset 0 1px 0 rgba(255,255,255,0.95), inset 0 0 0 1px rgba(0,0,0,0.05);
+    --lg-drop:0 20px 50px rgba(20,20,40,0.10);
+    background:#fff; color:var(--ink);
+  }
+  main > section:not(.hero):nth-of-type(odd){background:#f5f5f7}
+  main > section:not(.hero) .eyebrow,main > section:not(.hero) .pain-tag{color:#8a5a00}
+  main > section:not(.hero) .pricing-lede,main > section:not(.hero) details.faq-item summary{color:var(--ink)}
+  main > section:not(.hero) .alert-when{color:#bf4800}
+  .price-card.premium .price-ends strong{color:var(--ink)}
+  .price-card.premium .tag{background:#efeff1; color:var(--ink-faint)}
+  .price-card.premium li.hl{color:var(--ink) !important}
+  .price-card.premium .btn-gold{background:#1d1d1f; color:#fff}
+  .price-card.premium .one-line-roi{background:#f5f5f7}
+  main > section:not(.hero) .shot{box-shadow:0 30px 70px rgba(0,0,0,0.14), 0 0 0 1px rgba(0,0,0,0.06)}
+  footer.site{background:#f5f5f7; color:var(--ink-faint)}
+  .sticky-cta a{background:#1d1d1f !important; color:#fff !important}
+
+  /* sign-up dialog: big, plain, readable */
+  dialog.join{border:0; padding:0; border-radius:28px; width:min(560px, calc(100vw - 24px)); max-height:calc(100dvh - 24px); overflow:auto;
+    background:#fff; color:#1d1d1f; box-shadow:0 40px 120px rgba(0,0,0,0.45)}
+  dialog.join::backdrop{background:rgba(0,0,0,0.55); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px)}
+  dialog.join form,.join-done{position:relative; padding:34px 32px 28px; display:flex; flex-direction:column; gap:16px}
+  dialog.join h2{font-size:2rem; letter-spacing:-0.02em; margin:0}
+  .join-lede{margin:-6px 0 4px; color:#3a3a3c; font-size:1.05rem}
+  dialog.join label{display:flex; flex-direction:column; gap:6px; font-weight:600; font-size:1rem; color:#1d1d1f}
+  dialog.join small{font-weight:400; color:#6e6e73}
+  dialog.join input:not([type=radio]),dialog.join select,dialog.join textarea{font:inherit; font-weight:400; font-size:1.05rem; padding:14px 16px; border-radius:14px; border:1px solid #d2d2d7; background:#fafafa; color:#1d1d1f}
+  dialog.join input:focus,dialog.join select:focus,dialog.join textarea:focus{outline:3px solid rgba(0,113,227,0.35); border-color:#0071e3; background:#fff}
+  .join-row{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+  .join-plan{border:0; padding:0; margin:0; display:flex; flex-direction:column; gap:10px}
+  .join-plan legend{font-weight:600; margin-bottom:8px}
+  .join-plan label{flex-direction:row !important; align-items:center; gap:10px !important; font-weight:500 !important; padding:12px 14px; border:1px solid #d2d2d7; border-radius:14px; cursor:pointer}
+  .join-plan label:has(input:checked){border-color:#0071e3; background:rgba(0,113,227,0.06)}
+  .join-plan input{width:20px; height:20px; accent-color:#0071e3}
+  .join-hp{position:absolute !important; left:-9999px; width:1px; height:1px; overflow:hidden}
+  .join-err{margin:0; color:#c0392b; font-weight:600}
+  .join-go{justify-content:center; background:#0071e3 !important; color:#fff !important}
+  .join-go:disabled{opacity:0.6}
+  .join-fine{margin:0; text-align:center; color:#6e6e73; font-size:0.9rem}
+  .join-x{position:absolute; top:14px; right:16px; width:40px; height:40px; border-radius:50%; border:0; background:#f2f2f4; font-size:1.6rem; line-height:1; cursor:pointer; color:#3a3a3c}
+  .join-done p{font-size:1.1rem; color:#3a3a3c; margin:0}
+  @media (max-width:520px){.join-row{grid-template-columns:1fr} dialog.join form,.join-done{padding:28px 20px 22px}}
 </style>
 </head>
 <body>
@@ -1037,119 +1087,6 @@
       <div class="push-note glass">
         <div class="bubble" aria-hidden="true"><b>TitusDL CRM</b>You have new alerts. Open to see them.</div>
         <p>That's the whole notification. Client names and dates never leave the app, so nothing private shows on a lock screen.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section id="features">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">Built in, not bolted on</span>
-        <h2>Everything a general CRM makes you set up yourself</h2>
-      </div>
-
-      <div class="feature-grid">
-        <div class="feature-card glass">
-          <div class="feature-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg>
-          </div>
-          <h3>8 product lines, one view</h3>
-          <p>Life, Medicare, health, annuity, cancer, long-term care, business retirement and group health.</p>
-        </div>
-        <div class="feature-card glass">
-          <div class="feature-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 2.5-5 6-5s6 2 6 5M12 20c0-3 2.5-5 6-5"/></svg>
-          </div>
-          <h3>Families & joint policies</h3>
-          <p>Link a household once and every call starts with the whole picture.</p>
-        </div>
-        <div class="feature-card glass">
-          <div class="feature-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></svg>
-          </div>
-          <h3>Dates that work themselves out</h3>
-          <p>Birthdays, renewals, RMDs and Medicare-65 land on your calendar without you typing them in.</p>
-        </div>
-        <div class="feature-card glass">
-          <div class="feature-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-          </div>
-          <h3>Follow-ups that come back</h3>
-          <p>Recurring to-dos reappear on schedule, so a quarterly check-in never depends on memory.</p>
-        </div>
-        <div class="feature-card glass">
-          <div class="feature-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
-          </div>
-          <h3>Status across every line</h3>
-          <p>Issued, pending, prospect, cancelled: see where your whole book stands in one screen.</p>
-        </div>
-        <div class="feature-card glass">
-          <div class="feature-icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg>
-          </div>
-          <h3>Works on your phone</h3>
-          <p>The same client book on phone, tablet or desktop, in the browser. Nothing to install.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SPREADSHEET VS TITUS -->
-  <section id="compare">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">Still on spreadsheets?</span>
-        <h2>What changes on day one</h2>
-      </div>
-      <div class="table-wrap glass vs-table">
-        <table>
-          <thead>
-            <tr>
-              <th>When you need to…</th>
-              <th>Spreadsheets</th>
-              <th class="our-col">TitusDL CRM</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Find a client's full picture</td>
-              <td class="mid">Search across tabs and files</td>
-              <td class="yes our-col">One search, every policy</td>
-            </tr>
-            <tr>
-              <td>Know who turns 65 soon</td>
-              <td class="no">Work it out by hand</td>
-              <td class="yes our-col">Alert 3 months ahead (Pro &amp; Premium)</td>
-            </tr>
-            <tr>
-              <td>Catch a renewal in time</td>
-              <td class="no">Hope you remember</td>
-              <td class="yes our-col">Shows up on your Today screen</td>
-            </tr>
-            <tr>
-              <td>See a whole family</td>
-              <td class="no">Separate rows, no link</td>
-              <td class="yes our-col">Linked in one household</td>
-            </tr>
-            <tr>
-              <td>Hear about a date before it passes</td>
-              <td class="no">Only if you open the file</td>
-              <td class="yes our-col">Push alert on your phone (Pro &amp; Premium)</td>
-            </tr>
-            <tr>
-              <td>Update a client after a new application</td>
-              <td class="no">Retype it from the paperwork</td>
-              <td class="yes our-col">Upload the application, it fills itself in (Premium)</td>
-            </tr>
-            <tr>
-              <td>Keep client data private</td>
-              <td class="no">Anyone with the file sees all of it</td>
-              <td class="yes our-col">Each agent sees only their own book</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </section>
@@ -1390,6 +1327,35 @@
   <a href="mailto:info@titusdl.com" class="js-start">Join early access</a>
 </div>
 
+<dialog id="join" class="join" aria-labelledby="join-title">
+  <form id="join-form" method="dialog" novalidate>
+    <button type="button" class="join-x" aria-label="Close" data-close>&times;</button>
+    <h2 id="join-title">Join early access</h2>
+    <p class="join-lede">Free through Dec 31, 2026. We set up your account and load your book for you.</p>
+    <label>Your name<input name="name" autocomplete="name" required maxlength="120"></label>
+    <label>Email<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+    <div class="join-row">
+      <label>State<select name="state" autocomplete="address-level1"><option value="">Choose</option>
+        <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>DC</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>PR</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option></select></label>
+      <label>Clients in your book<select name="book"><option value="">Choose</option><option>Under 100</option><option>100-300</option><option>300-1,000</option><option>Over 1,000</option></select></label>
+    </div>
+    <fieldset class="join-plan"><legend>Plan</legend>
+      <label><input type="radio" name="plan" value="Pro" checked> Pro <small>free now, $59.99 in 2027</small></label>
+      <label><input type="radio" name="plan" value="Premium"> Premium waitlist <small>$99.99 in 2027</small></label>
+    </fieldset>
+    <label>Anything we should know? <small>(optional)</small><textarea name="note" rows="3" maxlength="1000" placeholder="Where your clients are today: Excel, Google Sheets, another CRM"></textarea></label>
+    <label class="join-hp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+    <p class="join-err" role="alert" hidden></p>
+    <button type="submit" class="btn btn-primary btn-lg join-go">Request early access</button>
+    <p class="join-fine">We only use this to set up your account. No card, no spam.</p>
+  </form>
+  <div class="join-done" hidden>
+    <h2>Thank you<span class="join-who"></span>.</h2>
+    <p>We&rsquo;ll email you at <strong class="join-mail"></strong> with your account and a short setup guide.</p>
+    <button type="button" class="btn btn-primary btn-lg" data-close>Close</button>
+  </div>
+</dialog>
+
 <script>
   var mail = function (subject, body) {
     return "mailto:info@titusdl.com?subject=" + encodeURIComponent(subject) +
@@ -1411,6 +1377,43 @@
       "Hi Titus Data Labs,\n\nI'd like early access to TitusDL CRM" + (plan ? " on " + plan : "") + ".\n\n" +
       "Name:\nPhone:\nWhere my clients live today (Excel, Google Sheets, another CRM):\n");
   });
+  // Sign-up form (TK, 2026-11-06): every Join / waitlist button opens it; the
+  // mailto href stays as the fallback when scripts are off.
+  var ENDPOINT = "https://early-access-91693302373.us-west1.run.app";
+  var dlg = document.getElementById("join"), form = document.getElementById("join-form");
+  if (dlg && typeof dlg.showModal === "function") {
+    var open = function (plan) {
+      form.hidden = false; dlg.querySelector(".join-done").hidden = true;
+      form.querySelector(".join-err").hidden = true;
+      form.querySelector('input[name="plan"][value="' + (plan === "Premium" ? "Premium" : "Pro") + '"]').checked = true;
+      dlg.showModal(); form.querySelector('input[name="name"]').focus();
+    };
+    document.querySelectorAll(".js-start,.js-waitlist").forEach(function (a) {
+      a.addEventListener("click", function (e) { e.preventDefault(); open(a.classList.contains("js-waitlist") ? "Premium" : a.getAttribute("data-plan")); });
+    });
+    dlg.querySelectorAll("[data-close]").forEach(function (b) { b.addEventListener("click", function () { dlg.close(); }); });
+    dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var err = form.querySelector(".join-err"), go = form.querySelector(".join-go");
+      var data = {}; new FormData(form).forEach(function (v, k) { data[k] = v; });
+      if (!data.name || data.name.trim().length < 2) { err.textContent = "Please enter your name."; err.hidden = false; return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email || "")) { err.textContent = "Please enter a valid email."; err.hidden = false; return; }
+      err.hidden = true; go.disabled = true; go.textContent = "Sending\u2026";
+      fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || "error"); }); })
+        .then(function () {
+          dlg.querySelector(".join-who").textContent = ", " + data.name.trim().split(/\s+/)[0];
+          dlg.querySelector(".join-mail").textContent = data.email.trim();
+          form.hidden = true; dlg.querySelector(".join-done").hidden = false; form.reset();
+        })
+        .catch(function (x) {
+          err.textContent = (x && x.message && x.message !== "error" && x.message.indexOf("fetch") < 0) ? x.message : "Something went wrong. Please try again, or email info@titusdl.com.";
+          err.hidden = false;
+        })
+        .finally(function () { go.disabled = false; go.textContent = "Request early access"; });
+    });
+  }
 </script>
 
 </body>
