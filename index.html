@@ -763,6 +763,86 @@
     .siri-card,.price-card.featured{background:#1d1d1f}
     header.site .bar,.feature-card,.fact-card,.alert-card,.faq-item,.price-card.premium{background:#fff}
   }
+
+  /* =========================================================
+     Dark, with a ribbon of light (TK, 2026-11-06). Agents are 40+:
+     bigger base type, near-white text on black, nothing faint.
+     ========================================================= */
+  html{font-size:17px}
+  :root{
+    --ink:#f5f5f7; --ink-soft:#d2d2d7; --ink-faint:#a1a1a6; --accent:#2997ff; --accent-2:#2997ff; --good:#30d158; --warn:#ffd60a;
+    --lg-light:linear-gradient(160deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035));
+    --lg-light-edge:inset 0 1px 0 rgba(255,255,255,0.16), inset 0 0 0 1px rgba(255,255,255,0.07);
+    --lg-drop:0 24px 60px rgba(0,0,0,0.55);
+    --gold:#e2c275;
+  }
+  body{background:#000; color:var(--ink)}
+  main > section:nth-of-type(even){background:#0a0a0b}
+  .hero::before, #alerts::before, #features::before, #security::before, #faq::before, #pricing::before{opacity:0.55}
+
+  .promo-bar{background:#0f0f10; color:var(--ink-soft); border-bottom:1px solid rgba(255,255,255,0.06)}
+  .promo-bar strong,.promo-bar strong.promo-red{color:#fff}
+  header.site .bar{background:linear-gradient(160deg, rgba(40,40,44,0.72), rgba(20,20,22,0.62))}
+  nav.links a{color:#e8e8ed}
+  nav.links a:hover{color:#fff}
+  .logo{color:#fff}
+  img.mark{border-radius:7px}
+
+  .btn-primary{background:#fff; color:#000}
+  .btn-primary:hover{background:#e8e8ed}
+  .link-more{color:#2997ff}
+  .btn-ghost{color:#fff}
+  .sticky-cta a{background:#fff !important; color:#000 !important; box-shadow:0 12px 30px rgba(0,0,0,0.6) !important}
+
+  /* hero */
+  .hero{overflow:hidden; background:radial-gradient(70% 55% at 50% 22%, #1a1a1c 0%, #050505 60%, #000 100%)}
+  .hero-ribbon{position:absolute; left:50%; top:-130px; width:min(1500px, 140vw); transform:translateX(-50%); pointer-events:none; z-index:0; opacity:0.95;
+    animation:ribbonBreath 9s ease-in-out infinite alternate}
+  @keyframes ribbonBreath{0%{transform:translateX(-50%) scaleY(0.92); opacity:0.8} 100%{transform:translateX(-50%) scaleY(1.08); opacity:1}}
+  @media (prefers-reduced-motion: reduce){.hero-ribbon{animation:none}}
+  .hero .container{position:relative; z-index:1}
+  .hero-head{padding-top:260px}
+  .hero-kicker{color:var(--gold); font-size:1.15rem}
+  .hero h1{color:#fff}
+  .h1-dim{background:linear-gradient(180deg,#fff,rgba(255,255,255,0.5)); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .hero-sub{color:var(--ink-soft)}
+  .hero-fine{color:var(--ink-faint)}
+  .hero-stats b{color:#fff}
+  .hero-stats li{border-left-color:rgba(255,255,255,0.14)}
+  .hero-stats span{color:var(--ink-soft)}
+  @media (max-width:760px){.hero-head{padding-top:150px} .hero-ribbon{top:-10px; width:220vw}}
+
+  /* readable text everywhere */
+  .section-head p,.tour-copy p,.feature-card p,.fact-card p,.alert-card p,.push-note p,.faq-item p{color:var(--ink-soft)}
+  .tour-copy li{color:var(--ink)}
+  .eyebrow{color:var(--gold)}
+  .alert-when{color:#ff9f0a}
+  .feature-icon{color:#fff}
+  .pain-fix{background:rgba(48,209,88,0.12); color:var(--ink)}
+  .pain-tag{color:var(--gold)}
+  .shot{border-color:rgba(255,255,255,0.08); box-shadow:0 40px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.06)}
+  .table-wrap,main > section:nth-of-type(odd) .table-wrap{background:var(--lg-light); box-shadow:var(--lg-light-edge)}
+  .vs-table th{color:var(--ink-faint)}
+  .vs-table td,.vs-table th{border-color:rgba(255,255,255,0.08)}
+  td.no{color:#ff6961} td.mid{color:#ffd60a} td.yes{color:#30d158}
+  .our-col{background:rgba(41,151,255,0.10)}
+  .needs-note{color:var(--ink-soft)}
+  .pricing-lede{color:#fff}
+  .price-card.featured{border:1px solid rgba(226,194,117,0.45)}
+  .price-card.featured .btn{background:#fff !important; color:#000 !important}
+  .price-card.premium,main .price-card.premium{color:var(--ink)}
+  .price-card.premium .price-ends strong{color:#fff}
+  .price-card.premium .tag{background:rgba(255,255,255,0.10); color:var(--ink-soft)}
+  .price-card.premium .one-line-roi{background:rgba(255,255,255,0.06)}
+  .price-card li.hl{background:rgba(226,194,117,0.14) !important; color:#fff !important}
+  .btn-gold{background:#fff; color:#000}
+  .lock-note,.price-fineprint{color:var(--ink-soft)}
+  details.faq-item summary{color:#fff}
+  footer.site{color:var(--ink-faint); background:#000}
+  .siri-card{box-shadow:inset 0 1px 0 rgba(255,255,255,0.22), inset 0 0 0 1px rgba(255,255,255,0.12), 0 30px 80px rgba(0,0,0,0.7)}
+  @media (prefers-reduced-transparency: reduce){
+    header.site .bar,.feature-card,.fact-card,.alert-card,.faq-item,.price-card.premium{background:#161618}
+  }
 </style>
 </head>
 <body>
@@ -797,11 +877,12 @@
 
   <!-- HERO -->
   <section id="top" class="hero">
+    <img class="hero-ribbon" src="assets/brand/ribbon.svg" alt="" aria-hidden="true" />
     <div class="container">
       <div class="hero-head">
-        <p class="hero-kicker">For independent agents with Medicare clients</p>
+        <p class="hero-kicker">You built your book one client at a time.</p>
         <h1>Your Medicare clients <span class="h1-dim">are someone else&rsquo;s leads.</span></h1>
-        <p class="hero-sub">Every client about to turn 65. Every AEP. Every Medigap window about to close. TitusDL CRM finds them in your book and tells your phone first, months before another agent calls.</p>
+        <p class="hero-sub">Every client about to turn 65. Every AEP. Every Medigap window about to close. TitusDL CRM keeps watch over the book you spent years building, and tells your phone first, months before another agent calls.</p>
         <div class="ctas">
           <a href="mailto:info@titusdl.com" class="btn btn-primary btn-lg js-start">Put my book in it, free</a>
           <a href="#pricing" class="link-more">See pricing <span aria-hidden="true">›</span></a>

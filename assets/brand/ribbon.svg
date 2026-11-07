@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -100 1000 500">
+  <defs>
+    <filter id="soft" filterUnits="userSpaceOnUse" x="-200" y="-300" width="1400" height="900"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="glow" filterUnits="userSpaceOnUse" x="-200" y="-300" width="1400" height="900"><feGaussianBlur stdDeviation="42"/></filter>
+    <filter id="edge" filterUnits="userSpaceOnUse" x="-200" y="-300" width="1400" height="900"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <linearGradient id="core" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".3" stop-color="#d9dde6" stop-opacity=".7"/>
+      <stop offset=".5" stop-color="#fff"/><stop offset=".72" stop-color="#ffe6c4" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="iris" x1="0" x2="1">
+      <stop offset="0" stop-color="#ff9f0a" stop-opacity="0"/><stop offset=".25" stop-color="#ffb45c"/><stop offset=".45" stop-color="#ff7ad9"/>
+      <stop offset=".62" stop-color="#5ac8fa"/><stop offset=".8" stop-color="#7d7aff"/><stop offset="1" stop-color="#7d7aff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff5e6" stop-opacity=".32"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <ellipse cx="500" cy="160" rx="430" ry="120" fill="url(#halo)" filter="url(#glow)"/>
+  <g style="mix-blend-mode:screen">
+    <path d="M40 150 C260 110 380 60 520 70 C660 80 760 140 960 150 C760 170 640 210 500 200 C360 190 250 175 40 150Z" fill="url(#core)" opacity=".55" filter="url(#soft)"/>
+    <path d="M120 152 C300 120 420 95 540 110 C650 125 720 160 900 150 C720 180 620 205 500 198 C380 191 300 172 120 152Z" fill="#fff" opacity=".6" filter="url(#soft)"/>
+    <path d="M250 150 C360 135 450 128 560 140 C640 149 700 162 800 158 C700 175 610 185 520 180 C430 175 340 165 250 150Z" fill="#fff" filter="url(#edge)"/>
+    <path d="M60 150 C260 110 380 60 520 70 C660 80 760 140 960 150" fill="none" stroke="url(#iris)" stroke-width="2.5" filter="url(#edge)" opacity=".95"/>
+    <path d="M120 156 C320 190 420 205 520 198 C620 191 720 170 900 150" fill="none" stroke="url(#iris)" stroke-width="2" filter="url(#edge)" opacity=".75"/>
+  </g>
+</svg>
