@@ -28,7 +28,8 @@
 <path d="M-200 150 C200 150 380 148 500 146 C620 148 800 150 1200 150" fill="none" stroke="url(#h)" stroke-width="1.6" filter="url(#edge)"/>
 <path d="M-200 150 C200 150 380 148 500 146 C620 148 800 150 1200 150" fill="none" stroke="url(#h)" stroke-width="5" opacity=".35" filter="url(#gl2)"/>
 <!-- dates: closer, larger and brighter as they near today -->
-<style>@media (prefers-reduced-motion: reduce){.mv{display:none}}</style>
+<!-- TK, 2026-11-06: the glints always drift; with reduced motion they are only fainter (slow, small, no large movement). -->
+<style>@media (prefers-reduced-motion: reduce){.mv{opacity:.6}}</style>
 <g filter="url(#gl)">
 <ellipse cx="-40" cy="150" rx="8.7" ry="1.5" fill="url(#spark)" opacity="0.37"/>
 <ellipse cx="1040" cy="150" rx="8.7" ry="1.5" fill="url(#spark)" opacity="0.37"/>
