@@ -893,16 +893,47 @@
   .join-x{position:absolute; top:14px; right:16px; width:40px; height:40px; border-radius:50%; border:0; background:#f2f2f4; font-size:1.6rem; line-height:1; cursor:pointer; color:#3a3a3c}
   .join-done p{font-size:1.1rem; color:#3a3a3c; margin:0}
   @media (max-width:520px){.join-row{grid-template-columns:1fr} dialog.join form,.join-done{padding:28px 20px 22px}}
+
+  /* Top promo (TK, 2026-11-06): has to land. Black glass, a moving rim of
+     light, gold label, big offer line, days left, and a glass pill button. */
+  .promo{position:relative; z-index:60; background:radial-gradient(60% 140% at 50% 0%, #1c1c1f 0%, #070708 70%); overflow:hidden}
+  .promo::after{content:""; position:absolute; left:0; right:0; bottom:0; height:1.5px;
+    background:linear-gradient(90deg, transparent, #ffb45c 18%, #ff7ad9 38%, #5ac8fa 58%, #7d7aff 78%, transparent);
+    background-size:200% 100%; animation:promoRim 6s linear infinite; opacity:0.95}
+  .promo::before{content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(100deg, transparent 30%, rgba(255,255,255,0.07) 45%, transparent 60%); background-size:250% 100%; animation:promoSheen 7s ease-in-out infinite}
+  @keyframes promoRim{to{background-position:-200% 0}}
+  @keyframes promoSheen{0%{background-position:150% 0} 100%{background-position:-100% 0}}
+  @media (prefers-reduced-motion: reduce){.promo::after,.promo::before{animation:none}}
+  .promo-in{position:relative; max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:center; gap:14px 22px; flex-wrap:wrap; color:#fff}
+  .promo-live{display:inline-flex; align-items:center; gap:8px; font-size:0.8rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#e2c275;
+    padding:6px 12px; border-radius:999px; background:rgba(226,194,117,0.12); box-shadow:inset 0 0 0 1px rgba(226,194,117,0.35)}
+  .promo-dot{width:8px; height:8px; border-radius:50%; background:#30d158; box-shadow:0 0 0 0 rgba(48,209,88,0.7); animation:promoPulse 2s ease-out infinite}
+  @keyframes promoPulse{0%{box-shadow:0 0 0 0 rgba(48,209,88,0.65)} 100%{box-shadow:0 0 0 10px rgba(48,209,88,0)}}
+  .promo-main{font-size:clamp(1.05rem, 1.9vw, 1.3rem); letter-spacing:-0.01em}
+  .promo-main b{font-weight:700; background:linear-gradient(180deg,#fff,#f6e7bf); -webkit-background-clip:text; background-clip:text; color:transparent}
+  .promo-sub{color:#d2d2d7}
+  .promo-days{font-size:0.9rem; font-weight:600; color:#ffb45c; font-variant-numeric:tabular-nums}
+  .promo-btn{display:inline-flex; align-items:center; gap:6px; padding:9px 14px 9px 18px; border-radius:999px; text-decoration:none; font-weight:600; font-size:0.95rem; color:#000;
+    background:linear-gradient(180deg,#ffffff,#e9e9ee); box-shadow:inset 0 1px 0 #fff, 0 0 0 1px rgba(255,255,255,0.25), 0 6px 20px rgba(255,255,255,0.12); transition:transform .15s ease, box-shadow .15s ease}
+  .promo-btn:hover{transform:translateY(-1px); box-shadow:inset 0 1px 0 #fff, 0 0 0 1px rgba(255,255,255,0.35), 0 10px 28px rgba(255,255,255,0.2)}
+  .promo-btn svg{width:15px; height:15px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; transition:transform .15s ease}
+  .promo-btn:hover svg{transform:translateX(2px)}
+  @media (max-width:640px){.promo-in{padding:12px 14px; gap:10px 12px} .promo-sub{display:block} .promo-main{text-align:center; width:100%; order:-1} .promo-live{font-size:0.72rem}}
 </style>
 </head>
 <body>
 <a href="#main" class="skip-link">Skip to content</a>
 <div class="mesh-bg" aria-hidden="true"></div>
 
-<a href="#pricing" class="promo-bar">
-  Early access is open: <strong>free through Dec 31, 2026</strong> and <strong class="promo-red">we import your book free</strong>
-  <span class="promo-arrow" aria-hidden="true">→</span>
-</a>
+<div class="promo">
+  <div class="promo-in">
+    <span class="promo-live"><span class="promo-dot" aria-hidden="true"></span>Early access</span>
+    <span class="promo-main"><b>Free through Dec 31, 2026.</b> <span class="promo-sub">We load your book for you.</span></span>
+    <span class="promo-days js-days-only" hidden></span>
+    <a href="mailto:info@titusdl.com" class="promo-btn js-start">Claim my free spot<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5 10.5 8 6 12.5"/></svg></a>
+  </div>
+</div>
 
 <header class="site">
   <div class="container">
@@ -1362,6 +1393,9 @@
            "&body=" + encodeURIComponent(body);
   };
   // "· N days left" next to the launch-special end date; hidden once it has passed.
+  if (Math.ceil((new Date(2027, 0, 1) - new Date()) / 864e5) > 0) document.querySelectorAll(".js-days-only").forEach(function (el) {
+    var n = Math.ceil((new Date(2027, 0, 1) - new Date()) / 864e5); el.textContent = n + (n === 1 ? " day left" : " days left"); el.hidden = false;
+  });
   var daysLeft = Math.ceil((new Date(2027, 0, 1) - new Date()) / 864e5);
   if (daysLeft > 0) document.querySelectorAll(".js-days-left").forEach(function (el) {
     el.innerHTML = " · <strong>" + daysLeft + (daysLeft === 1 ? " day" : " days") + " left</strong>";
